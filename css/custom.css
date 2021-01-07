@@ -32,16 +32,16 @@ tr:hover .popup-image {
 }
 
 a {
-    color: #8DC9CB !important;
+    color: #1aa3b1 !important;
 }
 
 .reveal .progress span {
-    background: #8DC9CB !important;
+    background: #1aa3b1 !important;
 }
 
 ::selection {
     color: #fff;
-    background: #8DC9CB;
+    background: #1aa3b1;
     text-shadow: none;
 }
 
