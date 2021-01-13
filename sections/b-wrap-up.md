@@ -17,8 +17,7 @@
             </td>
         </tr>
         <tr>
-            <td style="text-align: right; vertical-align: middle;"><img width="20%" data-src="img/icons/website.png"
-                    class="no-background" /></td>
+            <td style="text-align: right; vertical-align: middle;"><img width="20%" data-src="img/icons/website.png" class="no-background" /></td>
             <td style="vertical-align: middle;"><a
                     href="https://hannotify.github.io">https://hannotify.github.io</a></td>
         </tr>
