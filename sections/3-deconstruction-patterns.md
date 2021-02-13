@@ -11,6 +11,8 @@
 
 <!-- .slide: data-auto-animate" -->
 
+### Deconstruction patterns
+
 <pre data-id="pattern-definition-animation"><code class="java" data-trim data-line-numbers>
 public class Overdrive implements Effect {
     private final int gain;
@@ -24,6 +26,8 @@ public class Overdrive implements Effect {
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Deconstruction patterns
 
 <pre data-id="pattern-definition-animation"><code class="java" data-trim data-line-numbers="8-10">
 public class Overdrive implements Effect {
@@ -49,6 +53,8 @@ public class Overdrive implements Effect {
 
 <!-- .slide: data-auto-animate" -->
 
+### Deconstruction patterns
+
 <pre data-id="deconstruction-patterns-animation"><code class="java" data-trim data-line-numbers>
 void apply(Effect effect) {
     String applyResult = switch(effect) {
@@ -68,6 +74,8 @@ void apply(Effect effect) {
 
 <!-- .slide: data-auto-animate" -->
 
+### Deconstruction patterns
+
 <pre data-id="deconstruction-patterns-animation"><code class="java" data-trim data-line-numbers="5">
 void apply(Effect effect) {
     String applyResult = switch(effect) {
@@ -86,6 +94,8 @@ void apply(Effect effect) {
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Deconstruction patterns
 
 <pre data-id="deconstruction-patterns-animation"><code class="java" data-trim data-line-numbers>
 void apply(Effect effect) {
@@ -110,6 +120,8 @@ void apply(Effect effect) {
 
 <!-- .slide: data-auto-animate" -->
 
+### Optimization
+
 <pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers>
 void apply(Effect effect) {
     String applyResult = switch(effect) {
@@ -129,6 +141,8 @@ void apply(Effect effect) {
 
 <!-- .slide: data-auto-animate" -->
 
+### Optimization
+
 <pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers="3">
 void apply(Effect effect) {
     String applyResult = switch(effect) {
@@ -142,6 +156,8 @@ void apply(Effect effect) {
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Optimization
 
 <pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers="3-4">
 void apply(Effect effect) {

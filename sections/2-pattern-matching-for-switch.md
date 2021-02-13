@@ -1,6 +1,6 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
-# Pattern Matching for <!-- .element: class="stroke" -->
-# `switch` <!-- .element: class="stroke" -->
+## Pattern Matching for <!-- .element: class="stroke" -->
+## `switch` <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
@@ -11,6 +11,8 @@
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Switch expression
 
 <pre data-id="switch-expression-animation"><code class="java" data-trim data-line-numbers>
 void apply(Effect effect) {
@@ -24,6 +26,8 @@ void apply(Effect effect) {
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Switch expression
 
 <pre data-id="switch-expression-animation"><code class="java" data-trim data-line-numbers="3-4">
 void apply(Effect effect) {
@@ -39,6 +43,8 @@ void apply(Effect effect) {
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Switch expression
 
 <pre data-id="switch-expression-animation"><code class="java" data-trim data-line-numbers="5-8">
 void apply(Effect effect) {
@@ -57,6 +63,8 @@ void apply(Effect effect) {
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Switch expression
 
 <pre data-id="switch-expression-animation"><code class="java" data-trim data-line-numbers="9">
 void apply(Effect effect) {
