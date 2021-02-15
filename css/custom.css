@@ -62,3 +62,11 @@ a {
     bottom: -50px;
     position: absolute;
 }
+
+.reveal code {
+    font-family: 'Fira Code', monospace;
+}
+
+.reveal pre {
+    width: 100%;
+}
