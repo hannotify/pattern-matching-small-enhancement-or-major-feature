@@ -1,5 +1,5 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## A Better Serialization? <!-- .element: class="stroke" -->
+# A Better Serialization? <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
