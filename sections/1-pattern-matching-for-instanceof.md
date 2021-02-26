@@ -6,7 +6,55 @@
 
 ---
 
-...
+
+### Instanceof-and-cast
+
+<pre><code class="java" data-trim data-line-numbers>
+if (obj instanceof Guitar) {
+    Guitar lesPaul = 
+                     (Guitar) obj;
+    // use lesPaul
+}
+</code></pre>
+
+---
+
+
+### Instanceof-and-cast
+
+<pre><code class="java" data-trim data-line-numbers="1">
+if (obj instanceof Guitar) { // 1. is obj a Guitar?
+    Guitar lesPaul = 
+                     (Guitar) obj;
+    // use lesPaul
+}
+</code></pre>
+
+---
+
+
+### Instanceof-and-cast
+
+<pre><code class="java" data-trim data-line-numbers="3">
+if (obj instanceof Guitar) { // 1. is obj a Guitar?
+    Guitar lesPaul = 
+                     (Guitar) obj; // 2. perform conversion
+    // use lesPaul
+}
+</code></pre>
+
+---
+
+
+### Instanceof-and-cast
+
+<pre><code class="java" data-trim data-line-numbers="2">
+if (obj instanceof Guitar) { // 1. is obj a Guitar?
+    Guitar lesPaul = // 3. declare variable, bind value
+                     (Guitar) obj; // 2. perform conversion
+    // use lesPaul
+}
+</code></pre>
 
 ---
 
