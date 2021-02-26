@@ -5,7 +5,32 @@
 
 ---
 
-...
+<!-- .slide: data-auto-animate" -->
+
+### Pattern bind statements
+
+<pre data-id="pattern-bind-statements-animation"><code class="java" data-trim data-line-numbers>
+var reverb = new Reverb("ChamberReverb", 2);
+
+__let Reverb(String name, int roomSize) = reverb;
+
+// do something with name & roomSize
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Pattern bind statements
+
+<pre data-id="pattern-bind-statements-animation"><code class="java" data-trim data-line-numbers="4">
+var reverb = new Reverb("ChamberReverb", 2);
+
+__let Reverb(String name, int roomSize) = reverb;
+else throw new IllegalArgumentException("not a Reverb!");
+
+// do something with name & roomSize
+</code></pre>
 
 ---
 
@@ -47,3 +72,22 @@ void apply(Effect effect, Guitar guitar) {
 
 ---
 
+## More future expansions
+
+<span class="fragment">
+* Array patterns
+</span>
+
+<span class="fragment">
+* Record patterns
+</span>
+
+<span class="fragment">
+* Guard patterns
+</span>
+
+<span class="fragment">
+* AND patterns
+</span>
+
+(...)
