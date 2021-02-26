@@ -17,9 +17,16 @@
             </td>
         </tr>
         <tr>
+            <td style="text-align: right; vertical-align: middle;"><img width="20%"
+                    data-src="img/icons/github.png" class="no-background" /></td>
+            <td style="vertical-align: middle;"><a 
+                    href="https://github.com/hannotify/pattern-matching-music-store">github.com/hannotify/pattern-matching-music-store</a>
+            </td>
+        </tr>
+        <tr>
             <td style="text-align: right; vertical-align: middle;"><img width="20%" data-src="img/icons/website.png" class="no-background" /></td>
             <td style="vertical-align: middle;"><a
-                    href="https://hannotify.github.io">https://hannotify.github.io</a></td>
+                    href="https://hannotify.github.io">hannotify.github.io</a></td>
         </tr>
         <tr>
             <td style="text-align: right; vertical-align: middle;"><img width="20%"
