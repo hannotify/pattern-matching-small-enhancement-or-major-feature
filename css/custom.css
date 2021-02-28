@@ -70,3 +70,13 @@ a {
 .reveal pre {
     width: 100%;
 }
+
+.reveal ::selection {
+  color: black;
+  background: #1aa3b1;
+  text-shadow: none; }
+
+.reveal ::-moz-selection {
+  color: black;
+  background: #1aa3b1;
+  text-shadow: none; }

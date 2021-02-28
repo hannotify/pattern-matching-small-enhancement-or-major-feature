@@ -1,0 +1,13 @@
+@startuml music-store-phase-1.puml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+HIDE_STEREOTYPE()
+
+skinparam backgroundColor transparent
+skinparam monochrome reverse
+
+Container_Boundary(musicStore, "music-store") {
+    Component(guitar, "Guitar", "Class", "-name: String")
+}
+
+@enduml

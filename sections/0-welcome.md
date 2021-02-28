@@ -25,3 +25,7 @@ note:
 
 Hi, my name is Hanno. 
 I work at Info Support as an IT consultant.
+
+---
+
+<!-- .slide: data-background="img/background/hanno-guitar-devoxx.jpg" data-background-color="black" data-background-opacity="0.9" -->
