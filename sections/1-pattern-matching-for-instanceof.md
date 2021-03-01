@@ -175,9 +175,221 @@ Patterns declare local variables "in the middle" of a statement or expression, w
 
 ---
 
-## Flow scoping
+<!-- .slide: data-auto-animate" -->
 
-(...)
+## Scoping
+
+**'Regular' local variable ('block scoping')**
+
+* The block in which it is declared.
+
+<pre data-id="block-scoping-animation"><code class="java" data-trim data-line-numbers>
+void playTunedGuitar() { 
+    Guitar lesPaul = new Guitar("Les Paul");
+
+    if (!lesPaul.isInTune()) {
+        Guitar fenderStrat = new Guitar("Fender Stratocaster");
+        fenderStrat.play();
+    }
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**'Regular' local variable ('block scoping')**
+
+* The block in which it is declared.
+
+<pre data-id="block-scoping-animation"><code class="java" data-trim data-line-numbers>
+void playTunedGuitar() { 
+    Guitar lesPaul = new Guitar("Les Paul");
+
+    if (!lesPaul.isInTune()) {
+        Guitar fenderStrat = new Guitar("Fender Stratocaster");
+        fenderStrat.play();
+        // fenderStrat is in scope
+    }
+    // fenderStrat is not in scope
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
+if (product instanceof Guitar lesPaul) {
+    // can use lesPaul here
+} else {
+    // can't use lesPaul here
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
+if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
+    // can use lesPaul here
+} else {
+    // can't use lesPaul here
+}
+
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
+if (product instanceof Guitar lesPaul 
+        || lesPaul.isInTune()) {
+    // ...
+} else {
+    // can't use lesPaul here
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
+if (product instanceof Guitar lesPaul 
+        || lesPaul.isInTune()/* can't use lesPaul here */) {
+    // ...
+} else {
+    // can't use lesPaul here
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
+if (product instanceof Guitar lesPaul 
+        || lesPaul.isInTune()/* can't use lesPaul here */) {
+    // can't use lesPaul here
+} else {
+    // can't use lesPaul here
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-2-animation"><code class="java" data-trim data-line-numbers>
+boolean isTunedGuitar(Object product) {
+	if (!(product instanceof Guitar lesPaul)) {
+		return false;
+    }
+
+	return lesPaul.isInTune();
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-2-animation"><code class="java" data-trim data-line-numbers>
+boolean isTunedGuitar(Object product) {
+	if (!(product instanceof Guitar lesPaul)) {
+		return false;
+    }
+
+	// This code is only reachable if 'product' is
+	// a Guitar, so 'lesPaul' is in scope.
+	return lesPaul.isInTune();
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.2" -->
+![music-store-phase-2](diagrams/music-store-phase-2.puml.png "Music store class diagram")
+
+<https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
+
+note:
+
+...
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+* The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-3-animation"><code class="java" data-trim data-line-numbers>
+void test(Object product) {
+	if (product instanceof Reverb effect)
+		effect.setRoomSize(25);
+	else if (product instanceof Delay effect)
+		effect.setTimeInMs(200);
+}
+</code></pre>
+
+note:
+
+Finally, if the variables' scopes don't overlap, for example in if-chains, you can reuse the same variable name within the same block.
+
+There are two declarations of 'effect', but each is only in scope within "its own" branch and so there is no overlap and hence no conflict.
+I don't think reusing the same variable name is a good idea, though. 
+Just because it's possible doesn't mean we have to do it. 😉
 
 ---
 
