@@ -386,14 +386,57 @@ void test(Effect effect) {
 note:
 
 Finally, if the variables' scopes don't overlap, for example in if-chains, you can reuse the same variable name within the same block.
-
 There are two declarations of 'effect', but each is only in scope within "its own" branch and so there is no overlap and hence no conflict.
-I don't think reusing the same variable name is a good idea, though. 
-Just because it's possible doesn't mean we have to do it. 😉
+
+Fun fact: this would not have been possible with classic 'block scoping'.
 
 ---
 
-(...)
+<!-- .slide: data-background="img/background/marshall-amplifier.jpg" data-background-color="black" data-background-opacity="0.4" -->
+![music-store-phase-3](diagrams/music-store-phase-3.puml.png "Music store class diagram")
+
+<https://pxhere.com/en/photo/853260> <!-- .element: class="attribution" -->
+
+---
+
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+## Demo
+
+* Simplify implementation of `equals`
+* Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
+
+* **Guitar.java** Simplify implementation of `equals`
+* **AmplifierTest.java** Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
+
+---
+
+## `instanceof` grammar
+
+The `instanceof` grammar is extended accordingly:
+
+<pre><code class="java" data-trim data-line-numbers="4,6,7">
+RelationalExpression:
+     ...
+     RelationalExpression instanceof ReferenceType
+     RelationalExpression instanceof Pattern
+
+Pattern:
+     ReferenceType Identifier
+</code></pre>
+
+<https://openjdk.java.net/jeps/305> <!-- .element: class="attribution" -->
+
+---
+
+## Benefits
+
+* Nearly 100% of casts will just disappear! 
+* More concise
+* Eliminates cut/paste errors
 
 ---
 
@@ -415,7 +458,7 @@ Just because it's possible doesn't mean we have to do it. 😉
 A **type pattern**:
 
 * consists of a *type* and a *variable name*
-* makes the variable accessible in the following code block 
+* makes the variable accessible according to *flow typing*
 
 <small>(but only when the passed value is of the given type)<small>
 
@@ -450,3 +493,26 @@ A **type pattern**:
     </tbody>
 </table>
 
+---
+
+<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.25" -->
+## Why so serious?
+
+* Surely a less invasive approach exists? <!-- .element: class="fragment" -->
+<li class="fragment"><strong>Flow typing</strong> has been considered.</li>
+* It infers refined types based on past conditionals. <!-- .element: class="fragment" -->
+<li class="fragment">But... it is suited for <code>instanceof</code> checks only.</li>
+* And pattern matching can be useful for more language concepts! <!-- .element: class="fragment" -->
+
+<https://pxhere.com/en/photo/835435> <!-- .element: class="attribution" -->
+
+note:
+
+But why such a serious, generic solution?
+"Why... So... Seriousa?"
+Surely a less invasive approach exists?
+Yes, it does. And it has been considered. 
+_Flow typing_ is the mechanism that infers refined types based on past conditionals.
+But... it is suited for `instanceof` checks only.
+And *pattern matching* can be useful for more language concepts.
+Such as switch expressions!
