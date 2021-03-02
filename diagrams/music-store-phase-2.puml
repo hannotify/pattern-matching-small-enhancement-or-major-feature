@@ -1,0 +1,19 @@
+@startuml music-store-phase-2.puml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+HIDE_STEREOTYPE()
+
+skinparam backgroundColor transparent
+skinparam monochrome reverse
+
+Container_Boundary(musicStore, "music-store") {
+    Component(guitar, "Guitar", "Class", "-name: String")
+    Component(effect, "Effect", "Interface", "+apply()")
+    Component(delay, "Delay", "Class", "-timeInMs: int")
+    Component(reverb, "Reverb", "Class", "-roomSize: int")
+
+    delay -u-|> effect
+    reverb -u-|> effect
+}
+
+@enduml

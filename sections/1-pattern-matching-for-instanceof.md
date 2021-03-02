@@ -375,11 +375,11 @@ note:
 * The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-3-animation"><code class="java" data-trim data-line-numbers>
-void test(Object product) {
-	if (product instanceof Reverb effect)
-		effect.setRoomSize(25);
-	else if (product instanceof Delay effect)
-		effect.setTimeInMs(200);
+void test(Effect effect) {
+	if (effect instanceof Reverb stockEffect)
+		stockEffect.setRoomSize(25);
+	else if (effect instanceof Delay stockEffect)
+		stockEffect.setTimeInMs(200);
 }
 </code></pre>
 
