@@ -399,6 +399,7 @@ This enables the switch label to take a generic `Pattern`.
     GuitarType.TELECASTER
     </code>
 </blockquote>
+
 <https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
 
 note:
@@ -429,7 +430,7 @@ It can be an enum constant, as depicted here, or a `String` literal, or a numeri
 
 ---
 
-<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.25" -->
+<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
 ## Why so serious?
 
 <li class="fragment"><em>Surely</em> a less invasive approach exists?</li>

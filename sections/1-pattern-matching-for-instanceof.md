@@ -495,7 +495,7 @@ A **type pattern**:
 
 ---
 
-<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.25" -->
+<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
 ## Why so serious?
 
 <li class="fragment"><em>Surely</em> a less invasive approach exists?</li>

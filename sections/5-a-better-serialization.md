@@ -5,6 +5,21 @@
 
 ---
 
+<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+## Here be dragons! <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    We can't be sure <strong>at all</strong> that the following features will appear in Java as depicted.
+    They can change a <strong>lot</strong> in the meantime.
+</blockquote>
+
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" --> 
+
+note:
+This is like a disclaimer`++`.
+
+---
+
 ...
 
 ---

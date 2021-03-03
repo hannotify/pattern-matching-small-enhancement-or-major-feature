@@ -5,6 +5,21 @@
 
 ---
 
+<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+## Here be super dragons! <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    We can't be sure that the following features will appear in Java as depicted, <strong>if at all</strong>.<br/>
+    Proceed with caution!
+</blockquote>
+
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" --> 
+
+note:
+This is like a disclaimer`+++`.
+
+---
+
 <!-- .slide: data-auto-animate" -->
 
 ### Pattern bind statements
