@@ -192,7 +192,7 @@ static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) 
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
 static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
-    if (effectLoop instanceOf EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
+    if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
         return timeInMs == roomSize;
     }
     return false;
@@ -263,3 +263,47 @@ void apply(Effect effect) {
 * Better encapsulation - a case branch only receives data that it actually references.
 * ...
 
+---
+
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    <strong>deconstruction pattern</strong>
+    <br/>
+    <code data-trim data-noescape>
+    Delay(int timeInMs)
+    </code>
+</blockquote>
+
+<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
+
+---
+
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    <strong>var pattern</strong>
+    <br/>
+    <code data-trim data-noescape>
+    var depth
+    </code>
+</blockquote>
+
+<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
+
+---
+
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    <strong>any pattern</strong>
+    <br/>
+    <code data-trim data-noescape>
+    _
+    </code>
+</blockquote>
+
+<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
