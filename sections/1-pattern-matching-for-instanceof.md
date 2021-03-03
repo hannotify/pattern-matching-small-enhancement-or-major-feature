@@ -414,29 +414,29 @@ note:
 
 ---
 
+## Benefits
+
+* Nearly 100% of casts will just disappear! 
+* More concise
+* Eliminates cut/paste errors
+
+---
+
 ## `instanceof` grammar
 
 The `instanceof` grammar is extended accordingly:
 
 <pre><code class="java" data-trim data-line-numbers="4,6,7">
 RelationalExpression:
-     ...
-     RelationalExpression instanceof ReferenceType
-     RelationalExpression instanceof Pattern
+  ...
+  RelationalExpression instanceof ReferenceType
+  RelationalExpression instanceof Pattern
 
 Pattern:
-     ReferenceType Identifier
+  ReferenceType Identifier
 </code></pre>
 
 <https://openjdk.java.net/jeps/305> <!-- .element: class="attribution" -->
-
----
-
-## Benefits
-
-* Nearly 100% of casts will just disappear! 
-* More concise
-* Eliminates cut/paste errors
 
 ---
 
@@ -498,11 +498,11 @@ A **type pattern**:
 <!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.25" -->
 ## Why so serious?
 
-* Surely a less invasive approach exists? <!-- .element: class="fragment" -->
+<li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
 <li class="fragment"><strong>Flow typing</strong> has been considered.</li>
-* It infers refined types based on past conditionals. <!-- .element: class="fragment" -->
+<li class="fragment">It infers refined types based on past conditionals.</li>
 <li class="fragment">But... it is suited for <code>instanceof</code> checks only.</li>
-* And pattern matching can be useful for more language concepts! <!-- .element: class="fragment" -->
+<li class="fragment">And pattern matching can be useful for more language concepts!</li>
 
 <https://pxhere.com/en/photo/835435> <!-- .element: class="attribution" -->
 
@@ -511,8 +511,9 @@ note:
 But why such a serious, generic solution?
 "Why... So... Seriousa?"
 Surely a less invasive approach exists?
-Yes, it does. And it has been considered. 
-_Flow typing_ is the mechanism that infers refined types based on past conditionals.
+Yes, it does. And it has been considered by the languange designers.
+_Flow typing_ is a proposed mechanism that infers refined types based on past conditionals.
+Sounds useful, right?
 But... it is suited for `instanceof` checks only.
-And *pattern matching* can be useful for more language concepts.
+Whereas *pattern matching* can do the same, **and** be useful for more language concepts.
 Such as switch expressions!
