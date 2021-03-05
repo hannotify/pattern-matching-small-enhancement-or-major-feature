@@ -33,7 +33,7 @@
         </tr>
         <tr class="fragment">
             <td><em>var pattern</em></td>
-            <td><code>var depth</code></td>
+            <td><code>var timeInMs</code></td>
             <td>Match anything and bind its target.</td>
         </tr>
         <tr class="fragment">
