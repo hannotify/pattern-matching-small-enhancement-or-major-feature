@@ -451,4 +451,3 @@ If no Tuner is present, the 'regular' case branch will be used as before.
 </table>
 
 <https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
- 

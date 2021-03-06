@@ -20,7 +20,46 @@ This is like a disclaimer`++`.
 
 ---
 
-...
+## Opposites
+
+### Deconstruction pattern
+
+* transforms an object into a set of typed fields
+
+### Constructor
+
+* transforms a set of typed fields into an object
+
+note:
+
+They can be seen as opposites.
+And this is an important observation when thinking about serialization.
+
+---
+
+## Serialization
+
+* very important feature
+* but many people hate its current implementation
+
+### Drawbacks
+
+* it undermines the accessibility model <!-- .element: class="fragment" -->
+* serialization logic is not 'readable code' <!-- .element: class="fragment" -->
+* it bypasses constructors and data validation <!-- .element: class="fragment" -->
+
+note:
+
+Serialization is a very important feature; it helped Java gain popularity in the late 90's due to its application in RMI.
+But many people really hate its current implementation.
+According to Java architect Brian Goetz: "even Gollum hates serialization".
+
+* it undermines the accessibility model (field scraping throught reflection magic)
+* serialization logic is not 'readable code'
+* it bypasses constructors and data validation
+
+But! 
+Using patterns could improve the situation dramatically.
 
 ---
 
@@ -58,10 +97,15 @@ public class EffectLoop implements Effect {
 
     public pattern EffectLoop(String name, Effect[] effects) {
         name = this.name;
-        effects = effects.toArray();
+        effects = this.effects.toArray();
     }
 }
 </code></pre>
+
+note:
+
+We add a pattern definition to serialize our object. 
+Let's assume that the serialized representation of an `EffectLoop` is a `String` and an `Effect` array.
 
 ---
 
@@ -84,14 +128,20 @@ public class EffectLoop implements Effect {
         for (Effect effect : effects) {
             this.effects.add(effect);
         }
+        return effectLoop;
     }
 
     public pattern EffectLoop(String name, Effect[] effects) {
         name = this.name;
-        effects = effects.toArray();
+        effects = this.effects.toArray();
     }
 }
 </code></pre>
+
+note:
+Here, we add a factory method to deserialize our object. (we could also have used an overloaded constructor)
+It converts a `String` and `Effect` array back to an `EffectLoop` object.
+If the constructor had any data validation, it would be used here.
 
 ---
 
@@ -120,7 +170,61 @@ public class EffectLoop implements Effect {
     @Serializer
     public pattern EffectLoop(String name, Effect[] effects) {
         name = this.name;
-        effects = effects.toArray();
+        effects = this.effects.toArray();
     }
 }
 </code></pre>
+
+note:
+
+And to make the intent of the code even more clear, we use annotations.
+
+We really improved on the drawbacks we indicated earlier!
+
+* the accessibility model is no longer undermined
+* serialization logic has become readable code!
+* it no longer bypasses constructors and data validation
+
+---
+
+### Some challenges remain
+
+**Q:** How to support multiple versions of one class?
+
+<span class="fragment">
+    <strong>A:</strong>  <code>@Serializer</code> and <code>@Deserializer</code> annotations could get a property <code>version</code> in the future.
+</span>
+
+note:
+
+Of course, not *all* drawbacks are solved with this.
+Because how will you support multiple versions of one class?
+Well, `@Serializer` and `@Deserializer` annotations could get a property `version` in the future.
+So that you would be able to annotate multiple methods with these annotations to support multiple versions.
+
+---
+
+## Feature Status
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>n/a</strong></td>
+            <td>Exploratory document</td>
+            <td><a href="https://cr.openjdk.java.net/~briangoetz/amber/serialization.html">Towards Better Serialization</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<https://cr.openjdk.java.net/~briangoetz/amber/serialization.html> <!-- .element: class="attribution" -->
+
+note:
+Well, I said 'in the future', but this entire feature is still very much in the future.
+ 
