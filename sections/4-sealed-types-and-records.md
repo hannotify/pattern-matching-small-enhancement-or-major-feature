@@ -6,21 +6,63 @@
 
 ---
 
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+## Demo
+
+* Convert effect classes to a record
+* Acquire constructor, accessor methods etc.
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
+Records can only be immutable classes.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
 ### Records
 
-Input:
+#### Input:
 
 * Commit to the class being a transparent carrier for its data.
 
-Output:
+---
 
+<!-- .slide: data-auto-animate" -->
+
+### Records
+
+#### Input:
+
+* Commit to the class being a transparent carrier for its data.
+
+<h4>Output:</h4>
 <ul>
-* constructors
-* accessor methods
-* `equals()`-implementation
-* `hashCode()`-implementation
-  <li class="fragment">deconstruction pattern</li>
+    <li>constructors</li>
+    <li>accessor methods</li>
+    <li><code>equals()</code>-implementation</li>
+    <li><code>hashCode()</code>-implementation</li>
+    <li><code>toString()</code>-implementation</li>
+    <li class="fragment">deconstruction pattern</li>
 </ul>
+
+---
+
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+## Demo
+
+* Make `Effect` a sealed type
+* Make subclasses `final`, `sealed` or `non-sealed`
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
+* Records can only be immutable classes.
+* Records are implicitly final.
+* All implementations of a sealed type must be `final`, `sealed` or `non-sealed` ([more info on non-sealed](https://stackoverflow.com/questions/63860110/what-is-the-point-of-extending-a-sealed-class-with-a-non-sealed-class))
+
+Example of non-sealed: `UserCustomEffect`.
 
 ---
 
@@ -62,3 +104,79 @@ String apply(Effect effect) {
     };
 }
 </code></pre>
+
+<https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
+
+note:
+* No default case needed; the compiler knows that all cases have been handled.
+
+---
+
+## Feature Status 
+### Records
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>14</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.java.net/jeps/359">JEP 359</a></td>
+        </tr>
+        <tr class="fragment">
+            <td><strong>15</strong></td>
+            <td>Second preview</td>
+            <td><a href="https://openjdk.java.net/jeps/384">JEP 384</a></td>
+        </tr>
+        <tr class="fragment">
+            <td><strong>16</strong></td>
+            <td>Final</td>
+            <td><a href="https://openjdk.java.net/jeps/395">JEP 395</a></td>
+        </tr>
+    </tbody>
+</table>
+
+note:
+Records don't acquire deconstruction patterns yet; I expect this to be a part of the 'deconstruction patterns' feature.
+Its status is still 'exploratory document'.
+
+---
+
+## Feature Status
+### Sealed Types
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>15</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.java.net/jeps/360">JEP 360</a></td>
+        </tr>
+        <tr class="fragment">
+            <td><strong>16</strong></td>
+            <td>Second preview</td>
+            <td><a href="https://openjdk.java.net/jeps/397">JEP 397</a></td>
+        </tr>
+        <tr class="fragment">
+            <td><strong>17</strong></td>
+            <td>Final</td>
+            <td>...</td>
+        </tr>
+    </tbody>
+</table>
+
+note:
+Sealed Types in Final status is expected in JDK 17, but hasn't officially been annouced yet.
