@@ -287,6 +287,16 @@ In this case we could choose to apply an 'any pattern'.
 
 ---
 
+<!-- .slide: data-background="https://media.giphy.com/media/26BGIqWh2R1fi6JDa/giphy.gif" data-background-size="contain" data-background-opacity="0.8" data-background-color="black"-->
+<http://gph.is/2lFlHIK> <!-- .element: class="attribution" style="color: white !important;" --> 
+
+note:
+An any pattern is nothing like the 'any key'.
+Because if Homer was attending this talk, he would hear how to find an any pattern and apply it.
+And you will too, just sit tight.
+
+---
+
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
@@ -299,7 +309,7 @@ static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) 
 </code></pre>
 
 note:
-An 'any pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the pattern definition.
+So an 'any pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the pattern definition.
 But there is a big difference: an any pattern *doesn't bind a value to a variable*.
 That's why there is no variable name, and just an underscore character to denote the any pattern.
 So this is what you can do to tell the compiler: "I don't care about the first value at all, just make sure to map the `roomSize` value to a variable.
@@ -380,9 +390,10 @@ If no Tuner is present, the 'regular' case branch will be used as before.
 
 ## Benefits
 
-* Better encapsulation - a case branch only receives data that it actually references.
-* More elegant logic - by using pattern composition
-* Optimization - through the use of any patterns
+<ul>
+    <li> Better encapsulation<br/><small>a case branch only receives data that it actually references.</small>
+    <li>More elegant logic<br/><small>by using pattern composition</small>
+    <li>Optimization<br/><small>through the use of any patterns</small>
 
 ---
 

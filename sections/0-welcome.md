@@ -29,3 +29,16 @@ I work at Info Support as an IT consultant.
 ---
 
 <!-- .slide: data-background="img/background/hanno-guitar-devoxx.jpg" data-background-color="black" data-background-opacity="0.9" -->
+
+---
+
+<!-- .slide: data-background="https://media.giphy.com/media/M9Isn1h9cy3hBD3DUN/giphy.gif" -->
+## Small Enhancement <!-- .element: class="stroke" -->
+<https://gph.is/g/ZPJNoPQ> <!-- .element: class="attribution" -->
+
+---
+
+<!-- .slide: data-background="https://thumbs.gfycat.com/DefiantElasticGadwall.webp" -->
+## Major Feature <!-- .element: class="stroke" -->
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+

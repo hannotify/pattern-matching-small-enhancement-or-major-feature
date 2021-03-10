@@ -164,7 +164,7 @@ case GuitarCabinet(Guitar[] { var lesPaul, var strat, var tele}):
 <span class="fragment">
 ...and to match 3 or more elements:
 <pre><code class="java" data-trim data-line-numbers>
-case GuitarCabinet(var lesPaul, var strat, var tele, ...}):
+case GuitarCabinet(var lesPaul, var strat, var tele, ...):
 </code></pre>
 </span>
 
