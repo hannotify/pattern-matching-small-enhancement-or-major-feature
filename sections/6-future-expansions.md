@@ -85,7 +85,7 @@ In this case we could use a guard to prevent unnecessary tuning...
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate -->
 
 ### Guards
 
@@ -106,6 +106,8 @@ note:
 Now the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
 
 ---
+
+<!-- .slide: data-visibility="hidden" -->
 
 ### Array patterns
 
@@ -145,6 +147,8 @@ Of course arrays can have more than 2 elements, so we need a way to express this
 
 ---
 
+<!-- .slide: data-visibility="hidden" -->
+
 ### Varargs patterns
 
 Varargs are like arrays, so:
@@ -157,7 +161,7 @@ case GuitarCabinet(var lesPaul, var strat, var tele):
 ...could be syntactic sugar for:
 
 <pre><code class="java" data-trim data-line-numbers>
-case GuitarCabinet(Guitar[] { var lesPaul, var strat, var tele}):
+case GuitarCabinet(Guitar[] { var lesPaul, var strat, var tele }):
 </code></pre>
 </span>
 
@@ -172,7 +176,27 @@ case GuitarCabinet(var lesPaul, var strat, var tele, ...):
 
 ---
 
-### Other planned expansions
+### Other ideas
+
+* Array patterns
+* Varargs patterns
+* AND patterns
+* Patterns in `catch` clauses
+* Collection patterns
+* Record patterns
+
+<https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->
+
+note:
+As you can see, the details are getting murkier by the minute.
+This is because these are **very new ideas** and are likely to change. 
+Or to not be ever implemented at all.
+
+---
+
+<!---.slide: data-visibility="hidden" -->
+
+### Other ideas
 
 <ul>
     <li class="fragment">Guard patterns:<br/><code>true(BooleanExpression)</code> or <code>false(BooleanExpression)</code>

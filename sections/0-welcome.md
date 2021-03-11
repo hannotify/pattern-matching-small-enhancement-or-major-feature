@@ -14,8 +14,6 @@ note:
 
 *Voorbereidingen*:
 
-* Start Spectacle.
-* Verbind Spotlight.
 * Eerste scherm:
   * Speaker notes
 * Tweede scherm:
@@ -29,6 +27,8 @@ A new feature in Java.
 ---
 
 <!-- .slide: data-background="img/background/hanno-guitar-devoxx.jpg" data-background-color="black" data-background-opacity="0.9" -->
+
+note:
 
 Hi, my name is Hanno. 
 I work at Info Support as an IT consultant.

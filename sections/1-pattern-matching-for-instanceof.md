@@ -261,7 +261,7 @@ if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ## Scoping
 
@@ -280,7 +280,7 @@ if (product instanceof Guitar lesPaul
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ## Scoping
 
@@ -299,7 +299,7 @@ if (product instanceof Guitar lesPaul
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ## Scoping
 
@@ -314,7 +314,7 @@ if (product instanceof Guitar lesPaul
 } else {
     // can't use lesPaul here
 }
-</code></pre>
+</code></pre> -->
 
 ---
 
