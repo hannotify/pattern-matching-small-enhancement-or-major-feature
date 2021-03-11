@@ -38,7 +38,7 @@ And that is why I think pattern matching is not a Small Enhancement, but a Major
         <td style="text-align: right; vertical-align: middle;"><img width="20%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a
-                href="#">#link#</a>
+                href="http://bit.do/javaland-pattern-matching">bit.do/javaland-pattern-matching</a>
         </td>
 </tr>
 <tr>
