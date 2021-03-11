@@ -20,15 +20,20 @@ note:
   * Speaker notes
 * Tweede scherm:
   * Slides
-* Test Extend -> Mirror (not needed if there is a screen on the stage)
-* Test Mirror -> Extend
+  * IntelliJ - code op juiste tag (`0-completed-preparations`)
+    
 
-Hi, my name is Hanno. 
-I work at Info Support as an IT consultant.
+Welcome to this talk on Pattern Matching.
+A new feature in Java.
 
 ---
 
 <!-- .slide: data-background="img/background/hanno-guitar-devoxx.jpg" data-background-color="black" data-background-opacity="0.9" -->
+
+Hi, my name is Hanno. 
+I work at Info Support as an IT consultant.
+Also, I enjoy speaking at conferences and playing the guitar.
+Also both at the same time.
 
 ---
 

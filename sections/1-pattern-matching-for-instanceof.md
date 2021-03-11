@@ -13,7 +13,7 @@
 
 note:
 
-Introduce our 'music store' code example.<br/>
+(introduce our 'local music store' code example)<br/>
 All demo code is on Github - link will be on the final slide.
 
 ---
@@ -82,13 +82,13 @@ if (product instanceof Guitar) { // 1. is product a Guitar?
 
 note: 
 
-This is a famous pattern, both straightforward and understood by all Java programmers.
+This is a famous pattern and it is understood by all Java programmers.
 
 But - drawbacks!
 
 * verbose
 * why should both the type test (1.) and the cast (2.) be necessary?
-* the actual logic ('use lesPaul') seems less important
+* the actual logic ('use lesPaul') seems less important, when it actually is the most important
 * the `Guitar` type is repeated 3 times, which makes it difficult to maintain
 
 The situation would improve dramatically if we could compress the 3 steps shown here into a single one.
@@ -148,6 +148,9 @@ It looks like a variable declaration (which is not an accident!).
 
 note:
 
+"Pattern matching for instanceof" is the first feature in Java that uses the pattern matching concept.
+It "allows the conditional (...)"
+
 It is not a new concept, a lot of programming languages support pattern matching:
 
 * Haskell
@@ -167,11 +170,13 @@ if (product instanceof Guitar lesPaul) {
 
 note:
 
+So, let's get into some details.
+
 `lesPaul` is an ordinary local variable.
 But its declaration location is different.
 
 We are used to local variables being declared "at the left margin", or as part of a for loop, for example.
-Patterns declare local variables "in the middle" of a statement or expression, which may take a little time to get used to.
+But patterns declare local variables "in the middle" of a statement or expression, which may take a little time to get used to.
 
 ---
 
@@ -362,7 +367,7 @@ boolean isTunedGuitar(Object product) {
 
 note:
 
-...
+Let's introduce some more classes from the local music store.
 
 ---
 
@@ -385,7 +390,7 @@ void test(Effect effect) {
 
 note:
 
-Finally, if the variables' scopes don't overlap, for example in if-chains, you can reuse the same variable name within the same block.
+Finally, if the scopes of the variables don't overlap, for example in if-chains, you can reuse the same variable name within the same block.
 There are two declarations of 'effect', but each is only in scope within "its own" branch and so there is no overlap and hence no conflict.
 
 Fun fact: this would not have been possible with classic 'block scoping'.
@@ -396,6 +401,10 @@ Fun fact: this would not have been possible with classic 'block scoping'.
 ![music-store-phase-3](diagrams/music-store-phase-3.puml.png "Music store class diagram")
 
 <https://pxhere.com/en/photo/853260> <!-- .element: class="attribution" -->
+
+note:
+Let's connect `Guitar` with the effects.
+We'll use an `Amplifier` and an `EffectLoop`.
 
 ---
 
@@ -455,15 +464,6 @@ Pattern:
 
 ---
 
-A **type pattern**:
-
-* consists of a *type* and a *variable name*
-* makes the variable accessible according to *flow typing*
-
-<small>(but only when the passed value is of the given type)<small>
-
----
-
 ## Feature Status
 
 <table style="font-size: 100%">
@@ -480,12 +480,12 @@ A **type pattern**:
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/305">JEP 305</a></td>
         </tr>
-        <tr class="fragment">
+        <tr>
             <td><strong>15</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/375">JEP 375</a></td>
         </tr>
-        <tr class="fragment">
+        <tr>
             <td><strong>16</strong></td>
             <td>Final</td>
             <td><a href="https://openjdk.java.net/jeps/394">JEP 394</a></td>
@@ -498,11 +498,13 @@ A **type pattern**:
 <!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
 ## Why so serious?
 
-<li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
-<li class="fragment"><strong>Flow typing</strong> has been considered.</li>
-<li class="fragment">It infers refined types based on past conditionals.</li>
-<li class="fragment">But... it is suited for <code>instanceof</code> checks only.</li>
-<li class="fragment">And pattern matching can be useful for more language concepts!</li>
+<ul>
+    <li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
+    <li class="fragment"><strong>Flow typing</strong> has been considered.</li>
+    <li class="fragment">It infers refined types based on past conditionals.</li>
+    <li class="fragment">But... it is suited for <code>instanceof</code> checks only.</li>
+    <li class="fragment">And pattern matching can be useful for more language concepts!</li>
+</ul>
 
 <https://pxhere.com/en/photo/835435> <!-- .element: class="attribution" -->
 

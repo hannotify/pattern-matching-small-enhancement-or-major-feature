@@ -15,7 +15,8 @@
 
 note:
 Pattern matching is a rich feature arc that will play out over several versions. 
-The first installment allows us to use type patterns in instanceof, which reduces the ceremony of such code, but future installments will bring us patterns in switch, deconstruction patterns on records, and more, with the aim of making destructuring objects as easy as (and more structurally similar to) constructing them.
+(slide) The first installment allows us to use type patterns in instanceof, which reduces the 
+ceremony of such code, but future installments will bring us (slide) patterns in switch, deconstruction patterns on records, and more, (slide) with the aim of making destructuring objects as easy as - and more structurally similar to - constructing them.
 
 Together with the related features of records and sealed classes, pattern matching holds the potential to simplify and streamline much of the code we write today.
 
@@ -26,7 +27,7 @@ Together with the related features of records and sealed classes, pattern matchi
 ## Major Feature <!-- .element: class="stroke" -->
 
 note:
-And that is why I declare pattern matching a Major Feature.
+And that is why I think pattern matching is not a Small Enhancement, but a Major Feature.
 
 ---
 

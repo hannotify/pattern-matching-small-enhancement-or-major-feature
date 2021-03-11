@@ -312,7 +312,7 @@ note:
 So an 'any pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the pattern definition.
 But there is a big difference: an any pattern *doesn't bind a value to a variable*.
 That's why there is no variable name, and just an underscore character to denote the any pattern.
-So this is what you can do to tell the compiler: "I don't care about the first value at all, just make sure to map the `roomSize` value to a variable.
+It's like you tell the compiler: "Compiler, I don't care about the first value at all, just make sure to map the second value (which is `roomSize`) to a variable.
 
 ---
 
@@ -384,7 +384,7 @@ This is where any patterns come in.
 We could define a pattern definition that checks for the presence of a tuner.
 Using an any pattern we can tell the compiler that we don't care about any other effects.
 Now, if there is a Tuner present in the effect loop, the top case branch will be executed.
-If no Tuner is present, the 'regular' case branch will be used as before.
+If no Tuner is present, the 'regular' case branch will be executed as before.
 
 ---
 

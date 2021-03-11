@@ -54,11 +54,11 @@ Serialization is a very important feature; it helped Java gain popularity in the
 But many people really hate its current implementation.
 According to Java architect Brian Goetz: "even Gollum hates serialization".
 
-* it undermines the accessibility model (field scraping throught reflection magic)
+* it undermines the accessibility model (field scraping through reflection magic)
 * serialization logic is not 'readable code'
 * it bypasses constructors and data validation
 
-But! 
+Not to worry!
 Using patterns could improve the situation dramatically.
 
 ---
@@ -141,7 +141,7 @@ public class EffectLoop implements Effect {
 note:
 Here, we add a factory method to deserialize our object. (we could also have used an overloaded constructor)
 It converts a `String` and `Effect` array back to an `EffectLoop` object.
-If the constructor had any data validation, it would be used here.
+If the constructor had any data validation, it would be called here.
 
 ---
 
@@ -198,7 +198,7 @@ We really improved on the drawbacks we indicated earlier!
 note:
 
 Of course, not *all* drawbacks are solved with this.
-Because how will you support multiple versions of one class?
+How will you support multiple versions of one class, for example?
 Well, `@Serializer` and `@Deserializer` annotations could get a property `version` in the future.
 So that you would be able to annotate multiple methods with these annotations to support multiple versions.
 
@@ -226,5 +226,5 @@ So that you would be able to annotate multiple methods with these annotations to
 <https://cr.openjdk.java.net/~briangoetz/amber/serialization.html> <!-- .element: class="attribution" -->
 
 note:
-Well, I said 'in the future', but this entire feature is still very much in the future.
+Well, I said 'in the future', but actually this entire feature is still very much in the future.
  

@@ -129,12 +129,12 @@ note:
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/359">JEP 359</a></td>
         </tr>
-        <tr class="fragment">
+        <tr>
             <td><strong>15</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/384">JEP 384</a></td>
         </tr>
-        <tr class="fragment">
+        <tr>
             <td><strong>16</strong></td>
             <td>Final</td>
             <td><a href="https://openjdk.java.net/jeps/395">JEP 395</a></td>
@@ -165,12 +165,12 @@ Its status is still 'exploratory document'.
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/360">JEP 360</a></td>
         </tr>
-        <tr class="fragment">
+        <tr>
             <td><strong>16</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/397">JEP 397</a></td>
         </tr>
-        <tr class="fragment">
+        <tr>
             <td><strong>17</strong></td>
             <td>Final</td>
             <td>...</td>
@@ -179,4 +179,4 @@ Its status is still 'exploratory document'.
 </table>
 
 note:
-Sealed Types in Final status is expected in JDK 17, but hasn't officially been annouced yet.
+Sealed Types in Final status is expected in JDK 17, but hasn't officially been announced yet.

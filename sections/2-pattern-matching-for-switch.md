@@ -23,6 +23,10 @@
 
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
 
+note:
+Let's finalize the local music store code.
+By introducing all available effects.
+
 ---
 
 <!-- .slide: data-auto-animate" -->
@@ -182,7 +186,7 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
-Let's make use of switch expressions (JEP 361), which became standard functionality in Java 14
+Let's make use of switch expressions (JEP 361), which became standard functionality in Java 14.
 We'll use `default` to replace the final `else` branch in our previous code example.
 Also: we can get rid of the local variable, because we're using `switch` as an expression here.
 Now, let's add some `case` statements.
@@ -433,11 +437,13 @@ It can be an enum constant, as depicted here, or a `String` literal, or a numeri
 <!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
 ## Why so serious?
 
-<li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
-<li class="fragment"><strong>Type switching</strong> has been considered.</li>
-<li class="fragment">It enables case labels to specify types, as well as constants.</li>
-<li class="fragment">But... it is suited for <code>switch</code> statements only.</li>
-<li class="fragment">And pattern matching can be useful for more language concepts!</li>
+<ul>
+    <li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
+    <li class="fragment"><strong>Type switching</strong> has been considered.</li>
+    <li class="fragment">It enables case labels to specify types, as well as constants.</li>
+    <li class="fragment">But... it is suited for <code>switch</code> statements only.</li>
+    <li class="fragment">And pattern matching can be useful for more language concepts!</li>
+</ul>
 
 <https://pxhere.com/en/photo/835435> <!-- .element: class="attribution" -->
 
