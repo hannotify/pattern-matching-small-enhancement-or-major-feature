@@ -160,7 +160,7 @@ public class EffectLoop implements Effect {
     }
 
     @Deserializer
-    public static Effectloop deserialize(String name, Effect[] effects) {
+    public static EffectLoop deserialize(String name, Effect[] effects) {
         EffectLoop effectLoop = new EffectLoop(name);
         for (Effect effect : effects) {
             this.effects.add(effect);
