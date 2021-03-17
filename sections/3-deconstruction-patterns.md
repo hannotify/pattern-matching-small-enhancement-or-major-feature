@@ -291,9 +291,7 @@ In this case we could choose to apply an 'any pattern'.
 <http://gph.is/2lFlHIK> <!-- .element: class="attribution" style="color: white !important;" --> 
 
 note:
-An any pattern is nothing like the 'any key'.
-Because if Homer was attending this talk, he would hear how to find an any pattern and apply it.
-And you will too, just sit tight.
+Which sounds a bit like the 'any key' that Homer is still trying to find.
 
 ---
 
@@ -391,7 +389,7 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
 ## Benefits
 
 <ul>
-    <li> Better encapsulation<br/><small>a case branch only receives data that it actually references.</small>
+    <li>Better encapsulation<br/><small>a case branch only receives data that it actually references.</small>
     <li>More elegant logic<br/><small>by using pattern composition</small>
     <li>Optimization<br/><small>through the use of any patterns</small>
 
