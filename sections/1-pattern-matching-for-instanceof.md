@@ -332,26 +332,6 @@ boolean isTunedGuitar(Object product) {
 		return false;
     }
 
-	return lesPaul.isInTune();
-}
-</code></pre>
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-## Scoping
-
-**Pattern binding variable ('flow scoping')**
-
-* The set of places where it would definitely be assigned.
-
-<pre data-id="flow-scoping-2-animation"><code class="java" data-trim data-line-numbers>
-boolean isTunedGuitar(Object product) {
-	if (!(product instanceof Guitar lesPaul)) {
-		return false;
-    }
-
 	// This code is only reachable if 'product' is
 	// a Guitar, so 'lesPaul' is in scope.
 	return lesPaul.isInTune();

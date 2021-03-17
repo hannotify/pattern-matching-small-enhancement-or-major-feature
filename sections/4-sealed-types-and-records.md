@@ -27,16 +27,6 @@ Records can only be immutable classes.
 
 * Commit to the class being a transparent carrier for its data.
 
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Records
-
-#### Input:
-
-* Commit to the class being a transparent carrier for its data.
-
 <h4>Output:</h4>
 <ul>
     <li>constructors</li>
@@ -53,7 +43,6 @@ Records can only be immutable classes.
 ## Demo
 
 * Make `Effect` a sealed type
-* Make subclasses `final`, `sealed` or `non-sealed`
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
