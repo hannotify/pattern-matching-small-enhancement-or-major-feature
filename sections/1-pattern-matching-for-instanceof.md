@@ -491,7 +491,7 @@ Pattern:
 note:
 
 But why such a serious, generic solution?
-"Why... So... Seriousa?"
+"Gwhy... So... Seriousa?"
 Surely a less invasive approach exists?
 Yes, it does. And it has been considered by the languange designers.
 _Flow typing_ is a proposed mechanism that infers refined types based on past conditionals.

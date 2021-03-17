@@ -449,7 +449,7 @@ It can be an enum constant, as depicted here, or a `String` literal, or a numeri
 
 note:
 But why such a serious, generic solution?
-"Why... So... Seriousa?"
+"Gwhy... So... Seriousa?"
 Surely a less invasive approach exists?
 Yes, it does. And it has been considered by the language designers.
 _Type switching_ is a proposed mechanism that enables case labels to specify types as well as constants.
