@@ -41,7 +41,7 @@ Records can only be immutable classes.
 
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 ## Demo
-local
+
 * Make `Effect` a sealed type
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
