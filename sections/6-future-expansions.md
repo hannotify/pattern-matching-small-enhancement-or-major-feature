@@ -176,24 +176,6 @@ case GuitarCabinet(var lesPaul, var strat, var tele, ...):
 
 ---
 
-### Other ideas
-
-* Array patterns
-* Varargs patterns
-* AND patterns
-* Patterns in `catch` clauses
-* Collection patterns
-* Record patterns
-
-<https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->
-
-note:
-As you can see, the details are getting murkier by the minute.
-This is because these are **very new ideas** and are likely to change. 
-Or to not be ever implemented at all.
-
----
-
 <!---.slide: data-visibility="hidden" -->
 
 ### Other ideas
