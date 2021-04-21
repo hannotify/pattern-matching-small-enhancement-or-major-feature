@@ -166,6 +166,7 @@ Or do you enter once, get all the stuff you need and then exit?
 
 ---
 
+
 <!-- .slide: data-auto-animate" -->
 ### Pattern composition
 

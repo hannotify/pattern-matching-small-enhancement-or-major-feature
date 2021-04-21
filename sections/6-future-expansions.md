@@ -77,7 +77,7 @@ String apply(Effect effect, Guitar guitar) {
 }
 </code></pre>
 
-<https://openjdk.java.net/jeps/8213076> <!-- .element: class="attribution" -->
+<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
 
 note:
 A *guard* is an additional boolean expression that must additionally be true in order for a pattern to match.

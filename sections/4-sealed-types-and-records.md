@@ -162,10 +162,7 @@ Its status is still 'exploratory document'.
         <tr>
             <td><strong>17</strong></td>
             <td>Final</td>
-            <td>...</td>
+            <td><a href="https://openjdk.java.net/jeps/409">JEP 409</a></td>
         </tr>
     </tbody>
 </table>
-
-note:
-Sealed Types in Final status is expected in JDK 17, but hasn't officially been announced yet.
