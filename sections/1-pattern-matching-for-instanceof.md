@@ -310,7 +310,7 @@ if (product instanceof Guitar lesPaul
 <pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
 if (product instanceof Guitar lesPaul 
         || lesPaul.isInTune()/* can't use lesPaul here */) {
-    // can't use lesPaul here
+    // can't use lesPaul (the pattern variable) here
 } else {
     // can't use lesPaul here
 }
