@@ -171,7 +171,7 @@ Or do you enter once, get all the stuff you need and then exit?
 ### Pattern composition
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
-static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 }
 </code></pre>
@@ -190,7 +190,7 @@ Suppose we have an `EffectLoop` and we want to know whether it contains both a `
 ### Pattern composition
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
-static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     return effectLoop.getEffects().stream()
         .filter(e -> e instanceof Delay || e instanceof Reverb)
         .map(dr -> {
@@ -219,7 +219,7 @@ Go figure!
 ### Pattern composition
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
-static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
         return timeInMs == roomSize;
     }
@@ -256,7 +256,7 @@ You can use `var` instead of specifying an explicit type.
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
-static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
         return timeInMs == roomSize;
     }
@@ -272,7 +272,7 @@ Let's return to our pattern composition example and use a few var patterns.
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers="2">
-static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     if (effectLoop instanceof EffectLoop(Delay(var timeInMs), Reverb(var name, var roomSize))) {
         return timeInMs == roomSize;
     }
@@ -299,7 +299,7 @@ Which sounds a bit like the 'any key' that Homer is still trying to find.
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
-static boolean containsReverbAndDelayWithEqualProperties(EffectLoop effectLoop) {
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     if (effectLoop instanceof EffectLoop(Delay(var timeInMs), Reverb(_, var roomSize))) {
         return timeInMs == roomSize;
     }

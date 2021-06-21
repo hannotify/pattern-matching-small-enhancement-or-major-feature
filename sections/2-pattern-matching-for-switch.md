@@ -51,7 +51,7 @@ String apply(Effect effect) {
         formatted = String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
     } else if (effect instanceof EffectLoop) {
         EffectLoop el = (EffectLoop) effect;
-        formatted = el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        formatted = el.getEffects().stream().map(e -> apply(e)).collect(Collectors.joining(System.lineSeparator()));
     } else {
         formatted = String.format("Unknown effect active: %s.", effect);
     }
@@ -275,8 +275,76 @@ That is much better!
 
 ---
 
-## Benefits
+<!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.4" -->
+![music-store-phase-4](diagrams/music-store-phase-4.puml.png "Music store class diagram")
 
+<https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
+
+note:
+Q: 
+* Why didn't we use the type system, by implementing the `apply()` method?
+
+A: 
+* We could have done that, but that approach has no need for pattern matching.
+* On top of that: what if we wanted to add an operation that has no meaning for the entire effect loop?
+
+---
+
+### Sensible operations to the effect loop
+
+* `apply()`
+* `setVolume(int volume)`
+* `contains(Effect... effect)`
+
+---
+
+### Nonsensical operations to the effect loop
+
+* `isTunerActive()`
+* `isDelayTimeEqualToReverbRoomSize()`
+* `isToneSuitableToPlayPrideInTheNameOfLove()`
+
+note:
+* This category of operations is nonsensical to a lot of Effect implementations.
+* Adding methods to the Effect interface would just pollute the API.
+
+---
+
+## Visitor pattern
+
+```java
+interface EffectVisitor<T> {
+    T visit(Tuner effect);
+    T visit(Delay effect);
+    T visit(Reverb effect);
+    // ...
+}
+
+class IsTunerActiveVisitor implements EffectVisitor<Boolean> {
+    public Boolean visit(Tuner effect) {
+        return !effect.isInTune();
+    }
+    
+    public Boolean visit(Delay effect) { return false; }
+    public Boolean visit(Reverb effect) { return false; }
+    // ...
+}
+```
+
+note:
+
+Typically the visitor pattern is used in cases like this to separate traversal of a data structure from the data structure definition itself.
+
+* quite verbose
+* box primitives
+* intrusive: each Effect implementation needs an `accept` method for each Visitor it accepts
+* elements we're traversing need a common supertype.
+
+---
+
+## Benefits of pattern matching
+
+* No need for the Visitor pattern or a common supertype
 * A single expression instead of many assignments
 * Less error-prone (in adding cases)
 * More concise
