@@ -6,18 +6,6 @@
 
 ---
 
-<!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->
-## Disclaimer <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    I can't tell you when the following features are coming to Java.<br/>
-    Also: syntax and implementation specifics may still change.
-</blockquote>
-
-<https://pxhere.com/en/photo/1359311> <!-- .element: class="attribution" -->
-
----
-
 <!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.4" -->
 ![music-store-phase-4](diagrams/music-store-phase-4.puml.png "Music store class diagram")
 
@@ -342,6 +330,52 @@ Typically the visitor pattern is used in cases like this to separate traversal o
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+### Switch expression
+
+<pre data-id="switch-expression-animation"><code class="java" data-trim data-line-numbers>
+String apply(Effect effect) {
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default            -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+So this method would make a lot more sense if it was `static`.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Switch expression
+
+<pre data-id="switch-expression-animation"><code class="java" data-trim data-line-numbers>
+static String apply(Effect effect) {
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default            -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+So this method would make a lot more sense if it was `static`.
+
+---
+
 ## Benefits of pattern matching
 
 * No need for the Visitor pattern or a common supertype
@@ -349,6 +383,123 @@ Typically the visitor pattern is used in cases like this to separate traversal o
 * Less error-prone (in adding cases)
 * More concise
 * Safer - the compiler can check for missing cases
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### But what if `effect` is `null`?
+
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers>
+static String apply(Effect effect) {
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default            -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### But what if `effect` is `null`?
+
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="2">
+static String apply(Effect effect) {
+    return switch(effect) { // throws NullPointerException!
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default            -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Solution #1: defensive testing
+
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="2-4">
+static String apply(Effect effect) {
+    if (effect == null) {
+        return "Malfunctioning effect active.";
+    }
+
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default            -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+Doesn't feel right. We now have to repeat the 'return' keyword. :(
+Also, it take a while to grasp why the null case is handled separately.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Solution #2: integrate null check in switch
+
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="3">
+static String apply(Effect effect) {
+    return switch(effect) {
+        case null          -> return "Malfunctioning effect active.";
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default            -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+This makes me feel all warm and fuzzy inside. Great stuff!
+Note that if you would forget to add the `null` case, the code would still throw a `NullPointerException`.
+The `default` case will not be changed to include `null`, to maintain backwards compatibility.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Combining case labels
+
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="9">
+static String apply(Effect effect) {
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case null, default -> String.format("Unknown or malfunctioning effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+However, it will be able to combine them, just as any other two case labels can.
 
 ---
 
@@ -481,7 +632,6 @@ It can be an enum constant, as depicted here, or a `String` literal, or a numeri
 
 ## Feature Status
 
-
 <table style="font-size: 100%">
     <thead>
         <tr>
@@ -492,7 +642,7 @@ It can be an enum constant, as depicted here, or a `String` literal, or a numeri
     </thead>
     <tbody>
         <tr>
-            <td><strong>n/a</strong></td>
+            <td><strong>17</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
         </tr>
