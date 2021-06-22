@@ -32,16 +32,16 @@ tr:hover .popup-image {
 }
 
 a {
-    color: #1aa3b1 !important;
+    color: #e4363c !important;
 }
 
 .reveal .progress span {
-    background: #1aa3b1 !important;
+    background: #e4363c !important;
 }
 
 ::selection {
     color: #fff;
-    background: #1aa3b1;
+    background: #e4363c;
     text-shadow: none;
 }
 
@@ -64,7 +64,7 @@ a {
 }
 
 .reveal code {
-    font-family: 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 .reveal pre {
@@ -73,10 +73,24 @@ a {
 
 .reveal ::selection {
   color: black;
-  background: #1aa3b1;
+  background: #e4363c;
   text-shadow: none; }
 
 .reveal ::-moz-selection {
   color: black;
-  background: #1aa3b1;
+  background: #e4363c;
   text-shadow: none; }
+
+.reveal .rightFooter {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: 0.5em;
+}
+
+.reveal .leftFooter {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 0.5em;
+}

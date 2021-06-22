@@ -51,7 +51,7 @@ And that is why I think pattern matching is not a Small Enhancement, but a Major
 <tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%" data-src="img/icons/website.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a
-                href="https://hannotify.github.io">hannotify.github.io</a></td>
+                href="https://hanno.codes">hanno.codes</a></td>
 </tr>
 <tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%"

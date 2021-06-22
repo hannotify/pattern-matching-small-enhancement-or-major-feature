@@ -7,7 +7,7 @@
         <td style="vertical-align: middle; padding: 0 0 0 0"><a href="https://www.twitter.com/hannotify">@hannotify</a></td>
     </tr>
 </table>
-<img data-src="img/logos/javaland.png" width="20%" class="no-background"/>
+<img data-src="img/logos/jlove.png" width="20%" class="no-background"/>
 <br/>
 
 note:
