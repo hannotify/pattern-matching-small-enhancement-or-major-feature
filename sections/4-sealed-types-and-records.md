@@ -15,7 +15,8 @@
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-Records can only be immutable classes.
+* Records can only be immutable classes.
+* Records are implicitly final.
 
 ---
 
@@ -39,6 +40,68 @@ Records can only be immutable classes.
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+### Completeness on pattern switch expressions
+
+<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
+static String apply(Object object) {
+    return switch(object) {
+        case Effect e -> e.apply();
+        case String s -> String.format("Tried to apply a String: %s", s);
+        case Number n -> String.format("Tried to apply a Number: %d", n);
+    };
+}
+</code></pre>
+
+note:
+If we would try to overload the `apply()` method to handle all object types, we would run into compiler errors.
+Because JEP 406 will introduce completeness checks for all switch expressions or statements that don't use the legacy types.
+(char, byte, short, int, boxed variants, String, enum types).
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Completeness on pattern switch expressions
+
+<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers="2">
+static String apply(Object object) {
+    return switch(object) { // Won't compile - incomplete!
+        case Effect e -> e.apply();
+        case String s -> String.format("Tried to apply a String: %s", s);
+        case Number n -> String.format("Tried to apply a Number: %d", n);
+    };
+}
+</code></pre>
+
+note:
+If we would try to overload the `apply()` method to handle all object types, we would run into compiler errors.
+Because JEP 406 will introduce completeness checks for all switch expressions or statements that don't use the legacy types.
+(char, byte, short, int, boxed variants, String, enum types).
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Completeness on pattern switch expressions
+
+<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers="6">
+static String apply(Object object) {
+    return switch(object) { 
+        case Effect e -> e.apply();
+        case String s -> String.format("Tried to apply a String: %s", s);
+        case Number n -> String.format("Tried to apply a Number: %d", n);
+        default       -> String.format("Tried to apply an Object: %s", object);
+    };
+}
+</code></pre>
+
+note:
+In most of the cases this is easily solved by providing a default case.
+
+---
+
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 ## Demo
 
@@ -47,8 +110,6 @@ Records can only be immutable classes.
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-* Records can only be immutable classes.
-* Records are implicitly final.
 * All implementations of a sealed type must be `final`, `sealed` or `non-sealed` ([more info on non-sealed](https://stackoverflow.com/questions/63860110/what-is-the-point-of-extending-a-sealed-class-with-a-non-sealed-class))
 
 Example of non-sealed: `UserCustomEffect`.
@@ -57,10 +118,10 @@ Example of non-sealed: `UserCustomEffect`.
 
 <!-- .slide: data-auto-animate" -->
 
-### Exhaustiveness
+### Sealed types yield completeness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
         case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
@@ -78,7 +139,7 @@ String apply(Effect effect) {
 
 <!-- .slide: data-auto-animate" -->
 
-### Exhaustiveness
+### Sealed types yield completeness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
 String apply(Effect effect) {
@@ -97,12 +158,12 @@ String apply(Effect effect) {
 <https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
 
 note:
-* No default case needed; the compiler knows that all cases have been handled.
+Here no default case is needed; the compiler is already aware that all cases have been handled.
 
 ---
 
-## Feature Status 
-### Records
+## Feature Status
+### Completeness
 
 <table style="font-size: 100%">
     <thead>
@@ -114,26 +175,36 @@ note:
     </thead>
     <tbody>
         <tr>
-            <td><strong>14</strong></td>
+            <td><strong>17</strong></td>
             <td>Preview</td>
-            <td><a href="https://openjdk.java.net/jeps/359">JEP 359</a></td>
-        </tr>
-        <tr>
-            <td><strong>15</strong></td>
-            <td>Second preview</td>
-            <td><a href="https://openjdk.java.net/jeps/384">JEP 384</a></td>
-        </tr>
-        <tr>
-            <td><strong>16</strong></td>
-            <td>Final</td>
-            <td><a href="https://openjdk.java.net/jeps/395">JEP 395</a></td>
+            <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
         </tr>
     </tbody>
 </table>
 
-note:
-Records don't acquire deconstruction patterns yet; I expect this to be a part of the 'deconstruction patterns' feature.
-Its status is still 'exploratory document'.
+<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
+
+---
+
+## Feature Status 
+### Record Patterns
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>18</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
+        </tr>
+    </tbody>
+</table>
 
 ---
 
