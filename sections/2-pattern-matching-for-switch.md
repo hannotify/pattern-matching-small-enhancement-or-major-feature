@@ -504,6 +504,96 @@ However, it will be able to combine them, just as any other two case labels can.
 ---
 
 <!-- .slide: data-auto-animate" -->
+
+### Guarded patterns
+
+<pre data-id="guards-animation"><code class="java" data-trim data-line-numbers=>
+String apply(Effect effect, Guitar guitar) {
+    return switch(effect) {
+        // (...)
+        case Tremolo tr-> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
+
+note:
+A *guarded pattern* is the combination of a pattern and a boolean expression.
+This boolean expression must additionally be true in order for the guarded pattern to match.
+In this case we could use a guarded pattern to prevent unnecessary tuning...
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### Guarded patterns
+
+<pre data-id="guards-animation"><code class="java" data-trim data-line-numbers="5">
+String apply(Effect effect, Guitar guitar) {
+    return switch(effect) {
+        // (...)
+        case Tremolo tr-> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu && !tu.isInTune(guitar) -> String.format("Guitar is in need of tuning - tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+...like so.
+Now the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
+
+One of the main reasons for Java to start supporting guarded patterns is to prevent further testing in a case block, like this:
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### Guarded patterns
+
+<pre data-id="overloaded-guards-animation"><code class="java" data-trim data-line-numbers>
+switch(effect) {
+    // ...
+    case Tuner tu: 
+        if (!tu.isInTune(guitar)) { // tuning is needed }
+        else { // no tuning is needed }
+        break;
+    // ...
+}
+</code></pre>
+
+note:
+This is how you would write it if no guarded patterns were available.
+We would have to use a good old switch statement instead of a switch expression.
+Using a guarded pattern and a regular one, we can rewrite this logic as follows:
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### Guarded patterns
+
+<pre data-id="overloaded-guards-animation"><code class="java" data-trim data-line-numbers>
+switch(effect) {
+    // ...
+    case Tuner tu && !tu.isInTune(guitar) -> // tuning is needed
+    case Tuner tu                         -> // no tuning is needed
+    // ...
+}
+</code></pre>
+
+note:
+And in the process it has become a switch expression again.
+The second case label will match on all Tuners that return `true` for the `isInTune(guitar)` method.
+
+---
+
+<!-- .slide: data-auto-animate" -->
 ### `switch` grammar
 
 <pre data-id="switch-grammar-animation"><code class="java" data-trim data-line-numbers>

@@ -6,40 +6,6 @@
 
 ---
 
-<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
-## Demo
-
-* Convert effect classes to a record
-* Acquire constructor, accessor methods etc.
-
-<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
-
-note:
-* Records can only be immutable classes.
-* Records are implicitly final.
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Records
-
-#### Input:
-
-* Commit to the class being a transparent carrier for its data.
-
-<h4>Output:</h4>
-<ul>
-    <li>constructors</li>
-    <li>accessor methods</li>
-    <li><code>equals()</code>-implementation</li>
-    <li><code>hashCode()</code>-implementation</li>
-    <li><code>toString()</code>-implementation</li>
-    <li class="fragment">deconstruction pattern</li>
-</ul>
-
----
-
 <!-- .slide: data-auto-animate" -->
 
 ### Completeness on pattern switch expressions
@@ -162,49 +128,37 @@ Here no default case is needed; the compiler is already aware that all cases hav
 
 ---
 
-## Feature Status
-### Completeness
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+## Demo
 
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th>Java version</th>
-            <th>Feature status</th>
-            <th>JEP</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>17</strong></td>
-            <td>Preview</td>
-            <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
-        </tr>
-    </tbody>
-</table>
+* Convert effect classes to a record
+* Acquire constructor, accessor methods etc.
 
-<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
+* Records can only be immutable classes.
+* Records are implicitly final.
 
 ---
 
-## Feature Status 
-### Record Patterns
+<!-- .slide: data-auto-animate" -->
 
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th>Java version</th>
-            <th>Feature status</th>
-            <th>JEP</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>18</strong></td>
-            <td>Preview</td>
-            <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
-        </tr>
-    </tbody>
-</table>
+### Records
+
+#### Input:
+
+* Commit to the class being a transparent carrier for its data.
+
+<h4>Output:</h4>
+<ul>
+    <li>constructors</li>
+    <li>accessor methods</li>
+    <li><code>equals()</code>-implementation</li>
+    <li><code>hashCode()</code>-implementation</li>
+    <li><code>toString()</code>-implementation</li>
+    <li class="fragment">deconstruction pattern</li>
+</ul>
 
 ---
 
@@ -237,3 +191,50 @@ Here no default case is needed; the compiler is already aware that all cases hav
         </tr>
     </tbody>
 </table>
+
+---
+
+## Feature Status
+### Completeness
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>17</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
+
+---
+
+## Feature Status 
+### Record & Array Patterns
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>18</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
+        </tr>
+    </tbody>
+</table>
+

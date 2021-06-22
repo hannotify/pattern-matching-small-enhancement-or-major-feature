@@ -61,52 +61,6 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
 
 ---
 
-<!-- .slide: data-auto-animate" -->
-
-### Guards
-
-<pre data-id="guards-animation"><code class="java" data-trim data-line-numbers="1">
-String apply(Effect effect, Guitar guitar) {
-    return switch(effect) {
-        // (...)
-        case Tremolo tr-> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
-
-note:
-A *guard* is an additional boolean expression that must additionally be true in order for a pattern to match.
-In this case we could use a guard to prevent unnecessary tuning...
-
----
-
-<!-- .slide: data-auto-animate -->
-
-### Guards
-
-<pre data-id="guards-animation"><code class="java" data-trim data-line-numbers="5">
-String apply(Effect effect, Guitar guitar) {
-    return switch(effect) {
-        // (...)
-        case Tremolo tr-> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu && !tu.isInTune(guitar) -> String.format("Guitar is in need of tuning - tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
-...like so.
-Now the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
-
----
-
 <!-- .slide: data-visibility="hidden" -->
 
 ### Array patterns
