@@ -394,51 +394,6 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
 
 ---
 
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    <strong>deconstruction pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    Delay(int timeInMs)
-    </code>
-</blockquote>
-
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
-
----
-
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    <strong>var pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    var timeInMs
-    </code>
-</blockquote>
-
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
-
----
-
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    <strong>any pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    _
-    </code>
-</blockquote>
-
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
-
----
-
 ## Feature Status
 
 <table style="font-size: 100%">
@@ -467,4 +422,3 @@ It will probably be delivered in parts.
 The first part will add support for record patterns only.
 It will actually be in 'Preview' status in Java 18.
 But more on record patterns a bit later!
-

@@ -411,39 +411,6 @@ note:
 
 ---
 
-## `instanceof` grammar
-
-The `instanceof` grammar is extended accordingly:
-
-<pre><code class="java" data-trim data-line-numbers="4,6,7">
-RelationalExpression:
-  ...
-  RelationalExpression instanceof ReferenceType
-  RelationalExpression instanceof Pattern
-
-Pattern:
-  ReferenceType Identifier
-</code></pre>
-
-<https://openjdk.java.net/jeps/305> <!-- .element: class="attribution" -->
-
----
-
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    <strong>type pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    Guitar lesPaul
-    </code>
-</blockquote>
-
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
-
----
-
 ## Feature Status
 
 <table style="font-size: 100%">
@@ -472,30 +439,3 @@ Pattern:
         </tr>
     </tbody>
 </table>
-
----
-
-<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## Why so serious?
-
-<ul>
-    <li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
-    <li class="fragment"><strong>Flow typing</strong> has been considered.</li>
-    <li class="fragment">It infers refined types based on past conditionals.</li>
-    <li class="fragment">But... it is suited for <code>instanceof</code> checks only.</li>
-    <li class="fragment">And pattern matching can be useful for more language concepts!</li>
-</ul>
-
-<https://pxhere.com/en/photo/835435> <!-- .element: class="attribution" -->
-
-note:
-
-But why such a serious, generic solution?
-"Gwhy... So... Seriousa?"
-Surely a less invasive approach exists?
-Yes, it does. And it has been considered by the languange designers.
-_Flow typing_ is a proposed mechanism that infers refined types based on past conditionals.
-Sounds useful, right?
-But... it is suited for `instanceof` checks only.
-Whereas *pattern matching* can do the same, **and** be useful for more language concepts.
-Such as switch expressions!
