@@ -317,14 +317,14 @@ It's like you tell the compiler: "Compiler, I don't care about the first value a
 ### Optimization
 
 <pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers>
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
         case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -343,10 +343,10 @@ So if we could avoid executing it when it is not needed, we would.
 ### Optimization
 
 <pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers="4">
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         // ...
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -365,11 +365,11 @@ So why bother processing the entire effect loop when you know all those effects 
 ### Optimization
 
 <pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers="4-5">
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         // ...
         case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -390,6 +390,7 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
     <li>Better encapsulation<br/><small>a case branch only receives data that it actually references.</small>
     <li>More elegant logic<br/><small>by using pattern composition</small>
     <li>Optimization<br/><small>through the use of any patterns</small>
+</ul>
 
 ---
 

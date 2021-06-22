@@ -63,11 +63,13 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
 
 ### Other ideas
 
-* Deconstruction patterns for all classes
-* Enhanced array patterns: `String[] { [8] -> var eighthElement, [9] -> var ninthElement}`.
-* AND patterns
-* Patterns in `catch` clauses
-* Collection patterns
+<ul>
+    <li>Deconstruction patterns for all classes</li>
+    <li>Enhanced array patterns<br/><small><code>String[] { [8] -> var eighthElement, [9] -> var ninthElement}</code></small></li>
+    <li>AND patterns</li>
+    <li>Patterns in <code>catch</code> clauses</li>
+    <li>Collection patterns</li>
+</ul>
 
 <https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->
 

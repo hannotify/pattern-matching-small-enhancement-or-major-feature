@@ -95,7 +95,7 @@ static String apply(Effect effect) {
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
         case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -108,7 +108,7 @@ static String apply(Effect effect) {
 ### Sealed types yield completeness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
         case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
@@ -116,7 +116,7 @@ String apply(Effect effect) {
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
         case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
     };
 }
 </code></pre>
@@ -167,7 +167,7 @@ note:
 ## Record patterns
 
 <pre><code class="java" data-trim data-line-numbers>
-record Amplifier(String name, EffectLoop stockEffects , EffectLoop auxEffects) { }
+record Amplifier(String name, EffectLoop stockEffects, EffectLoop auxEffects) { }
 record EffectLoop(Delay delay, Reverb reverb) { }
 </code></pre>
 
@@ -175,7 +175,7 @@ record EffectLoop(Delay delay, Reverb reverb) { }
 static String switchOn(Amplifier amplifier) {}
     return switch(effectLoop) {
         // ...
-        case Amplifier(var name, EffectLoop(Delay(int timeInMs), Reverb r), var auxEffects) -> "Stock delay active: timeInMs=" + timeInMs;
+        case Amplifier(var name, EffectLoop(Delay(int timeInMs), Reverb r), var auxEffects) -> String.format("Stock delay active: timeInMs=%d.", timeInMs);
         // ...
     } 
 }
