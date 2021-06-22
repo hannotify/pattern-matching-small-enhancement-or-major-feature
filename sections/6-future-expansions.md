@@ -61,83 +61,13 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
 
 ---
 
-<!-- .slide: data-visibility="hidden" -->
-
-### Array patterns
-
-Constructing a <code>Guitar</code> array:
-
-<pre><code class="java" data-trim data-line-numbers>
-var lesPaul = new Guitar("Gibson Les Paul", GuitarType.LES_PAUL);
-var strat = new Guitar("Fender Classic Strat", GuitarType.STRATOCASTER);
-var guitarArray = new Guitar[] { lesPaul, strat };
-</code></pre>
-
-<span class="fragment">
-Deconstructing a <code>Guitar</code> array of 2 elements:
-
-<pre><code class="java" data-trim data-line-numbers>
-if (guitarArray instanceof Guitar[] { var lesPaul, var strat }) {
-    // use lesPaul, strat
-}
-</code></pre>
-</span>
-
-<span class="fragment">
-Deconstructing a <code>Guitar</code> array of 2 or more elements:
-
-<pre><code class="java" data-trim data-line-numbers>
-if (guitarArray instanceof Guitar[] { var lesPaul, var strat, ... }) {
-    // use lesPaul, strat (... binds nothing)
-}
-</code></pre>
-</span>
-
-<https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002695.html> <!-- .element: class="attribution" -->
-
-note:
-(after the 2nd code example)
-Of course arrays can have more than 2 elements, so we need a way to express this.
-
----
-
-<!-- .slide: data-visibility="hidden" -->
-
-### Varargs patterns
-
-Varargs are like arrays, so:
-
-<pre><code class="java" data-trim data-line-numbers>
-case GuitarCabinet(var lesPaul, var strat, var tele):
-</code></pre>
-
-<span class="fragment">
-...could be syntactic sugar for:
-
-<pre><code class="java" data-trim data-line-numbers>
-case GuitarCabinet(Guitar[] { var lesPaul, var strat, var tele }):
-</code></pre>
-</span>
-
-<span class="fragment">
-...and to match 3 or more elements:
-<pre><code class="java" data-trim data-line-numbers>
-case GuitarCabinet(var lesPaul, var strat, var tele, ...):
-</code></pre>
-</span>
-
-<https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002695.html> <!-- .element: class="attribution" -->
-
----
-
 ### Other ideas
 
-* Array patterns
-* Varargs patterns
+* Deconstruction patterns for all classes
+* Enhanced array patterns: `String[] { [8] -> var eighthElement, [9] -> var ninthElement}`.
 * AND patterns
 * Patterns in `catch` clauses
 * Collection patterns
-* Record patterns
 
 <https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->
 
@@ -153,11 +83,9 @@ Or to not be ever implemented at all.
 ### Other ideas
 
 <ul>
-    <li class="fragment">Guard patterns:<br/><code>true(BooleanExpression)</code> or <code>false(BooleanExpression)</code>
     <li class="fragment">AND patterns:<br/><code>PatternOne&PatternTwo</code>
     <li class="fragment">Patterns in <code>catch</code> clauses:<br/><small>(will most likely complement multi-catch blocks)</small>
     <li class="fragment">Collection patterns
-    <li class="fragment">Record patterns
 </ul>
 
 <https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->

@@ -162,6 +162,61 @@ note:
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+## Record patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record Amplifier(String name, EffectLoop stockEffects , EffectLoop auxEffects) { }
+record EffectLoop(Delay delay, Reverb reverb) { }
+</code></pre>
+
+<pre><code class="java" data-trim data-line-numbers>
+static String switchOn(Amplifier amplifier) {}
+    return switch(effectLoop) {
+        // ...
+        case Amplifier(var name, EffectLoop(Delay(int timeInMs), Reverb r), var auxEffects) -> "Stock delay active: timeInMs=" + timeInMs;
+        // ...
+    } 
+}
+</code></pre>
+
+note:
+
+Record patterns are also part of JEP 406.
+It will be the first installment of Java's support for deconstruction patterns.
+When this JEP becomes available (preview in Java 18) it will be restricted to record classes only.
+My guess is the language designers will use the feedback to this preview feature to further shape full support of deconstruction patterns.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> " Effect loop contains no effects.";
+        case EffectLoop(var name, var volume, var effect) -> "Effect loop contains exactly one effect.";
+        case EffectLoop(var name, var volume, var effect, ...) -> "Effect loop contains more than one effect.";
+        case EffectLoop(var name, var volume, var effect1, var effect2) -> "Effect loop contains exactly two effects.";
+        case EffectLoop(var name, var volume, var effect1, var effect2, ...) -> "Effect loop contains more than two effects.";
+    } 
+}
+</code></pre>
+
+note:
+
+Array patterns are also part of JEP 406.
+So we can try them out for the first time in Java 18.
+
+---
+
 ## Feature Status
 ### Sealed Types
 

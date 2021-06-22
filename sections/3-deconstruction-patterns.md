@@ -458,3 +458,12 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
 </table>
 
 <https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
+
+note:
+
+It is impossible to put a release version on deconstruction patterns as a whole.
+It will probably be delivered in parts.
+The first part will add support for record patterns only.
+It will actually be in 'Preview' status in Java 18.
+But more on record patterns a bit later!
+
