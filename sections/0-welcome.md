@@ -19,10 +19,10 @@ note:
 * Tweede scherm:
   * Slides
   * IntelliJ - code op juiste tag (`0-completed-preparations`)
-    
 
-Welcome to this talk on Pattern Matching.
-A new feature in Java.
+Hi, welcome to this talk on Pattern Matching.
+My name is Hanno, I am @hannotify on Twitter.
+I work at Info Support as an IT consultant.
 
 ---
 
@@ -30,10 +30,10 @@ A new feature in Java.
 
 note:
 
-Hi, my name is Hanno. 
-I work at Info Support as an IT consultant.
 Also, I enjoy speaking at conferences and playing the guitar.
-Also both at the same time.
+And sometimes I do both at the same time.
+
+Now today I want to talk about Pattern Matching in the Java language.
 
 ---
 

@@ -23,14 +23,14 @@
 ### Deconstruction patterns
 
 <pre data-id="deconstruction-patterns-animation"><code class="java" data-trim data-line-numbers>
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
         case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -46,14 +46,14 @@ Let's get back to our switch expression and introduce a deconstruction pattern.
 ### Deconstruction patterns
 
 <pre data-id="deconstruction-patterns-animation"><code class="java" data-trim data-line-numbers="5">
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
         case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -114,14 +114,14 @@ And it sort of works like a reverse constructor.
 ### Deconstruction patterns
 
 <pre data-id="deconstruction-patterns-2-animation"><code class="java" data-trim data-line-numbers="5">
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
         case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -136,14 +136,14 @@ Now, if we add a pattern definition to every implementor of the Effect interface
 ### Deconstruction patterns
 
 <pre data-id="deconstruction-patterns-2-animation"><code class="java" data-trim data-line-numbers>
-String apply(Effect effect) {
+static String apply(Effect effect) {
     return switch(effect) {
         case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
         case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }

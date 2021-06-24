@@ -12,8 +12,8 @@
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
 
 note:
-Let's finalize the local music store code.
-By introducing all available effects.
+To demonstrate 'Pattern Matching for switch' I need a few more Effect implementations.
+So let's introduce them to the domain.
 
 ---
 
@@ -350,6 +350,7 @@ String apply(Effect effect) {
 
 note:
 So this method would make a lot more sense if it was `static`.
+In fact, its enclosing class would probably contain more static methods like this, such as `isTunerActive` for example.
 
 ---
 
@@ -388,7 +389,7 @@ So this method would make a lot more sense if it was `static`.
 
 <!-- .slide: data-auto-animate" -->
 
-### But what if `effect` is `null`?
+### What happens if `effect` is `null`?
 
 <pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers>
 static String apply(Effect effect) {
@@ -408,7 +409,7 @@ static String apply(Effect effect) {
 
 <!-- .slide: data-auto-animate" -->
 
-### But what if `effect` is `null`?
+### What happens if `effect` is `null`?
 
 <pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="2">
 static String apply(Effect effect) {

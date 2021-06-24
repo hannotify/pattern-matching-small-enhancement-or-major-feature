@@ -4,6 +4,11 @@
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
+note:
+
+Preview feature in Java 14 and 15.
+Final feature in Java 16.
+
 ---
 
 <!-- .slide: data-background="img/background/guitar-store-close-up.jpg" data-background-color="black" data-background-opacity="0.2" -->
@@ -27,6 +32,10 @@ if (product instanceof Guitar) {
     // use lesPaul
 }
 </code></pre>
+
+note:
+
+So, let's first discover why 'Pattern Matching for instanceof' was added to Java in the first place.
 
 ---
 

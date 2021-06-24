@@ -172,7 +172,7 @@ record EffectLoop(Delay delay, Reverb reverb) { }
 </code></pre>
 
 <pre><code class="java" data-trim data-line-numbers>
-static String switchOn(Amplifier amplifier) {}
+static String switchOn(Amplifier amplifier) {
     return switch(effectLoop) {
         // ...
         case Amplifier(var name, EffectLoop(Delay(int timeInMs), Reverb r), var auxEffects) -> String.format("Stock delay active: timeInMs=%d.", timeInMs);
