@@ -44,9 +44,9 @@ And this is an important observation when thinking about serialization.
 
 ### Drawbacks
 
-* it undermines the accessibility model <!-- .element: class="fragment" -->
-* serialization logic is not 'readable code' <!-- .element: class="fragment" -->
-* it bypasses constructors and data validation <!-- .element: class="fragment" -->
+* it undermines the accessibility model 
+* serialization logic is not 'readable code'
+* it bypasses constructors and data validation
 
 note:
 
@@ -187,23 +187,6 @@ We really improved on the drawbacks we indicated earlier!
 
 ---
 
-### Some challenges remain
-
-**Q:** How to support multiple versions of one class?
-
-<span class="fragment">
-    <strong>A:</strong>  <code>@Serializer</code> and <code>@Deserializer</code> annotations could get a property <code>version</code> in the future.
-</span>
-
-note:
-
-Of course, not *all* drawbacks are solved with this.
-How will you support multiple versions of one class, for example?
-Well, `@Serializer` and `@Deserializer` annotations could get a property `version` in the future.
-So that you would be able to annotate multiple methods with these annotations to support multiple versions.
-
----
-
 ## Feature Status
 
 <table style="font-size: 100%">
@@ -226,5 +209,4 @@ So that you would be able to annotate multiple methods with these annotations to
 <https://cr.openjdk.java.net/~briangoetz/amber/serialization.html> <!-- .element: class="attribution" -->
 
 note:
-Well, I said 'in the future', but actually this entire feature is still very much in the future.
  

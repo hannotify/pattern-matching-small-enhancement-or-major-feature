@@ -377,7 +377,7 @@ So this method would make a lot more sense if it was `static`.
 
 ---
 
-## Benefits of pattern matching
+## Benefits
 
 * No need for the Visitor pattern or a common supertype
 * A single expression instead of many assignments

@@ -127,26 +127,6 @@ And it does 3 things at the same time:
 ---
 
 <!-- .slide: data-background="img/background/chalkboard.jpg" data-background-color="black" data-background-opacity="0.3" -->
-## Type pattern <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    Consists of a predicate that specifies a type, along with a single binding variable.
-</blockquote>
-
-<https://www.pexels.com/photo/person-holding-white-chalk-625219/> <!-- .element: class="attribution" -->
-
-note:
-
-A type pattern consists of:
-
-1. a predicate, that specifies a type (`Guitar`)
-2. a binding variable (`lesPaul`)
-
-It looks like a variable declaration (which is not an accident!).
-
----
-
-<!-- .slide: data-background="img/background/chalkboard.jpg" data-background-color="black" data-background-opacity="0.3" -->
 ## Pattern matching <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
@@ -247,25 +227,6 @@ if (product instanceof Guitar lesPaul) {
 } else {
     // can't use lesPaul here
 }
-</code></pre>
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-## Scoping
-
-**Pattern binding variable ('flow scoping')**
-
-* The set of places where it would definitely be assigned.
-
-<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
-if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
-    // can use lesPaul here
-} else {
-    // can't use lesPaul here
-}
-
 </code></pre>
 
 ---
@@ -401,14 +362,12 @@ We'll use an `Amplifier` and an `EffectLoop`.
 ## Demo
 
 * Simplify implementation of `equals`
-* Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
 
 * **Guitar.java** Simplify implementation of `equals`
-* **AmplifierTest.java** Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
 
 ---
 
@@ -416,7 +375,7 @@ note:
 
 * Nearly 100% of casts will just disappear! 
 * More concise
-* Eliminates cut/paste errors
+* No type repeating
 
 ---
 
