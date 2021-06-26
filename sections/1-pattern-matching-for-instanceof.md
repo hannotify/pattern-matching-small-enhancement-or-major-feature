@@ -118,7 +118,7 @@ note:
 
 This is a *type pattern* (mark with mouse).
 
-And it does 3 things at the same time:
+And it does all 3 things at the same time:
 
 1. testing
 2. conditional extraction
@@ -165,7 +165,7 @@ So, let's get into some details.
 But its declaration location is different.
 
 We are used to local variables being declared "at the left margin", or as part of a for loop, for example.
-But patterns declare local variables "in the middle" of a statement or expression, which may take a little time to get used to.
+But patterns declare local variables "in the middle" of a statement or expression, so that's different.
 
 ---
 
@@ -317,7 +317,7 @@ boolean isTunedGuitar(Object product) {
 
 note:
 
-Let's introduce some more classes from the local music store.
+Let's introduce a few more classes from the local music store.
 
 ---
 

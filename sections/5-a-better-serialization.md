@@ -39,7 +39,7 @@ And this is an important observation when thinking about serialization.
 
 ## Serialization
 
-* very important feature
+* important feature
 * but many people hate its current implementation
 
 ### Drawbacks
@@ -50,7 +50,7 @@ And this is an important observation when thinking about serialization.
 
 note:
 
-Serialization is a very important feature; it helped Java gain popularity in the late 90's due to its application in RMI.
+Serialization is an important feature; it helped Java gain popularity in the late 90's due to its application in RMI.
 But many people really hate its current implementation.
 According to Java architect Brian Goetz: "even Gollum hates serialization".
 

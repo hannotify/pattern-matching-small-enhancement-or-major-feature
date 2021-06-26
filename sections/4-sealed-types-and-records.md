@@ -21,9 +21,8 @@ static String apply(Object object) {
 </code></pre>
 
 note:
-If we would try to overload the `apply()` method to handle all object types, we would run into compiler errors.
-Because JEP 406 will introduce completeness checks for all switch expressions or statements that don't use the legacy types.
-(char, byte, short, int, boxed variants, String, enum types).
+So, suppose we wanted to overload the `apply()` method to handle all object types and not just Effects.
+Then, in Java 17, we would run into compiler errors.
 
 ---
 
@@ -42,7 +41,6 @@ static String apply(Object object) {
 </code></pre>
 
 note:
-If we would try to overload the `apply()` method to handle all object types, we would run into compiler errors.
 Because JEP 406 will introduce completeness checks for all switch expressions or statements that don't use the legacy types.
 (char, byte, short, int, boxed variants, String, enum types).
 
@@ -95,7 +93,7 @@ static String apply(Effect effect) {
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
         case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -116,7 +114,7 @@ static String apply(Effect effect) {
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
         case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(var effects) -> effects.stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
     };
 }
 </code></pre>

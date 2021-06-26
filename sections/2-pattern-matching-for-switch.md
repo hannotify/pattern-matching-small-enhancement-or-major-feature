@@ -87,7 +87,7 @@ But it actually contains only 7 lines of *real* business logic.
 The rest is all ceremony!
 So how can we reduce the ceremony?
 
-Of course, with the introduction of JEP 305 (Pattern Matching for instanceof) we are able to simplify this code example...
+Of course, with 'Pattern Matching for instanceof' we are able to simplify this code example...
 
 ---
 
@@ -350,7 +350,7 @@ String apply(Effect effect) {
 
 note:
 So this method would make a lot more sense if it was `static`.
-In fact, its enclosing class would probably contain more static methods like this, such as `isTunerActive` for example.
+In fact, its enclosing class could be called `EffectOperations` and would probably contain more static methods like this, such as `isTunerActive` for example.
 
 ---
 
@@ -366,7 +366,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -399,7 +399,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -419,7 +419,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -443,7 +443,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -468,7 +468,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -493,7 +493,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         case null, default -> String.format("Unknown or malfunctioning effect active: %s.", effect);
     };
 }

@@ -30,7 +30,7 @@ static String apply(Effect effect) {
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -53,7 +53,7 @@ static String apply(Effect effect) {
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -121,7 +121,7 @@ static String apply(Effect effect) {
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop el -> el.getEffects().stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default            -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -143,7 +143,7 @@ static String apply(Effect effect) {
         case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
         case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case EffectLoop(Set&lt;Effect&gt; effects) -> effects.stream().map(EffectOperations::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
     };
 }
@@ -285,14 +285,6 @@ In this case we could choose to apply an 'any pattern'.
 
 ---
 
-<!-- .slide: data-background="https://media.giphy.com/media/26BGIqWh2R1fi6JDa/giphy.gif" data-background-size="contain" data-background-opacity="0.8" data-background-color="black"-->
-<http://gph.is/2lFlHIK> <!-- .element: class="attribution" style="color: white !important;" --> 
-
-note:
-Which sounds a bit like the 'any key' that Homer is still trying to find.
-
----
-
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
@@ -312,79 +304,7 @@ It's like you tell the compiler: "Compiler, I don't care about the first value a
 
 ---
 
-<!-- .slide: data-auto-animate" -->
-
-### Optimization
-
-<pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers>
-static String apply(Effect effect) {
-    return switch(effect) {
-        case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
-        case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
-        case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
-        case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
-        case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
-Another use case for any patterns is optimization of a specific case branch.
-To demonstate this, let's return to our switch expression example.
-Now the EffectLoop branch could be quite performance heavy, because of the recursive call.
-So if we could avoid executing it when it is not needed, we would.
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Optimization
-
-<pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers="4">
-static String apply(Effect effect) {
-    return switch(effect) {
-        // ...
-        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
-Let's hide the other branches for now to be able to focus on this case branch a bit better.
-Now, here is my optimization idea.
-Whenever an effect loop contains an active tuner, the signal is muted, right?
-So why bother processing the entire effect loop when you know all those effects aren't going to change the guitar tone at all?
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Optimization
-
-<pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers="4-5">
-static String apply(Effect effect) {
-    return switch(effect) {
-        // ...
-        case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
-This is where any patterns come in.
-We could define a pattern definition that checks for the presence of a tuner.
-Using an any pattern we can tell the compiler that we don't care about any other effects.
-Now, if there is a Tuner present in the effect loop, the top case branch will be executed.
-If no Tuner is present, the 'regular' case branch will be executed as before.
-
----
-
-## Benefits
+## Benefits of deconstruction patterns
 
 <ul>
     <li>Better encapsulation<br/><small>a case branch only receives data that it actually references.</small>
