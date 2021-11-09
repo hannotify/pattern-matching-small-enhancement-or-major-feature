@@ -32,16 +32,16 @@ tr:hover .popup-image {
 }
 
 a {
-    color: #1aa3b1 !important;
+    color: #DD4C9B !important;
 }
 
 .reveal .progress span {
-    background: #1aa3b1 !important;
+    background: #DD4C9B !important;
 }
 
 ::selection {
     color: #fff;
-    background: #1aa3b1;
+    background: #DD4C9B;
     text-shadow: none;
 }
 
@@ -64,7 +64,7 @@ a {
 }
 
 .reveal code {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Jetbrains Mono', monospace;
 }
 
 .reveal pre {
