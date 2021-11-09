@@ -79,4 +79,19 @@ a {
 .reveal ::-moz-selection {
   color: black;
   background: #1aa3b1;
-  text-shadow: none; }
+  text-shadow: none; 
+}
+
+.reveal .rightFooter {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: 0.5em;
+}
+
+.reveal .leftFooter {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 0.5em;
+}
