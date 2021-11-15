@@ -33,29 +33,32 @@ And that is why I think pattern matching is not a Small Enhancement, but a Major
 
 <h2>Thank you! ☺️</h2>
 <br />
-<table>
+<table style="font-size: 75%">
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="20%"
+        <td style="text-align: right; vertical-align: middle;" width="20%"><img width="20%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>
-        <td style="vertical-align: middle;"><a
-                href="http://bit.do/javaland-pattern-matching">bit.do/javaland-pattern-matching</a>
+        <td style="vertical-align: middle;" colspan="2"><a
+                href="http://todo">todo/slides-link</a>
         </td>
 </tr>
 <tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%"
                 data-src="img/icons/github.png" class="no-background" /></td>
-        <td style="vertical-align: middle;"><a 
+        <td style="vertical-align: middle;" colspan="2"><a 
                 href="https://github.com/hannotify/pattern-matching-music-store">github.com/hannotify/pattern-matching-music-store</a>
         </td>
 </tr>
 <tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%" data-src="img/icons/website.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a
-                href="https://hannotify.github.io">hannotify.github.io</a></td>
+                href="https://hanno.codes">hanno.codes</a></td>
+        <td style="vertical-align: middle;"><a
+                href="https://peterwessels.nl">peterwessels.nl</a></td>
 </tr>
 <tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%"
                 data-src="img/icons/twitter-white.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a href="https://www.twitter.com/hannotify">@hannotify</a></td>
+        <td style="vertical-align: middle;"><a href="https://www.twitter.com/PeterWessels">@PeterWessels</a></td>
 </tr>
 </table>
