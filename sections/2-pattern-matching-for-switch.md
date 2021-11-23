@@ -424,6 +424,9 @@ static String apply(Effect effect) {
 }
 </code></pre>
 
+note:
+Traditionally, switch statements and expressions throw NullPointerException if the selector expression evaluates to null, so if you wanted to prevent this, you had to test for null outside of the switch expression.
+
 ---
 
 <!-- .slide: data-auto-animate" -->
@@ -499,7 +502,7 @@ static String apply(Effect effect) {
 </code></pre>
 
 note:
-However, it will be able to combine them, just as any other two case labels can.
+However, it will be able to combine them, just as any other two case labels can be combined.
 
 ---
 
@@ -511,7 +514,7 @@ However, it will be able to combine them, just as any other two case labels can.
 String apply(Effect effect, Guitar guitar) {
     return switch(effect) {
         // (...)
-        case Tremolo tr-> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tremolo tr -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
         case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
@@ -524,6 +527,7 @@ String apply(Effect effect, Guitar guitar) {
 note:
 A *guarded pattern* is the combination of a pattern and a boolean expression.
 This boolean expression must additionally be true in order for the guarded pattern to match.
+We can use guarded patterns to further refine a matched pattern by applying a boolean expression
 In this case we could use a guarded pattern to prevent unnecessary tuning...
 
 ---
@@ -536,7 +540,7 @@ In this case we could use a guarded pattern to prevent unnecessary tuning...
 String apply(Effect effect, Guitar guitar) {
     return switch(effect) {
         // (...)
-        case Tremolo tr-> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tremolo tr -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
         case Tuner tu && !tu.isInTune(guitar) -> String.format("Guitar is in need of tuning - tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
         case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
         default -> String.format("Unknown effect active: %s.", effect);
@@ -608,10 +612,13 @@ It can be an enum constant, as depicted here, or a `String` literal, or a numeri
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
         </tr>
+        <tr>
+            <td><strong>18</strong></td>
+            <td>Second preview <br/><small>(proposed to target)</small></td>
+            <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
+        </tr>
     </tbody>
 </table>
-
-<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
 
 ---
 
