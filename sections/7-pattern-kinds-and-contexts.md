@@ -22,11 +22,6 @@
             <td>Perform an instanceof test, cast the target, and bind it to a pattern variable.</td>
         </tr>
         <tr class="fragment">
-            <td><em>constant pattern</em></td>
-            <td><code>GuitarType.TELECASTER</code></td>
-            <td>Test the target for equality with a constant.</td>
-        </tr>
-        <tr class="fragment">
             <td><em>deconstruction pattern</em></td>
             <td><code>Delay(int timeInMs)</code></td>
             <td>Perform an instanceof test, cast the target, destructure the target and recursively match the components to subpatterns.</td>
