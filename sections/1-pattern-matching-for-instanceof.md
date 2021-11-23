@@ -411,24 +411,6 @@ note:
 
 ---
 
-## `instanceof` grammar
-
-The `instanceof` grammar is extended accordingly:
-
-<pre><code class="java" data-trim data-line-numbers="4,6,7">
-RelationalExpression:
-  ...
-  RelationalExpression instanceof ReferenceType
-  RelationalExpression instanceof Pattern
-
-Pattern:
-  ReferenceType Identifier
-</code></pre>
-
-<https://openjdk.java.net/jeps/305> <!-- .element: class="attribution" -->
-
----
-
 <!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
