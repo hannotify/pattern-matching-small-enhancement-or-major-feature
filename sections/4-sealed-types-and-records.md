@@ -201,7 +201,7 @@ record EffectLoop(String name, int volume, Effect... effects) { }
 <pre><code class="java" data-trim data-line-numbers>
 static String apply(EffectLoop effectLoop) {}
     return switch(effectLoop) {
-        case EffectLoop(var name, var volume) -> " Effect loop contains no effects.";
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
         case EffectLoop(var name, var volume, var effect) -> "Effect loop contains exactly one effect.";
         case EffectLoop(var name, var volume, var effect, ...) -> "Effect loop contains more than one effect.";
         case EffectLoop(var name, var volume, var effect1, var effect2) -> "Effect loop contains exactly two effects.";
