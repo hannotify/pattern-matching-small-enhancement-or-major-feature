@@ -307,7 +307,6 @@ interface EffectVisitor<T> {
     T visit(Reverb effect);
     // ...
 }
-
 class IsTunerActiveVisitor implements EffectVisitor<Boolean> {
     public Boolean visit(Tuner effect) {
         return !effect.isInTune();
@@ -406,103 +405,50 @@ static String apply(Effect effect) {
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 
-### But what if `effect` is `null`?
+## Demo
 
-<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="2">
-static String apply(Effect effect) {
-    return switch(effect) { // throws NullPointerException!
-        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
-        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
-        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
-        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default            -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
+* What if `effect` is `null`?
+  * Solution #1: defensive testing
+  * Solution #2: integrate null check in switch
+  * Solution #3: combining case labels
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
+
 Traditionally, switch statements and expressions throw NullPointerException if the selector expression evaluates to null, so if you wanted to prevent this, you had to test for null outside of the switch expression.
 
----
+## Solution #1: defensive testing
 
-<!-- .slide: data-auto-animate" -->
-
-### Solution #1: defensive testing
-
-<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="2-4">
-static String apply(Effect effect) {
-    if (effect == null) {
-        return "Malfunctioning effect active.";
-    }
-
-    return switch(effect) {
-        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
-        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
-        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
-        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default            -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
 Doesn't feel right. We now have to repeat the 'return' keyword. :(
 Also, it take a while to grasp why the null case is handled separately.
 
----
+## Solution #2: integrate null check in switch
 
-<!-- .slide: data-auto-animate" -->
-
-### Solution #2: integrate null check in switch
-
-<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="3">
-static String apply(Effect effect) {
-    return switch(effect) {
-        case null          -> return "Malfunctioning effect active.";
-        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
-        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
-        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
-        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default            -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
 This makes me feel all warm and fuzzy inside. Great stuff!
 Note that if you would forget to add the `null` case, the code would still throw a `NullPointerException`.
 The `default` case will not be changed to include `null`, to maintain backwards compatibility.
 
+## Solution #3: combining case labels
+
+However, it will be able to combine them, just as any other two case labels can be combined.
+
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 
-### Combining case labels
+## Demo
 
-<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="9">
-static String apply(Effect effect) {
-    return switch(effect) {
-        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
-        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
-        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
-        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        case null, default -> String.format("Unknown or malfunctioning effect active: %s.", effect);
-    };
-}
-</code></pre>
+* Guarded patterns
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-However, it will be able to combine them, just as any other two case labels can be combined.
+A *guarded pattern* is the combination of a pattern and a boolean expression.
+This boolean expression must additionally be true in order for the guarded pattern to match.
+We can use guarded patterns to further refine a matched pattern by applying a boolean expression.
 
 ---
 
@@ -522,13 +468,7 @@ String apply(Effect effect, Guitar guitar) {
 }
 </code></pre>
 
-<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
-
 note:
-A *guarded pattern* is the combination of a pattern and a boolean expression.
-This boolean expression must additionally be true in order for the guarded pattern to match.
-We can use guarded patterns to further refine a matched pattern by applying a boolean expression
-In this case we could use a guarded pattern to prevent unnecessary tuning...
 
 ---
 
@@ -549,8 +489,7 @@ String apply(Effect effect, Guitar guitar) {
 </code></pre>
 
 note:
-...like so.
-Now the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
+So we saw in the demo that the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
 
 One of the main reasons for Java to start supporting guarded patterns is to prevent further testing in a case block, like this:
 
@@ -572,9 +511,8 @@ switch(effect) {
 </code></pre>
 
 note:
-This is how you would write it if no guarded patterns were available.
+This is how you would have to write it if no guarded patterns were available.
 We would have to use a good old switch statement instead of a switch expression.
-Using a guarded pattern and a regular one, we can rewrite this logic as follows:
 
 ---
 
@@ -601,6 +539,8 @@ Using a guarded pattern and a regular one, we can rewrite this logic as follows:
         </tr>
     </tbody>
 </table>
+
+<https://openjdk.java.net/jeps/420> <!-- .element: class="attribution" -->
 
 ---
 

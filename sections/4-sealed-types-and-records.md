@@ -266,10 +266,15 @@ So we can try them out for the first time in Java 18.
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
         </tr>
+        <tr>
+            <td><strong>18</strong></td>
+            <td>Second preview <br/><small>(proposed to target)</small></td>
+            <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
+        </tr>
     </tbody>
 </table>
 
-<https://openjdk.java.net/jeps/406> <!-- .element: class="attribution" -->
+<https://openjdk.java.net/jeps/420> <!-- .element: class="attribution" -->
 
 ---
 
@@ -286,7 +291,7 @@ So we can try them out for the first time in Java 18.
     </thead>
     <tbody>
         <tr>
-            <td><strong>18</strong></td>
+            <td><strong>n/a</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
