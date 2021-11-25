@@ -1,5 +1,7 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 # Pattern Matching for <!-- .element: class="stroke" -->
+
 # `instanceof` <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
@@ -7,6 +9,7 @@
 ---
 
 <!-- .slide: data-background="img/background/guitar-store-close-up.jpg" data-background-color="black" data-background-opacity="0.2" -->
+
 ![music-store-phase-1](diagrams/music-store-phase-1.puml.png "Music store class diagram")
 
 <https://pxhere.com/en/photo/548063> <!-- .element: class="attribution" -->
@@ -30,7 +33,6 @@ if (product instanceof Guitar) {
 
 ---
 
-
 ### Instanceof-and-cast
 
 <pre><code class="java" data-trim data-line-numbers="1">
@@ -42,7 +44,6 @@ if (product instanceof Guitar) { // 1. is product a Guitar?
 </code></pre>
 
 ---
-
 
 ### Instanceof-and-cast
 
@@ -80,16 +81,16 @@ if (product instanceof Guitar) { // 1. is product a Guitar?
 }
 </code></pre>
 
-note: 
+note:
 
 This is a famous pattern and it is understood by all Java programmers.
 
 But - drawbacks!
 
-* verbose
-* why should both the type test (1.) and the cast (2.) be necessary?
-* the actual logic ('use lesPaul') seems less important, when it actually is the most important
-* the `Guitar` type is repeated 3 times, which makes it difficult to maintain
+- verbose
+- why should both the type test (1.) and the cast (2.) be necessary?
+- the actual logic ('use lesPaul') seems less important, when it actually is the most important
+- the `Guitar` type is repeated 3 times, which makes it difficult to maintain
 
 The situation would improve dramatically if we could compress the 3 steps shown here into a single one.
 
@@ -107,7 +108,7 @@ if (product instanceof Guitar lesPaul) {
 
 note:
 
-This is a *type pattern* (mark with mouse).
+This is a _type pattern_ (mark with mouse).
 
 And it does 3 things at the same time:
 
@@ -118,6 +119,7 @@ And it does 3 things at the same time:
 ---
 
 <!-- .slide: data-background="img/background/chalkboard.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
 ## Type pattern <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
@@ -138,6 +140,7 @@ It looks like a variable declaration (which is not an accident!).
 ---
 
 <!-- .slide: data-background="img/background/chalkboard.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
 ## Pattern matching <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
@@ -153,10 +156,10 @@ It "allows the conditional (...)"
 
 It is not a new concept, a lot of programming languages support pattern matching:
 
-* Haskell
-* C#
-* Erlang
-* [Scala](https://docs.scala-lang.org/tour/pattern-matching.html)
+- Haskell
+- C#
+- Erlang
+- [Scala](https://docs.scala-lang.org/tour/pattern-matching.html)
 
 ---
 
@@ -186,7 +189,7 @@ But patterns declare local variables "in the middle" of a statement or expressio
 
 **'Regular' local variable ('block scoping')**
 
-* The block in which it is declared.
+- The block in which it is declared.
 
 <pre data-id="block-scoping-animation"><code class="java" data-trim data-line-numbers>
 void playTunedGuitar() { 
@@ -207,7 +210,7 @@ void playTunedGuitar() {
 
 **'Regular' local variable ('block scoping')**
 
-* The block in which it is declared.
+- The block in which it is declared.
 
 <pre data-id="block-scoping-animation"><code class="java" data-trim data-line-numbers>
 void playTunedGuitar() { 
@@ -230,7 +233,7 @@ void playTunedGuitar() {
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
 if (product instanceof Guitar lesPaul) {
@@ -248,7 +251,7 @@ if (product instanceof Guitar lesPaul) {
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
 if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
@@ -267,7 +270,7 @@ if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
 if (product instanceof Guitar lesPaul 
@@ -286,7 +289,7 @@ if (product instanceof Guitar lesPaul
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
 if (product instanceof Guitar lesPaul 
@@ -305,7 +308,7 @@ if (product instanceof Guitar lesPaul
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
 if (product instanceof Guitar lesPaul 
@@ -324,7 +327,7 @@ if (product instanceof Guitar lesPaul
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-2-animation"><code class="java" data-trim data-line-numbers>
 boolean isTunedGuitar(Object product) {
@@ -341,6 +344,7 @@ boolean isTunedGuitar(Object product) {
 ---
 
 <!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.2" -->
+
 ![music-store-phase-2](diagrams/music-store-phase-2.puml.png "Music store class diagram")
 
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
@@ -357,7 +361,7 @@ Let's introduce some more classes from the local music store.
 
 **Pattern binding variable ('flow scoping')**
 
-* The set of places where it would definitely be assigned.
+- The set of places where it would definitely be assigned.
 
 <pre data-id="flow-scoping-3-animation"><code class="java" data-trim data-line-numbers>
 void test(Effect effect) {
@@ -378,6 +382,7 @@ Fun fact: this would not have been possible with classic 'block scoping'.
 ---
 
 <!-- .slide: data-background="img/background/marshall-amplifier.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ![music-store-phase-3](diagrams/music-store-phase-3.puml.png "Music store class diagram")
 
 <https://pxhere.com/en/photo/853260> <!-- .element: class="attribution" -->
@@ -389,40 +394,55 @@ We'll use an `Amplifier` and an `EffectLoop`.
 ---
 
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
 ## Demo
 
-* Simplify implementation of `equals`
-* Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
+- Simplify implementation of `equals`
+- Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
 
-* **Guitar.java** Simplify implementation of `equals`
-* **AmplifierTest.java** Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
+- **Guitar.java** Simplify implementation of `equals`
+- **AmplifierTest.java** Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
 
 ---
 
 ## Benefits
 
-* Nearly 100% of casts will just disappear! 
-* More concise
-* Eliminates cut/paste errors
+- Nearly 100% of casts will just disappear!
+- More concise
+- Eliminates cut/paste errors
 
 ---
 
 <!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
-<blockquote class="explanation">
-    <strong>type pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    Guitar lesPaul
-    </code>
-</blockquote>
+<table style="font-size: 100%">
+    <tbody>
+        <tr>
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr style="filter: blur(3px); opacity:0.4;">
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+        <tr style="filter: blur(3px); opacity:0.4;">
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+        <tr style="filter: blur(3px); opacity:0.4;">
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr>
+    </tbody>
+</table>
 
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
 
 ---
 
@@ -458,6 +478,7 @@ note:
 ---
 
 <!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## Why so serious?
 
 <ul>
@@ -479,5 +500,5 @@ Yes, it does. And it has been considered by the languange designers.
 _Flow typing_ is a proposed mechanism that infers refined types based on past conditionals.
 Sounds useful, right?
 But... it is suited for `instanceof` checks only.
-Whereas *pattern matching* can do the same, **and** be useful for more language concepts.
+Whereas _pattern matching_ can do the same, **and** be useful for more language concepts.
 Such as switch expressions!

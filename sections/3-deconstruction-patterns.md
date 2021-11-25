@@ -1,5 +1,7 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## Deconstruction <!-- .element: class="stroke" -->
+
 # Patterns <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
@@ -7,6 +9,7 @@
 ---
 
 <!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->
+
 ## Disclaimer <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
@@ -106,7 +109,7 @@ public class Overdrive implements Effect {
 
 note:
 ...and this is wat we need to add to support a deconstruction pattern.
-It is called a *pattern definition*.
+It is called a _pattern definition_.
 And it sort of works like a reverse constructor.
 
 ---
@@ -133,6 +136,7 @@ Now, if we add a pattern definition to every implementor of the Effect interface
 ---
 
 <!-- .slide: data-auto-animate" -->
+
 ### Deconstruction patterns
 
 <pre data-id="deconstruction-patterns-2-animation"><code class="java" data-trim data-line-numbers>
@@ -163,8 +167,8 @@ Or do you enter once, get all the stuff you need and then exit?
 
 ---
 
-
 <!-- .slide: data-auto-animate" -->
+
 ### Pattern composition
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
@@ -175,15 +179,34 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 We can use patterns in conjunction with each other to achieve even more powerful matching logic.
-We call this 'Pattern Composition', and it boils down to *nesting* patterns.
+We call this 'Pattern Composition', and it boils down to _nesting_ patterns.
 
 Let's use an example to demonstrate this.
 Suppose we have an `EffectLoop` and we want to know whether it contains both a `Reverb` and a `Delay` with the same value for their properties.
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+### Pattern composition
+
+<pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
+    if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
+        return timeInMs == roomSize;
+    }
+    return false;
+}
+</code></pre>
+
+note:
+This is how easy the code could become if we use pattern composition!
+(explain how the composed pattern would be matched)
+
+---
 
 <!-- .slide: data-auto-animate" -->
+
 ### Pattern composition
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
@@ -212,24 +235,6 @@ Go figure!
 
 ---
 
-<!-- .slide: data-auto-animate" -->
-### Pattern composition
-
-<pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
-static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
-    if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
-        return timeInMs == roomSize;
-    }
-    return false;
-}
-</code></pre>
-
-note:
-This is how easy the code could become if we use pattern composition!
-(explain how the composed pattern would be matched)
-
----
-
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
@@ -240,7 +245,7 @@ Guitar telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType
 var telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
 </code></pre>
 
-<https://openjdk.java.net/jeps/286> <!-- .element: class="attribution" --> 
+<https://openjdk.java.net/jeps/286> <!-- .element: class="attribution" -->
 
 note:
 Do you remember 'Local-Variable Type Inference' that became available in Java 10?
@@ -286,7 +291,8 @@ In this case we could choose to apply an 'any pattern'.
 ---
 
 <!-- .slide: data-background="https://media.giphy.com/media/26BGIqWh2R1fi6JDa/giphy.gif" data-background-size="contain" data-background-opacity="0.8" data-background-color="black"-->
-<http://gph.is/2lFlHIK> <!-- .element: class="attribution" style="color: white !important;" --> 
+
+<http://gph.is/2lFlHIK> <!-- .element: class="attribution" style="color: white !important;" -->
 
 note:
 Which sounds a bit like the 'any key' that Homer is still trying to find.
@@ -306,7 +312,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 So an 'any pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the pattern definition.
-But there is a big difference: an any pattern *doesn't bind a value to a variable*.
+But there is a big difference: an any pattern _doesn't bind a value to a variable_.
 That's why there is no variable name, and just an underscore character to denote the any pattern.
 It's like you tell the compiler: "Compiler, I don't care about the first value at all, just make sure to map the second value (which is `roomSize`) to a variable.
 
@@ -395,47 +401,89 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
 ---
 
 <!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
-<blockquote class="explanation">
-    <strong>deconstruction pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    Delay(int timeInMs)
-    </code>
-</blockquote>
+<table style="font-size: 100%">
+    <tbody>
+        <tr style="opacity:0.6;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr>
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+        <tr style="filter: blur(3px); opacity:0.4;">
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+        <tr style="filter: blur(3px); opacity:0.4;">
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr>
+    </tbody>
+</table>
 
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
 
 ---
 
 <!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
-<blockquote class="explanation">
-    <strong>var pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    var timeInMs
-    </code>
-</blockquote>
+<table style="font-size: 100%">
+    <tbody>
+        <tr style="opacity:0.6;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr style="opacity:0.6;">
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+        <tr>
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+        <tr style="filter: blur(3px); opacity:0.4;">
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr>
+    </tbody>
+</table>
 
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
 
 ---
 
 <!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
-<blockquote class="explanation">
-    <strong>any pattern</strong>
-    <br/>
-    <code data-trim data-noescape>
-    _
-    </code>
-</blockquote>
+<table style="font-size: 100%">
+    <tbody>
+        <tr style="opacity:0.6;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr style="opacity:0.6;">
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+         <tr style="opacity:0.6;">
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+        <tr>
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr>
+    </tbody>
+</table>
 
-<https://www.pexels.com/photo/gray-metal-statue-of-man-raising-hand-near-dock-825430/> <!-- .element: class="attribution" -->
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
 
 ---
 
@@ -467,4 +515,3 @@ It will probably be delivered in parts.
 The first part will add support for record patterns only.
 It will actually be in 'Preview' status in Java 18.
 But more on record patterns a bit later!
-
