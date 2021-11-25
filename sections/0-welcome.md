@@ -13,7 +13,7 @@
     <tr>
     </tr>
 </table>
-<img data-src="img/logos/javazone.png" width="12%" class="no-background"/>
+<img data-src="img/logos/info-support-blue.png" width="20%" class="no-background"/>
 <br/>
 
 note:
