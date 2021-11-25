@@ -31,14 +31,14 @@ And that is why I think pattern matching is not a Small Enhancement, but a Major
 
 ---
 
-<h2>Thank you! ☺️</h2>
+<h2>Thank you! 😀</h2>
 <br />
 <table style="font-size: 75%">
 <tr>
         <td style="text-align: right; vertical-align: middle;" width="20%"><img width="20%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>
         <td style="vertical-align: middle;" colspan="2"><a
-                href="http://todo">todo/slides-link</a>
+                href="https://tinyurl.com/pattern-matching-info-support">tinyurl.com/pattern-matching-info-support</a>
         </td>
 </tr>
 <tr>
