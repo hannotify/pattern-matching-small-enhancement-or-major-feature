@@ -13,7 +13,7 @@
 ## Disclaimer <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
-    I can't tell you when the following features are coming to Java.<br/>
+    We can't tell you when the following features are coming to Java.<br/>
     Also: syntax and implementation specifics may still change.
 </blockquote>
 
