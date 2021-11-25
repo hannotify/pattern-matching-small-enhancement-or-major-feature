@@ -259,22 +259,6 @@ Go figure!
             <td> deconstruction pattern </td>  
             <td><code>Delay(int timeInMs)</code></td>
         </tr>
-        <!-- <tr>
-            <td> var pattern </td>
-            <td><code>var timeInMs</code></td>
-        </tr> -->
-        <!-- <tr>
-            <td> any pattern </td>
-            <td><code>_</code></td>
-        </tr> -->
-        <!-- <tr>
-            <td> array pattern </td>
-            <td><code>_</code></td>
-        </tr> -->
-        <!--<tr>
-            <td> record pattern </td>
-            <td><code>EffectLoop(var name, <br> var volume, <br> var effect, <br> ...)</code></td>
-        </tr> -->
     </tbody>
 </table>
 
@@ -475,18 +459,6 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td> var pattern </td>
             <td><code>var timeInMs</code></td>
         </tr>
-        <!-- <tr>
-            <td> any pattern </td>
-            <td><code>_</code></td>
-        </tr> -->
-        <!-- <tr>
-            <td> array pattern </td>
-            <td><code>_</code></td>
-        </tr> -->
-        <!--<tr>
-            <td> record pattern </td>
-            <td><code>EffectLoop(var name, <br> var volume, <br> var effect, <br> ...)</code></td>
-        </tr> -->
     </tbody>
 </table>
 

@@ -216,10 +216,6 @@ My guess is the language designers will use the feedback to this preview feature
             <td> record pattern </td>
             <td><code>record EffectLoop</code></td>
         </tr>
-        <!-- <tr>
-            <td> array pattern </td>
-            <td><code>_</code></td>
-        </tr> -->
     </tbody>
 </table>
 
