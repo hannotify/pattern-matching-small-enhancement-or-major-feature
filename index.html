@@ -1,79 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
     <title>Pattern Matching: Small Enhancement or Major Feature?</title>
 
-    <meta name="description" content="">
-    <meta name="author" content="Hanno Embregts">
+    <meta name="description" content="" />
+    <meta name="author" content="Hanno Embregts" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../../dist/reset.css">
-    <link rel="stylesheet" href="../../dist/reveal.css">
-    <link rel="stylesheet" href="../../dist/theme/blood.css" id="theme">
-    <link rel="stylesheet" href="css/info-support.css" id="custom">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
+    <link rel="stylesheet" href="../../dist/reset.css" />
+    <link rel="stylesheet" href="../../dist/reveal.css" />
+    <link rel="stylesheet" href="../../dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="css/info-support.css" id="custom" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+    />
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="css/darcula.css" id="highlight-theme">
-</head>
+    <link rel="stylesheet" href="css/darcula.css" id="highlight-theme" />
+  </head>
 
-<body>
-
+  <body>
     <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section
+          data-markdown="sections/0-welcome.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <section data-markdown="sections/0-welcome.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/agenda.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/1-pattern-matching-for-instanceof.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/1-pattern-matching-for-instanceof.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/2-pattern-matching-for-switch.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/2-pattern-matching-for-switch.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/3-deconstruction-patterns.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/3-deconstruction-patterns.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/4-sealed-types-and-records.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/4-sealed-types-and-records.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/5-a-better-serialization.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/5-a-better-serialization.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/6-future-expansions.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/6-future-expansions.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/7-pattern-kinds-and-contexts.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
+        <section
+          data-markdown="sections/7-pattern-kinds-and-contexts.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
 
-            <section data-markdown="sections/b-wrap-up.md" data-separator="^\r?\n------\r?\n$"
-                data-separator-vertical="^\r?\n---\r?\n$">
-            </section>
-        </div>
+        <section
+          data-markdown="sections/b-wrap-up.md"
+          data-separator="^\r?\n------\r?\n$"
+          data-separator-vertical="^\r?\n---\r?\n$"
+        ></section>
+      </div>
 
-        <div class="leftFooter">
-            <a href="https://twitter.com/hannotify">#InfoSupportJavaMeetup #PatternMatching</a>
-        </div>
-        <div class="rightFooter">
-            <a href="https://twitter.com/hannotify">@hannotify @PeterWessels</a>
-        </div>
+      <div class="leftFooter">
+        <a href="https://twitter.com/hannotify"
+          >#InfoSupportJavaMeetup #PatternMatching</a
+        >
+      </div>
+      <div class="rightFooter">
+        <a href="https://twitter.com/hannotify">@hannotify @PeterWessels</a>
+      </div>
     </div>
 
     <script src="../../dist/reveal.js"></script>
@@ -83,28 +112,32 @@
     <script src="../../plugin/markdown/markdown.js"></script>
     <script src="../../plugin/highlight/highlight.js"></script>
     <script>
-
-        // Also available as an ES module, see:
-        // https://revealjs.com/initialization/
-        Reveal.initialize({
-            controls: false,
-            progress: true,
-            center: true,
-            history: true,
-            hash: true,
-            keyboard: {
-                39: 'next',
-                37: 'prev'
-            },
-            transition: 'fade', // none/fade/slide/convex/concave/zoom
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
-        });
-        Reveal.configure({
-            pdfSeparateFragments: false
-        });
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        center: true,
+        history: true,
+        hash: true,
+        width: 1350,
+        keyboard: {
+          39: "next",
+          37: "prev",
+        },
+        transition: "fade", // none/fade/slide/convex/concave/zoom
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+      Reveal.configure({
+        pdfSeparateFragments: false,
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
