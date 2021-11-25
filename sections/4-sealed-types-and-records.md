@@ -132,22 +132,6 @@ Here no default case is needed; the compiler is already aware that all cases hav
 
 ---
 
-<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
-
-## Demo
-
-- Convert effect classes to a record
-- Acquire constructor, accessor methods etc.
-
-<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
-
-note:
-
-- Records can only be immutable classes.
-- Records are implicitly final.
-
----
-
 <!-- .slide: data-auto-animate" -->
 
 ### Records
