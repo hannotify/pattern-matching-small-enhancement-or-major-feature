@@ -235,6 +235,53 @@ Go figure!
 
 ---
 
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="opacity:0.4;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> guarded pattern </td>  
+            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+        <tr>
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+        <!-- <tr>
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr> -->
+        <!-- <tr>
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+        <!-- <tr>
+            <td> array pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+        <!--<tr>
+            <td> record pattern </td>
+            <td><code>EffectLoop(var name, <br> var volume, <br> var effect, <br> ...)</code></td>
+        </tr> -->
+    </tbody>
+</table>
+
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+---
+
 ### Var and any patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
@@ -405,23 +452,41 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
 <table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
     <tbody>
-        <tr style="opacity:0.6;">
+        <tr style="opacity:0.4;">
             <td> type pattern </td>
             <td><code>Guitar lesPaul</code></td>
         </tr>
-        <tr>
+        <tr style="opacity:0.4;">
+            <td> guarded pattern </td>  
+            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
             <td> deconstruction pattern </td>  
             <td><code>Delay(int timeInMs)</code></td>
         </tr>
-        <tr style="filter: blur(3px); opacity:0.4;">
+        <tr>
             <td> var pattern </td>
             <td><code>var timeInMs</code></td>
         </tr>
-        <tr style="filter: blur(3px); opacity:0.4;">
+        <!-- <tr>
             <td> any pattern </td>
             <td><code>_</code></td>
-        </tr>
+        </tr> -->
+        <!-- <tr>
+            <td> array pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+        <!--<tr>
+            <td> record pattern </td>
+            <td><code>EffectLoop(var name, <br> var volume, <br> var effect, <br> ...)</code></td>
+        </tr> -->
     </tbody>
 </table>
 
@@ -434,45 +499,26 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
 ## It's a kind of Pattern <!-- .element: class="stroke" -->
 
 <table style="font-size: 100%">
-    <tbody>
-        <tr style="opacity:0.6;">
-            <td> type pattern </td>
-            <td><code>Guitar lesPaul</code></td>
-        </tr>
-        <tr style="opacity:0.6;">
-            <td> deconstruction pattern </td>  
-            <td><code>Delay(int timeInMs)</code></td>
-        </tr>
+    <thead>
         <tr>
-            <td> var pattern </td>
-            <td><code>var timeInMs</code></td>
+            <th> pattern </th>
+            <th><code>example</code></th>
         </tr>
-        <tr style="filter: blur(3px); opacity:0.4;">
-            <td> any pattern </td>
-            <td><code>_</code></td>
-        </tr>
-    </tbody>
-</table>
-
-<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
-
----
-
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<table style="font-size: 100%">
+    </thead>
     <tbody>
-        <tr style="opacity:0.6;">
+        <tr style="opacity:0.4;">
             <td> type pattern </td>
             <td><code>Guitar lesPaul</code></td>
         </tr>
-        <tr style="opacity:0.6;">
+        <tr style="opacity:0.4;">
+            <td> guarded pattern </td>  
+            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
             <td> deconstruction pattern </td>  
             <td><code>Delay(int timeInMs)</code></td>
         </tr>
-         <tr style="opacity:0.6;">
+        <tr style="opacity:0.4;">
             <td> var pattern </td>
             <td><code>var timeInMs</code></td>
         </tr>
@@ -480,6 +526,14 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td> any pattern </td>
             <td><code>_</code></td>
         </tr>
+        <!-- <tr>
+            <td> array pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+        <!--<tr>
+            <td> record pattern </td>
+            <td><code>EffectLoop(var name, <br> var volume, <br> var effect, <br> ...)</code></td>
+        </tr> -->
     </tbody>
 </table>
 

@@ -1,5 +1,7 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
-## Pattern Matching Plays Nice With 
+
+## Pattern Matching Plays Nice With
+
 # Sealed Types and Records <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
@@ -69,14 +71,16 @@ In most of the cases this is easily solved by providing a default case.
 ---
 
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
 ## Demo
 
-* Make `Effect` a sealed type
+- Make `Effect` a sealed type
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-* All implementations of a sealed type must be `final`, `sealed` or `non-sealed` ([more info on non-sealed](https://stackoverflow.com/questions/63860110/what-is-the-point-of-extending-a-sealed-class-with-a-non-sealed-class))
+
+- All implementations of a sealed type must be `final`, `sealed` or `non-sealed` ([more info on non-sealed](https://stackoverflow.com/questions/63860110/what-is-the-point-of-extending-a-sealed-class-with-a-non-sealed-class))
 
 Example of non-sealed: `UserCustomEffect`.
 
@@ -129,16 +133,18 @@ Here no default case is needed; the compiler is already aware that all cases hav
 ---
 
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
 ## Demo
 
-* Convert effect classes to a record
-* Acquire constructor, accessor methods etc.
+- Convert effect classes to a record
+- Acquire constructor, accessor methods etc.
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-* Records can only be immutable classes.
-* Records are implicitly final.
+
+- Records can only be immutable classes.
+- Records are implicitly final.
 
 ---
 
@@ -148,7 +154,7 @@ note:
 
 #### Input:
 
-* Commit to the class being a transparent carrier for its data.
+- Commit to the class being a transparent carrier for its data.
 
 <h4>Output:</h4>
 <ul>
@@ -190,6 +196,53 @@ My guess is the language designers will use the feedback to this preview feature
 
 ---
 
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="opacity:0.4;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> guarded pattern </td>  
+            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr>
+        <tr>
+            <td> record pattern </td>
+            <td><code>record EffectLoop</code></td>
+        </tr>
+        <!-- <tr>
+            <td> array pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+    </tbody>
+</table>
+
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+---
+
 <!-- .slide: data-auto-animate" -->
 
 ## Array patterns
@@ -217,7 +270,47 @@ So we can try them out for the first time in Java 18.
 
 ---
 
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="opacity:0.4;">
+            <td>..</td>
+            <td>..</td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr>
+              <tr style="opacity:0.4;">
+            <td> record pattern </td>
+            <td><code>record EffectLoop</code></td>
+        </tr>
+        <tr>
+            <td> array pattern </td>
+            <td><code>EffectLoop(var name, var effect, ...)</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+---
+
 ## Feature Status
+
 ### Sealed Types
 
 <table style="font-size: 100%">
@@ -250,6 +343,7 @@ So we can try them out for the first time in Java 18.
 ---
 
 ## Feature Status
+
 ### Completeness
 
 <table style="font-size: 100%">
@@ -278,7 +372,8 @@ So we can try them out for the first time in Java 18.
 
 ---
 
-## Feature Status 
+## Feature Status
+
 ### Record & Array Patterns
 
 <table style="font-size: 100%">
@@ -297,4 +392,3 @@ So we can try them out for the first time in Java 18.
         </tr>
     </tbody>
 </table>
-

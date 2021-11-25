@@ -1,5 +1,7 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 # Pattern Matching for <!-- .element: class="stroke" -->
+
 # `switch` <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
@@ -7,6 +9,7 @@
 ---
 
 <!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ![music-store-phase-4](diagrams/music-store-phase-4.puml.png "Music store class diagram")
 
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
@@ -83,7 +86,7 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
-But it actually contains only 7 lines of *real* business logic.
+But it actually contains only 7 lines of _real_ business logic.
 The rest is all ceremony!
 So how can we reduce the ceremony?
 
@@ -116,7 +119,7 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
-...to *this*.
+...to _this_.
 
 Let's make the business logic stand out again.
 
@@ -149,14 +152,13 @@ String apply(Effect effect) {
 note:
 We're down to 19 lines of code.
 
-
-And still, it doesn't feel very elegant. 
+And still, it doesn't feel very elegant.
 Still 12 lines of code are dedicated to ceremony.
-And I don't like the repetition of else-if's. 
+And I don't like the repetition of else-if's.
 
 We're dealing with an equality test with multiple options here.
 A better option than if-else would be `switch`, of course.
-Although the `switch`-statement is currently very limited: it can only take numbers, strings and enum. 
+Although the `switch`-statement is currently very limited: it can only take numbers, strings and enum.
 But hang on: the `instanceof` keyword was extended to take type patterns in JEP 305; why can't we generalize the `switch` statement to take type patterns, too?
 
 ---
@@ -264,37 +266,41 @@ That is much better!
 ---
 
 <!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ![music-store-phase-4](diagrams/music-store-phase-4.puml.png "Music store class diagram")
 
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
 
 note:
-Q: 
-* Why didn't we use the type system, by implementing the `apply()` method?
+Q:
 
-A: 
-* We could have done that, but that approach has no need for pattern matching.
-* On top of that: what if we wanted to add an operation that has no meaning for the entire effect loop?
+- Why didn't we use the type system, by implementing the `apply()` method?
+
+A:
+
+- We could have done that, but that approach has no need for pattern matching.
+- On top of that: what if we wanted to add an operation that has no meaning for the entire effect loop?
 
 ---
 
 ### Sensible operations to the effect loop
 
-* `apply()`
-* `setVolume(int volume)`
-* `contains(Effect... effect)`
+- `apply()`
+- `setVolume(int volume)`
+- `contains(Effect... effect)`
 
 ---
 
 ### Nonsensical operations to the effect loop
 
-* `isTunerActive()`
-* `isDelayTimeEqualToReverbRoomSize()`
-* `isToneSuitableToPlayPrideInTheNameOfLove()`
+- `isTunerActive()`
+- `isDelayTimeEqualToReverbRoomSize()`
+- `isToneSuitableToPlayPrideInTheNameOfLove()`
 
 note:
-* This category of operations is nonsensical to a lot of Effect implementations.
-* Adding methods to the Effect interface would just pollute the API.
+
+- This category of operations is nonsensical to a lot of Effect implementations.
+- Adding methods to the Effect interface would just pollute the API.
 
 ---
 
@@ -311,7 +317,7 @@ class IsTunerActiveVisitor implements EffectVisitor<Boolean> {
     public Boolean visit(Tuner effect) {
         return !effect.isInTune();
     }
-    
+
     public Boolean visit(Delay effect) { return false; }
     public Boolean visit(Reverb effect) { return false; }
     // ...
@@ -322,10 +328,10 @@ note:
 
 Typically the visitor pattern is used in cases like this to separate traversal of a data structure from the data structure definition itself.
 
-* quite verbose
-* box primitives
-* intrusive: each Effect implementation needs an `accept` method for each Visitor it accepts
-* elements we're traversing need a common supertype.
+- quite verbose
+- box primitives
+- intrusive: each Effect implementation needs an `accept` method for each Visitor it accepts
+- elements we're traversing need a common supertype.
 
 ---
 
@@ -377,11 +383,11 @@ So this method would make a lot more sense if it was `static`.
 
 ## Benefits of pattern matching
 
-* No need for the Visitor pattern or a common supertype
-* A single expression instead of many assignments
-* Less error-prone (in adding cases)
-* More concise
-* Safer - the compiler can check for missing cases
+- No need for the Visitor pattern or a common supertype
+- A single expression instead of many assignments
+- Less error-prone (in adding cases)
+- More concise
+- Safer - the compiler can check for missing cases
 
 ---
 
@@ -409,10 +415,10 @@ static String apply(Effect effect) {
 
 ## Demo
 
-* What if `effect` is `null`?
-  * Solution #1: defensive testing
-  * Solution #2: integrate null check in switch
-  * Solution #3: combining case labels
+- What if `effect` is `null`?
+  - Solution #1: defensive testing
+  - Solution #2: integrate null check in switch
+  - Solution #3: combining case labels
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
@@ -441,12 +447,12 @@ However, it will be able to combine them, just as any other two case labels can 
 
 ## Demo
 
-* Guarded patterns
+- Guarded patterns
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-A *guarded pattern* is the combination of a pattern and a boolean expression.
+A _guarded pattern_ is the combination of a pattern and a boolean expression.
 This boolean expression must additionally be true in order for the guarded pattern to match.
 We can use guarded patterns to further refine a matched pattern by applying a boolean expression.
 
@@ -516,6 +522,53 @@ We would have to use a good old switch statement instead of a switch expression.
 
 ---
 
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="opacity:0.4;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr>
+            <td> guarded pattern </td>  
+            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+        <!-- <tr>
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr> -->
+        <!-- <tr>
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr> -->
+        <!-- <tr>
+            <td> any pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+        <!-- <tr>
+            <td> array pattern </td>
+            <td><code>_</code></td>
+        </tr> -->
+        <!-- <tr>
+            <td> record pattern </td>
+            <td><code>EffectLoop(var name, <br> var volume, <br> var effect, <br> ...)</code></td>
+        </tr> -->
+    </tbody>
+</table>
+
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+---
+
 ## Feature Status
 
 <table style="font-size: 100%">
@@ -545,6 +598,7 @@ We would have to use a good old switch statement instead of a switch expression.
 ---
 
 <!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 ## Why so serious?
 
 <ul>
@@ -565,5 +619,5 @@ Yes, it does. And it has been considered by the language designers.
 _Type switching_ is a proposed mechanism that enables case labels to specify types as well as constants.
 Sounds useful, right?
 But... it is suited for `switch` statements only.
-Whereas *pattern matching* can do the same, **and** be useful for more language concepts.
+Whereas _pattern matching_ can do the same, **and** be useful for more language concepts.
 Such as deconstruction!
