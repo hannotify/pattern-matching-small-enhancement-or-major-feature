@@ -33,7 +33,7 @@ And that is why I think pattern matching is not a Small Enhancement, but a Major
 
 <h2>Thank you! 😀</h2>
 <br />
-<table style="font-size: 75%">
+<table style="font-size: 90%">
 <tr>
         <td style="text-align: right; vertical-align: middle;" width="20%"><img width="20%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>

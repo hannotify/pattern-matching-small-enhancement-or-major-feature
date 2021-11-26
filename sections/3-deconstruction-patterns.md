@@ -276,7 +276,7 @@ Guitar telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType
 var telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
 </code></pre>
 
-<https://openjdk.java.net/jeps/286> <!-- .element: class="attribution" -->
+<small><a href="https://openjdk.java.net/jeps/286">https://openjdk.java.net/jeps/286</a>
 
 note:
 Do you remember 'Local-Variable Type Inference' that became available in Java 10?
@@ -532,7 +532,10 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
     </tbody>
 </table>
 
-<https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
+<br/>
+<small>
+<a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html</a>
+</small>
 
 note:
 

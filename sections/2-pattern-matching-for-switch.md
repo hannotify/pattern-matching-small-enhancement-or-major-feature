@@ -573,8 +573,6 @@ We would have to use a good old switch statement instead of a switch expression.
     </tbody>
 </table>
 
-<https://openjdk.java.net/jeps/420> <!-- .element: class="attribution" -->
-
 ---
 
 <!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->

@@ -1,7 +1,7 @@
 <h1>Pattern Matching</h1>
-<h4>Small Enhancement or Major Feature?</h4>
+<h3>Small Enhancement or Major Feature?</h3>
 
-<table style="font-size: 70%">
+<table style="font-size: 90%">
     <tr>
         <td style="vertical-align: middle; padding: 0em 0em 0em 0em; text-align: right; border-bottom: none;">Hanno Embregts</td>
         <td style="text-align: right; padding: 0em 0.5em 0em 0em; border-bottom: none;"><img width="10%" data-src="img/icons/twitter-white.png" class="no-background" style="vertical-align: middle; "/></td>
@@ -13,7 +13,7 @@
     <tr>
     </tr>
 </table>
-<img data-src="img/logos/info-support-blue.png" width="20%" class="no-background"/>
+<img data-src="img/logos/info-support-blue.png" width="30%" class="no-background"/>
 <br/>
 
 note:

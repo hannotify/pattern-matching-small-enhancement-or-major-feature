@@ -32,7 +32,10 @@ __let Reverb(String name, int roomSize) = reverb;
 // do something with name & roomSize
 </code></pre>
 
-<https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
+<br/>
+<small>
+<a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html</a>
+</small>
 
 note:
 A pattern binding statement destructures a target using a pattern.
@@ -71,7 +74,11 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
     <li>Collection patterns</li>
 </ul>
 
-<https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->
+<br/>
+<br/>
+<small>
+<a href="https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html">https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html</a>
+</small>
 
 note:
 As you can see, the details are getting murkier by the minute.

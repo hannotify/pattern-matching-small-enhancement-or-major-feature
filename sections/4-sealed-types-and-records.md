@@ -125,7 +125,10 @@ static String apply(Effect effect) {
 }
 </code></pre>
 
-<https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html> <!-- .element: class="attribution" -->
+<br/>
+<small>
+<a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html</a>
+</small>
 
 note:
 Here no default case is needed; the compiler is already aware that all cases have been handled.
@@ -348,7 +351,6 @@ So we can try them out for the first time in Java 18.
     </tbody>
 </table>
 
-<https://openjdk.java.net/jeps/420> <!-- .element: class="attribution" -->
 
 ---
 

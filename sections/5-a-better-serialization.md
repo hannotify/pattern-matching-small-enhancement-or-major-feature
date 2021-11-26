@@ -223,7 +223,10 @@ So that you would be able to annotate multiple methods with these annotations to
     </tbody>
 </table>
 
-<https://cr.openjdk.java.net/~briangoetz/amber/serialization.html> <!-- .element: class="attribution" -->
+<br/>
+<small>
+<a href="https://cr.openjdk.java.net/~briangoetz/amber/serialization.html">https://cr.openjdk.java.net/~briangoetz/amber/serialization.html</a>
+</small>
 
 note:
 Well, I said 'in the future', but actually this entire feature is still very much in the future.
