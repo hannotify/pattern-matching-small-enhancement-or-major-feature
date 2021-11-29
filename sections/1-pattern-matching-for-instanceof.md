@@ -212,14 +212,12 @@ We'll use an `Amplifier` and an `EffectLoop`.
 ## Demo
 
 - Simplify implementation of `equals`
-- Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
 
 - **Guitar.java** Simplify implementation of `equals`
-- **AmplifierTest.java** Loop through a set of `Effect`s and apply 'pattern matching for instanceof'
 
 ---
 

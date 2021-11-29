@@ -1,8 +1,6 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
 
-## Deconstruction <!-- .element: class="stroke" -->
-
-# Patterns <!-- .element: class="stroke" -->
+# Deconstruction Patterns <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
@@ -13,7 +11,7 @@
 ## Disclaimer <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
-    We can't tell you when the following features are coming to Java.<br/>
+    We can't tell you when the following features are coming to Java.
     Also: syntax and implementation specifics may still change.
 </blockquote>
 
