@@ -3,6 +3,10 @@
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
+note:
+
+**Target time: 38m**
+
 ---
 
 <!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->

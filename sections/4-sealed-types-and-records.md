@@ -6,6 +6,10 @@
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
+note:
+
+**Target time: 28m**
+
 ---
 
 <!-- .slide: data-auto-animate" -->

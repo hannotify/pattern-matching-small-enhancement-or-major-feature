@@ -3,6 +3,10 @@
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
+note:
+
+**Target time: 39m**
+
 ---
 
 ### Pattern Kinds

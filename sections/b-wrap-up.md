@@ -3,6 +3,10 @@
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
+note:
+
+**Target time: 40m**
+
 ---
 
 ## Pattern matching...
@@ -27,7 +31,7 @@ Together with the related features of records and sealed classes, pattern matchi
 ## Major Feature <!-- .element: class="stroke" -->
 
 note:
-And that is why I think pattern matching is not a Small Enhancement, but a Major Feature.
+And that is why we think pattern matching is not a Small Enhancement, but a Major Feature.
 
 ---
 

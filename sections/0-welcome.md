@@ -36,6 +36,8 @@ A new feature in Java.
 
 note:
 
+**Target time: 0m**
+
 Hi, my name is Hanno. 
 I work at Info Support as an IT consultant.
 Also, I enjoy speaking at conferences and playing the guitar.

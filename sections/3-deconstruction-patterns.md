@@ -4,6 +4,10 @@
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
+note:
+
+**Target time: 18m**
+
 ---
 
 <!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->
