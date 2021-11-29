@@ -183,49 +183,6 @@ My guess is the language designers will use the feedback to this preview feature
 
 ---
 
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th> pattern </th>
-            <th><code>example</code></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="opacity:0.4;">
-            <td> type pattern </td>
-            <td><code>Guitar lesPaul</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> guarded pattern </td>  
-            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> deconstruction pattern </td>  
-            <td><code>Delay(int timeInMs)</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> var pattern </td>
-            <td><code>var timeInMs</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> any pattern </td>
-            <td><code>_</code></td>
-        </tr>
-        <tr>
-            <td> record pattern </td>
-            <td><code>record EffectLoop</code></td>
-        </tr>
-    </tbody>
-</table>
-
-<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
-
----
-
 <!-- .slide: data-auto-animate" -->
 
 ## Array patterns
@@ -276,10 +233,6 @@ So we can try them out for the first time in Java 18.
         <tr style="opacity:0.4;">
             <td> any pattern </td>
             <td><code>_</code></td>
-        </tr>
-              <tr style="opacity:0.4;">
-            <td> record pattern </td>
-            <td><code>record EffectLoop</code></td>
         </tr>
         <tr>
             <td> array pattern </td>

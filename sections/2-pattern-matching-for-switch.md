@@ -572,30 +572,3 @@ We would have to use a good old switch statement instead of a switch expression.
         </tr>
     </tbody>
 </table>
-
----
-
-<!-- .slide: data-background="img/background/joker.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-## Why so serious?
-
-<ul>
-    <li class="fragment"><em>Surely</em> a less invasive approach exists?</li>
-    <li class="fragment"><strong>Type switching</strong> has been considered.</li>
-    <li class="fragment">It enables case labels to specify types, as well as constants.</li>
-    <li class="fragment">But... it is suited for <code>switch</code> statements only.</li>
-    <li class="fragment">And pattern matching can be useful for more language concepts!</li>
-</ul>
-
-<https://pxhere.com/en/photo/835435> <!-- .element: class="attribution" -->
-
-note:
-But why such a serious, generic solution?
-"Gwhy... So... Seriousa?"
-Surely a less invasive approach exists?
-Yes, it does. And it has been considered by the language designers.
-_Type switching_ is a proposed mechanism that enables case labels to specify types as well as constants.
-Sounds useful, right?
-But... it is suited for `switch` statements only.
-Whereas _pattern matching_ can do the same, **and** be useful for more language concepts.
-Such as deconstruction!
