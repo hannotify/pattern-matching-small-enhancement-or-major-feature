@@ -39,13 +39,6 @@ And that is why we think pattern matching is not a Small Enhancement, but a Majo
 <br />
 <table style="font-size: 90%">
 <tr>
-        <td style="text-align: right; vertical-align: middle;" width="20%"><img width="20%"
-                data-src="img/icons/slide-deck.png" class="no-background" /></td>
-        <td style="vertical-align: middle;" colspan="2"><a
-                href="https://tinyurl.com/pattern-matching-info-support">tinyurl.com/pattern-matching-info-support</a>
-        </td>
-</tr>
-<tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%"
                 data-src="img/icons/github.png" class="no-background" /></td>
         <td style="vertical-align: middle;" colspan="2"><a 
@@ -66,3 +59,7 @@ And that is why we think pattern matching is not a Small Enhancement, but a Majo
         <td style="vertical-align: middle;"><a href="https://www.twitter.com/PeterWessels">@PeterWessels</a></td>
 </tr>
 </table>
+
+note:
+
+We will Tweet the slides!
