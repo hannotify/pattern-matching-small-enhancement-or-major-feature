@@ -37,7 +37,7 @@ And that is why we think pattern matching is not a Small Enhancement, but a Majo
 
 <h2>Thank you! 😀</h2>
 <br />
-<table style="font-size: 90%">
+<table>
 <tr>
         <td style="text-align: right; vertical-align: middle;"><img width="20%"
                 data-src="img/icons/github.png" class="no-background" /></td>

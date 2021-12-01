@@ -13,6 +13,7 @@
     <tr>
     </tr>
 </table>
+<br/>
 <img data-src="img/logos/info-support-blue.png" width="30%" class="no-background"/>
 <br/>
 
