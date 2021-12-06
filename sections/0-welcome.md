@@ -14,7 +14,7 @@
     </tr>
 </table>
 <br/>
-<img data-src="img/logos/info-support-blue.png" width="30%" class="no-background"/>
+<img data-src="img/logos/javazone.png" width="30%" class="no-background"/>
 <br/>
 
 note:
