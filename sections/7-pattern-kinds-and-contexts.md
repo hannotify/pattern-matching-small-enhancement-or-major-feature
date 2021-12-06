@@ -1,47 +1,11 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
-# Pattern Kinds and Contexts <!-- .element: class="stroke" -->
+# Pattern Contexts <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
 note:
 
 **Target time: 39m**
-
----
-
-### Pattern Kinds
-
-<table style="font-size: 70%">
-    <thead>
-        <tr>
-            <th>Pattern kind</th>
-            <th>Example</th>
-            <th>Purpose</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="fragment">
-            <td><em>type pattern</em></td>
-            <td><code>Guitar lesPaul</code></td>
-            <td>Perform an instanceof test, cast the target, and bind it to a pattern variable.</td>
-        </tr>
-        <tr class="fragment">
-            <td><em>deconstruction pattern</em></td>
-            <td><code>Delay(int timeInMs)</code></td>
-            <td>Perform an instanceof test, cast the target, destructure the target and recursively match the components to subpatterns.</td>
-        </tr>
-        <tr class="fragment">
-            <td><em>var pattern</em></td>
-            <td><code>var timeInMs</code></td>
-            <td>Match anything and bind its target.</td>
-        </tr>
-        <tr class="fragment">
-            <td><em>any pattern</em></td>
-            <td><code>_</code></td>
-            <td>Match anything, but bind nothing.</td>
-        </tr>
-    </tbody>
-</table>
 
 ---
 
