@@ -187,6 +187,24 @@ But patterns declare local variables "in the middle" of a statement or expressio
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+## Scoping
+
+**Pattern binding variable ('flow scoping')**
+
+- The set of places where it would definitely be assigned.
+
+<pre data-id="flow-scoping-animation"><code class="java" data-trim data-line-numbers>
+if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
+    // can use lesPaul here
+} else {
+    // can't use lesPaul here
+}
+</code></pre>
+
+---
+
 <!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.2" -->
 
 ![music-store-phase-2](diagrams/music-store-phase-2.puml.png "Music store class diagram")
