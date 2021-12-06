@@ -423,10 +423,13 @@ static String apply(Effect effect) {
   - Solution #1: defensive testing
   - Solution #2: integrate null check in switch
   - Solution #3: combining case labels
+- Guarded patterns
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
+
+# What if `effect` is `null`?
 
 Traditionally, switch statements and expressions throw NullPointerException if the selector expression evaluates to null, so if you wanted to prevent this, you had to test for null outside of the switch expression.
 
@@ -445,17 +448,8 @@ The `default` case will not be changed to include `null`, to maintain backwards 
 
 However, it will be able to combine them, just as any other two case labels can be combined.
 
----
+# Guarded patterns
 
-<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
-
-## Demo
-
-- Guarded patterns
-
-<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
-
-note:
 A _guarded pattern_ is the combination of a pattern and a boolean expression.
 This boolean expression must additionally be true in order for the guarded pattern to match.
 We can use guarded patterns to further refine a matched pattern by applying a boolean expression.
