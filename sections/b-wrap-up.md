@@ -14,15 +14,16 @@ note:
 * is a rich feature arc that will play out over several versions.
 * allows us to use type patterns in instanceof. <!-- .element: class="fragment" -->
 * improves switch expressions.<!-- .element: class="fragment" -->
-* makes destructuring objects as easy (and more similar to) constructing them.<!-- .element: class="fragment" -->
+* makes destructuring objects as easy as (and more similar to) constructing them.<!-- .element: class="fragment" -->
 * holds the potential to simplify and streamline much of the code we write today.<!-- .element: class="fragment" -->
 
 note:
 Pattern matching is a rich feature arc that will play out over several versions. 
 (slide) The first installment allows us to use type patterns in instanceof, which reduces the 
-ceremony of such code, but future installments will bring us (slide) patterns in switch, deconstruction patterns on records, and more, (slide) with the aim of making destructuring objects as easy as - and more structurally similar to - constructing them.
+ceremony of such code, and the second installment brought us (slide) patterns in switch. 
+Future installments will bring deconstruction patterns on records, and more, (slide) with the aim of making destructuring objects as easy as - and more similar to - constructing them.
 
-Together with the related features of records and sealed classes, pattern matching holds the potential to simplify and streamline much of the code we write today.
+Together with the related features of records and sealed classes (slide), pattern matching holds the potential to simplify and streamline much of the code we write today.
 
 ---
 
