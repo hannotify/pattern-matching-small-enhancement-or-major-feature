@@ -68,6 +68,8 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
 
 ---
 
+<!---.slide: data-visibility="hidden" -->
+
 ### Other ideas
 
 <ul>
@@ -91,8 +93,6 @@ Or to not be ever implemented at all.
 
 ---
 
-<!---.slide: data-visibility="hidden" -->
-
 ### Other ideas
 
 <ul>
@@ -101,7 +101,10 @@ Or to not be ever implemented at all.
     <li class="fragment">Collection patterns
 </ul>
 
-<https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html> <!-- .element: class="attribution" -->
+<br><br>
+<small>
+<a href="https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html">https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html</a>
+</small>
 
 note:
 As you can see, the details are getting murkier by the minute.
