@@ -159,6 +159,7 @@ Here no default case is needed; the compiler is already aware that all cases hav
 
 ---
 
+<!---.slide: data-visibility="hidden" -->
 <!-- .slide: data-auto-animate" -->
 
 ## Record patterns
@@ -195,14 +196,86 @@ My guess is the language designers will use the feedback to this preview feature
 record EffectLoop(String name, int volume, Effect... effects) { }
 </code></pre>
 
-<pre><code class="java" data-trim data-line-numbers>
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
 static String apply(EffectLoop effectLoop) {}
     return switch(effectLoop) {
         case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
-        case EffectLoop(var name, var volume, var effect) -> "Effect loop contains exactly one effect.";
-        case EffectLoop(var name, var volume, var effect, ...) -> "Effect loop contains more than one effect.";
-        case EffectLoop(var name, var volume, var effect1, var effect2) -> "Effect loop contains exactly two effects.";
-        case EffectLoop(var name, var volume, var effect1, var effect2, ...) -> "Effect loop contains more than two effects.";
+    } 
+}
+</code></pre>
+
+note:
+
+Array patterns are also part of JEP 406.
+So we can try them out for the first time in Java 18.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
+    } 
+}
+</code></pre>
+
+note:
+
+Array patterns are also part of JEP 406.
+So we can try them out for the first time in Java 18.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
+        case EffectLoop(_, _, var effect, ...) -> "Effect loop contains more than one effect.";
+    } 
+}
+</code></pre>
+
+note:
+
+Array patterns are also part of JEP 406.
+So we can try them out for the first time in Java 18.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
+        case EffectLoop(_, _, var effect, ...) -> "Effect loop contains more than one effect.";
+        case EffectLoop(_, _, var effect1, var effect2) -> "Effect loop contains exactly two effects.";
+        case EffectLoop(_, _, var effect1, var effect2, ...) -> "Effect loop contains more than two effects.";
     } 
 }
 </code></pre>
