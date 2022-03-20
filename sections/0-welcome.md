@@ -14,7 +14,7 @@
     </tr>
 </table>
 <br/>
-<img data-src="img/logos/javazone.png" width="15%" class="no-background"/>
+<img data-src="img/logos/voxxed-days-bucharest.png" width="50%" class="no-background"/>
 <br/>
 
 note:
