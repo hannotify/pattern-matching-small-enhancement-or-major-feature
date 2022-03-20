@@ -308,6 +308,7 @@ note:
 
 ---
 
+<!---.slide: data-visibility="hidden" -->
 ## Visitor pattern
 
 ```java
@@ -456,6 +457,7 @@ We can use guarded patterns to further refine a matched pattern by applying a bo
 
 ---
 
+<!---.slide: data-visibility="hidden" -->
 <!-- .slide: data-auto-animate" -->
 
 ### Guarded patterns
