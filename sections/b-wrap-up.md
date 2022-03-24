@@ -64,3 +64,5 @@ And that is why we think pattern matching is not a Small Enhancement, but a Majo
 note:
 
 We will Tweet the slides!
+
+**Vergeet niet jezelf te muten bij vragen!**
