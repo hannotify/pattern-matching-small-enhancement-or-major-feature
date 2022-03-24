@@ -371,7 +371,7 @@ static String apply(Effect effect) {
 
 note:
 Another use case for any patterns is optimization of a specific case branch.
-To demonstate this, let's return to our switch expression example.
+To demonstrate this, let's return to our switch expression example.
 Now the EffectLoop branch could be quite performance heavy, because of the recursive call.
 So if we could avoid executing it when it is not needed, we would.
 
