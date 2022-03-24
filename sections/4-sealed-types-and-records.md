@@ -8,69 +8,7 @@
 
 note:
 
-**Target time: 28m**
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Completeness on pattern switch expressions
-
-<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
-static String apply(Object object) {
-    return switch(object) {
-        case Effect e -> e.apply();
-        case String s -> String.format("Tried to apply a String: %s", s);
-        case Number n -> String.format("Tried to apply a Number: %d", n);
-    };
-}
-</code></pre>
-
-note:
-If we would try to overload the `apply()` method to handle all object types, we would run into compiler errors.
-Because JEP 406 will introduce completeness checks for all switch expressions or statements that don't use the legacy types.
-(char, byte, short, int, boxed variants, String, enum types).
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Completeness on pattern switch expressions
-
-<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers="2">
-static String apply(Object object) {
-    return switch(object) { // Won't compile - incomplete!
-        case Effect e -> e.apply();
-        case String s -> String.format("Tried to apply a String: %s", s);
-        case Number n -> String.format("Tried to apply a Number: %d", n);
-    };
-}
-</code></pre>
-
-note:
-If we would try to overload the `apply()` method to handle all object types, we would run into compiler errors.
-Because JEP 406 will introduce completeness checks for all switch expressions or statements that don't use the legacy types.
-(char, byte, short, int, boxed variants, String, enum types).
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Completeness on pattern switch expressions
-
-<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers="6">
-static String apply(Object object) {
-    return switch(object) { 
-        case Effect e -> e.apply();
-        case String s -> String.format("Tried to apply a String: %s", s);
-        case Number n -> String.format("Tried to apply a Number: %d", n);
-        default       -> String.format("Tried to apply an Object: %s", object);
-    };
-}
-</code></pre>
-
-note:
-In most of the cases this is easily solved by providing a default case.
+**Target time: 24m**
 
 ---
 
@@ -375,7 +313,7 @@ So we can try them out for the first time in Java 18.
         </tr>
         <tr>
             <td><strong>18</strong></td>
-            <td>Second preview <br/><small>(proposed to target)</small></td>
+            <td>Second preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
         </tr>
     </tbody>

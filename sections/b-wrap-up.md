@@ -5,7 +5,7 @@
 
 note:
 
-**Target time: 40m**
+**Target time: 35m**
 
 ---
 
@@ -13,7 +13,7 @@ note:
 
 * is a rich feature arc that will play out over several versions.
 * allows us to use type patterns in instanceof. <!-- .element: class="fragment" -->
-* improves switch expressions.<!-- .element: class="fragment" -->
+* improves switch expressions. <!-- .element: class="fragment" -->
 * makes destructuring objects as easy as (and more similar to) constructing them.<!-- .element: class="fragment" -->
 * holds the potential to simplify and streamline much of the code we write today.<!-- .element: class="fragment" -->
 

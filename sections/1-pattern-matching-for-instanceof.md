@@ -167,6 +167,21 @@ It is not a new concept, a lot of programming languages support pattern matching
 
 ---
 
+
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
+## Demo
+
+- Simplify implementation of `equals`
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
+
+- **Guitar.java** Simplify implementation of `equals`
+
+---
+
 ## Declaring 'in the middle'
 
 <pre><code class="java" data-trim data-line-numbers>
@@ -202,44 +217,6 @@ if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
     // can't use lesPaul here
 }
 </code></pre>
-
----
-
-<!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.2" -->
-
-![music-store-phase-2](diagrams/music-store-phase-2.puml.png "Music store class diagram")
-
-<https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
-
-note:
-
-Let's introduce some more classes from the local music store.
-
----
-
-<!-- .slide: data-background="img/background/marshall-amplifier.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-![music-store-phase-3](diagrams/music-store-phase-3.puml.png "Music store class diagram")
-
-<https://pxhere.com/en/photo/853260> <!-- .element: class="attribution" -->
-
-note:
-Let's connect `Guitar` with the effects.
-We'll use an `Amplifier` and an `EffectLoop`.
-
----
-
-<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
-
-## Demo
-
-- Simplify implementation of `equals`
-
-<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
-
-note:
-
-- **Guitar.java** Simplify implementation of `equals`
 
 ---
 

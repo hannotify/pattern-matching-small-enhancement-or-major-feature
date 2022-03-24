@@ -8,7 +8,31 @@
 
 note:
 
-**Target time: 9m**
+**Target time: 8m**
+
+---
+
+<!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.2" -->
+
+![music-store-phase-2](diagrams/music-store-phase-2.puml.png "Music store class diagram")
+
+<https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
+
+note:
+
+Let's introduce some more classes from the local music store.
+
+---
+
+<!-- .slide: data-background="img/background/marshall-amplifier.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+![music-store-phase-3](diagrams/music-store-phase-3.puml.png "Music store class diagram")
+
+<https://pxhere.com/en/photo/853260> <!-- .element: class="attribution" -->
+
+note:
+Let's connect `Guitar` with the effects.
+We'll use an `Amplifier` and an `EffectLoop`.
 
 ---
 
@@ -396,13 +420,14 @@ So this method would make a lot more sense if it was `static`.
 
 ---
 
+
 <!-- .slide: data-auto-animate" -->
 
 ### But what if `effect` is `null`?
 
-<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers>
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="2">
 static String apply(Effect effect) {
-    return switch(effect) {
+    return switch(effect) { // throws NullPointerException!
         case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
         case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
         case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
@@ -414,40 +439,43 @@ static String apply(Effect effect) {
 }
 </code></pre>
 
+note:
+Traditionally, switch statements and expressions throw NullPointerException if the selector expression evaluates to null, so if you wanted to prevent this, you had to test for null outside of the switch expression.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Combining case labels
+
+<pre data-id="null-in-switch"><code class="java" data-trim data-line-numbers="9">
+static String apply(Effect effect) {
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Reverb re     -> String.format("Reverb active of type %s and roomSize %d.", re.getName(), re.getRoomSize());
+        case Overdrive ov  -> String.format("Overdrive active with gain %d.", ov.getGain());
+        case Tremolo tr    -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu      -> String.format("Tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        case null, default -> String.format("Unknown or malfunctioning effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+However, it will be able to combine them, just as any other two case labels can be combined.
+
 ---
 
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 
 ## Demo
 
-- What if `effect` is `null`?
-  - Solution #1: defensive testing
-  - Solution #2: integrate null check in switch
-  - Solution #3: combining case labels
 - Guarded patterns
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
 note:
-
-# What if `effect` is `null`?
-
-Traditionally, switch statements and expressions throw NullPointerException if the selector expression evaluates to null, so if you wanted to prevent this, you had to test for null outside of the switch expression.
-
-## Solution #1: defensive testing
-
-Doesn't feel right. We now have to repeat the 'return' keyword. :(
-Also, it take a while to grasp why the null case is handled separately.
-
-## Solution #2: integrate null check in switch
-
-This makes me feel all warm and fuzzy inside. Great stuff!
-Note that if you would forget to add the `null` case, the code would still throw a `NullPointerException`.
-The `default` case will not be changed to include `null`, to maintain backwards compatibility.
-
-## Solution #3: combining case labels
-
-However, it will be able to combine them, just as any other two case labels can be combined.
 
 # Guarded patterns
 
@@ -457,8 +485,7 @@ We can use guarded patterns to further refine a matched pattern by applying a bo
 
 ---
 
-<!---.slide: data-visibility="hidden" -->
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate" data-visibility="hidden" -->
 
 ### Guarded patterns
 
@@ -478,7 +505,7 @@ note:
 
 ---
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ### Guarded patterns
 
@@ -501,7 +528,7 @@ One of the main reasons for Java to start supporting guarded patterns is to prev
 
 ---
 
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ### Guarded patterns
 
@@ -567,7 +594,7 @@ We would have to use a good old switch statement instead of a switch expression.
         </tr>
         <tr>
             <td><strong>18</strong></td>
-            <td>Second preview <br/><small>(proposed to target)</small></td>
+            <td>Second preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
         </tr>
     </tbody>
