@@ -119,10 +119,9 @@ static String switchOn(Amplifier amplifier) {}
 
 note:
 
-Record patterns are also part of JEP 406.
+Record patterns are part of JEP 405.
 It will be the first installment of Java's support for deconstruction patterns.
-When this JEP becomes available (preview in Java 18) it will be restricted to record classes only.
-My guess is the language designers will use the feedback to this preview feature to further shape full support of deconstruction patterns.
+It is currently not known when it will become available.
 
 ---
 
@@ -144,8 +143,6 @@ static String apply(EffectLoop effectLoop) {}
 
 note:
 
-Array patterns are also part of JEP 406.
-So we can try them out for the first time in Java 18.
 
 ---
 
@@ -168,8 +165,6 @@ static String apply(EffectLoop effectLoop) {}
 
 note:
 
-Array patterns are also part of JEP 406.
-So we can try them out for the first time in Java 18.
 
 ---
 
@@ -192,9 +187,6 @@ static String apply(EffectLoop effectLoop) {}
 </code></pre>
 
 note:
-
-Array patterns are also part of JEP 406.
-So we can try them out for the first time in Java 18.
 
 ---
 
@@ -219,9 +211,6 @@ static String apply(EffectLoop effectLoop) {}
 </code></pre>
 
 note:
-
-Array patterns are also part of JEP 406.
-So we can try them out for the first time in Java 18.
 
 ---
 
@@ -324,7 +313,7 @@ So we can try them out for the first time in Java 18.
 
 ## Feature Status
 
-### Record & Array Patterns
+### Record Patterns
 
 <table style="font-size: 100%">
     <thead>
@@ -342,3 +331,7 @@ So we can try them out for the first time in Java 18.
         </tr>
     </tbody>
 </table>
+
+note:
+
+Array patterns are not part of any JEP yet.

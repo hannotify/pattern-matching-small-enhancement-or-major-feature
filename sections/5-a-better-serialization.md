@@ -127,12 +127,11 @@ public class EffectLoop implements Effect {
         this.effects = new HashSet&lt;&gt;();
     }
 
-    public static Effectloop deserialize(String name, Effect[] effects) {
-        EffectLoop effectLoop = new EffectLoop(name);
+    public EffectLoop(String name, Effect[] effects) {
+        this(name);
         for (Effect effect : effects) {
             this.effects.add(effect);
         }
-        return effectLoop;
     }
 
     public pattern EffectLoop(String name, Effect[] effects) {
@@ -164,8 +163,8 @@ public class EffectLoop implements Effect {
     }
 
     @Deserializer
-    public static EffectLoop deserialize(String name, Effect[] effects) {
-        EffectLoop effectLoop = new EffectLoop(name);
+    public EffectLoop(String name, Effect[] effects) {
+        this(name);
         for (Effect effect : effects) {
             this.effects.add(effect);
         }
