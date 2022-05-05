@@ -14,7 +14,7 @@
     </tr>
 </table>
 <br/>
-<img data-src="img/logos/voxxed-days-bucharest.png" width="50%" class="no-background"/>
+<img data-src="img/logos/devoxx-uk.png" width="40%" class="no-background"/>
 <br/>
 
 note:
