@@ -538,5 +538,4 @@ note:
 It is impossible to put a release version on deconstruction patterns as a whole.
 It will probably be delivered in parts.
 The first part will add support for record patterns only.
-It will actually be in 'Preview' status in Java 18.
-But more on record patterns a bit later!
+It will probably be in 'Preview' status in Java 19.

@@ -121,7 +121,7 @@ note:
 
 Record patterns are part of JEP 405.
 It will be the first installment of Java's support for deconstruction patterns.
-It is currently not known when it will become available.
+It will probably be in preview in Java 19.
 
 ---
 
@@ -339,4 +339,5 @@ note:
 
 note:
 
+Record patterns will probably be in preview in Java 19, though this has not been confirmed yet.
 Array patterns are not part of any JEP yet.
