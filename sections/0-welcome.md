@@ -36,8 +36,6 @@ A new feature in Java.
 
 note:
 
-**Target time: 0m**
-
 Hi, my name is Hanno.
 I work at Info Support as an IT consultant.
 Also, I enjoy speaking at conferences and playing the guitar.
@@ -49,10 +47,12 @@ Also both at the same time.
 
 note:
 
-**Target time: 0m**
-
 Hi, my name is Peter.
 I work at Info Support as an IT consultant.
+
+Before diving into the very interesting subject of Pattern Matching, I'm curious to hear:
+
+"What Java version do you run in production?"
 
 ---
 
