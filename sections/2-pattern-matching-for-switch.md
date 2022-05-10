@@ -485,7 +485,7 @@ We can use guarded patterns to further refine a matched pattern by applying a bo
 
 ---
 
-<!-- .slide: data-auto-animate" data-visibility="hidden" -->
+<!-- .slide: data-auto-animate" -->
 
 ### Guarded patterns
 
@@ -505,7 +505,7 @@ note:
 
 ---
 
-<!-- .slide: data-auto-animate data-visibility="hidden" -->
+<!-- .slide: data-auto-animate -->
 
 ### Guarded patterns
 
@@ -528,9 +528,29 @@ One of the main reasons for Java to start supporting guarded patterns is to prev
 
 ---
 
-<!-- .slide: data-auto-animate data-visibility="hidden" -->
+<!-- .slide: data-auto-animate -->
 
-### Guarded patterns
+### ~~Guarded patterns~~ When clauses
+
+<pre data-id="guards-animation"><code class="java" data-trim data-line-numbers="5">
+String apply(Effect effect, Guitar guitar) {
+    return switch(effect) {
+        // (...)
+        case Tremolo tr -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
+        case Tuner tu when !tu.isInTune(guitar) -> String.format("Guitar is in need of tuning - tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
+        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
+        default -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### When clauses
 
 <pre data-id="overloaded-guards-animation"><code class="java" data-trim data-line-numbers>
 switch(effect) {
@@ -573,6 +593,34 @@ We would have to use a good old switch statement instead of a switch expression.
 </table>
 
 <https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+---
+
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="opacity:0.4;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr>
+            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
 
 ---
 

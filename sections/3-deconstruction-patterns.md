@@ -256,8 +256,8 @@ Go figure!
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr style="opacity:0.4;">
-            <td> guarded pattern </td>  
-            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
         <tr>
             <td> deconstruction pattern </td>  
@@ -452,8 +452,8 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr style="opacity:0.4;">
-            <td> guarded pattern </td>  
-            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
         <tr style="opacity:0.4;">
             <td> deconstruction pattern </td>  
@@ -487,8 +487,8 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr style="opacity:0.4;">
-            <td> guarded pattern </td>  
-            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
+            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
         <tr style="opacity:0.4;">
             <td> deconstruction pattern </td>  
