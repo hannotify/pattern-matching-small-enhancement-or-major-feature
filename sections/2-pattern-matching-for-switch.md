@@ -597,5 +597,10 @@ We would have to use a good old switch statement instead of a switch expression.
             <td>Second preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
         </tr>
+        <tr>
+            <td><strong>19</strong></td>
+            <td>Third preview <br/></td>
+            <td><a href="https://openjdk.java.net/jeps/427">JEP 427</a></td>
+        </tr>        
     </tbody>
 </table>

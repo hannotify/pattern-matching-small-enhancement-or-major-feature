@@ -8,6 +8,8 @@ note:
 
 **Target time: 16m**
 
+**Switch keyboard layout naar Qwerty Hanno!!**
+
 ---
 
 <!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->
