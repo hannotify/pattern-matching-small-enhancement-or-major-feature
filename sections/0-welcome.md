@@ -14,7 +14,7 @@
     </tr>
 </table>
 <br/>
-<img data-src="img/logos/devoxx-uk.png" width="40%" class="no-background"/>
+<img data-src="img/logos/developer-week.png" width="70%" class="no-background"/>
 <br/>
 
 note:
