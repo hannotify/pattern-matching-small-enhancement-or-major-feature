@@ -135,6 +135,19 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
+Well, we want to see that in action!
+
+---
+
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
+## Demo
+
+- Deconstruction with Records
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
 Now, if we add a pattern definition to every implementor of the Effect interface...
 
 ---
