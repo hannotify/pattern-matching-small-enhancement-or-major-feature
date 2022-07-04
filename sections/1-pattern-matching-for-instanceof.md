@@ -167,7 +167,6 @@ It is not a new concept, a lot of programming languages support pattern matching
 
 ---
 
-
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 
 ## Demo
@@ -251,6 +250,8 @@ if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
 ---
 
 ## Feature Status
+
+### Type Patterns
 
 <table style="font-size: 100%">
     <thead>

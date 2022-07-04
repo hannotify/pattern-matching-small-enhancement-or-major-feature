@@ -333,6 +333,7 @@ note:
 ---
 
 <!---.slide: data-visibility="hidden" -->
+
 ## Visitor pattern
 
 ```java
@@ -419,7 +420,6 @@ So this method would make a lot more sense if it was `static`.
 - Safer - the compiler can check for missing cases
 
 ---
-
 
 <!-- .slide: data-auto-animate" -->
 
@@ -621,10 +621,11 @@ We would have to use a good old switch statement instead of a switch expression.
 
 <https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
 
-
 ---
 
 ## Feature Status
+
+### Guarded Patterns
 
 <table style="font-size: 100%">
     <thead>
