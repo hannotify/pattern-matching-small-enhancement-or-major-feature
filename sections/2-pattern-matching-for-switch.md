@@ -8,7 +8,7 @@
 
 note:
 
-**Target time: 10m**
+**Target time: 11m**
 
 ---
 
@@ -530,7 +530,7 @@ One of the main reasons for Java to start supporting guarded patterns is to prev
 
 <!-- .slide: data-auto-animate -->
 
-### ~~Guarded patterns~~ When clauses
+### Guarded patterns
 
 <pre data-id="guards-animation"><code class="java" data-trim data-line-numbers="5">
 String apply(Effect effect, Guitar guitar) {
@@ -550,7 +550,7 @@ note:
 
 <!-- .slide: data-auto-animate -->
 
-### When clauses
+### Guarded patterns
 
 <pre data-id="overloaded-guards-animation"><code class="java" data-trim data-line-numbers>
 switch(effect) {
