@@ -613,7 +613,7 @@ We would have to use a good old switch statement instead of a switch expression.
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr>
-            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td>guarded pattern</td>  
             <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
     </tbody>

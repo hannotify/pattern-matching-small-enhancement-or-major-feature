@@ -269,7 +269,7 @@ Go figure!
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr style="opacity:0.4;">
-            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td> guarded pattern </td>  
             <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
         <tr>
@@ -465,7 +465,7 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr style="opacity:0.4;">
-            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td> guarded pattern </td>  
             <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
         <tr style="opacity:0.4;">
@@ -500,7 +500,7 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td><code>Guitar lesPaul</code></td>
         </tr>
         <tr style="opacity:0.4;">
-            <td><strike> guarded pattern </strike><br/> when clause</td>  
+            <td> guarded pattern </td>  
             <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
         </tr>
         <tr style="opacity:0.4;">
