@@ -330,7 +330,7 @@ note:
     </thead>
     <tbody>
         <tr>
-            <td><strong>n/a</strong></td>
+            <td><strong>19</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
@@ -339,5 +339,5 @@ note:
 
 note:
 
-Record patterns will probably be in preview in Java 19, though this has not been confirmed yet.
+Record patterns is available in 'preview' status in Java 19.
 Array patterns are not part of any JEP yet.

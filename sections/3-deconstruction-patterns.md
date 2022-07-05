@@ -534,21 +534,17 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
     </thead>
     <tbody>
         <tr>
-            <td><strong>n/a</strong></td>
-            <td>Exploratory document</td>
-            <td><a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">Pattern Matching for Java</a></td>
+            <td><strong>19</strong></td>
+            <td>Preview (composition of record and type patterns only)</td>
+            <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
     </tbody>
 </table>
 
-<br/>
-<small>
-<a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html</a>
-</small>
-
 note:
 
 It is impossible to put a release version on deconstruction patterns as a whole.
-It will probably be delivered in parts.
-The first part will add support for record patterns only.
-It will probably be in 'Preview' status in Java 19.
+Because it will be delivered in parts.
+The first part adds support for record and type patterns only.
+It is in 'Preview' status in Java 19.
+More on record patterns in a moment.
