@@ -186,7 +186,7 @@ Or do you enter once, get all the stuff you need and then exit?
 
 <!-- .slide: data-auto-animate" -->
 
-### Pattern composition
+### Can we combine patterns?
 
 <pre data-id="composition-animation"><code class="java" data-trim data-line-numbers>
 static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
@@ -195,11 +195,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 </code></pre>
 
 note:
-We can use patterns in conjunction with each other to achieve even more powerful matching logic.
-We call this 'Pattern Composition', and it boils down to _nesting_ patterns.
-
-Let's use an example to demonstrate this.
-Suppose we have an `EffectLoop` and we want to know whether it contains both a `Reverb` and a `Delay` with the same value for their properties.
+The previous pattern matches are fairly simple. However, can we combine these patterns to implement this method?
 
 ---
 
@@ -217,6 +213,14 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 </code></pre>
 
 note:
+Yes, we can!
+
+We can use patterns in conjunction with each other to achieve even more powerful matching logic.
+We call this 'Pattern Composition', and it boils down to _nesting_ patterns.
+
+Let's use an example to demonstrate this.
+Suppose we have an `EffectLoop` and we want to know whether it contains both a `Reverb` and a `Delay` with the same value for their properties.
+
 This is how easy the code could become if we use pattern composition!
 (explain how the composed pattern would be matched)
 
