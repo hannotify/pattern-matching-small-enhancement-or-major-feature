@@ -11,9 +11,19 @@ Container_Boundary(musicStore, "music-store") {
     Component(effect, "Effect", "Interface", "+apply()")
     Component(delay, "Delay", "Class", "-timeInMs: int")
     Component(reverb, "Reverb", "Class", "-roomSize: int")
+    Component(overdrive, "Overdrive", "Class", "-gain: int")
+    Component(tremolo, "Tremolo", "Class", "-depth:int\n-rate: int")
+    Component(tuner, "Tuner", "Class", "-pitchInHz: int\n+isInTune(Guitar)")
 
     delay -u-|> effect
     reverb -u-|> effect
+    overdrive --|> effect
+    tremolo --|> effect
+    tuner -l-|> effect
+
+    Lay_R(guitar, tremolo)
+    Lay_D(guitar, delay)
+    Lay_R(tremolo, overdrive)
 }
 
 @enduml

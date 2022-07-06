@@ -12,6 +12,19 @@ note:
 
 ---
 
+<!-- .slide: data-background="img/background/guitar-store-close-up.jpg" data-background-color="black" data-background-opacity="0.2" -->
+
+![music-store-phase-1](diagrams/music-store-phase-1.puml.png "Music store class diagram")
+
+<https://pxhere.com/en/photo/548063> <!-- .element: class="attribution" -->
+
+note:
+
+Remember our code example?
+We will now extend it for a bit.
+
+---
+
 <!-- .slide: data-background="img/background/stompboxes.jpg" data-background-color="black" data-background-opacity="0.2" -->
 
 ![music-store-phase-2](diagrams/music-store-phase-2.puml.png "Music store class diagram")
@@ -21,18 +34,7 @@ note:
 note:
 
 Let's introduce some more classes from the local music store.
-
----
-
-<!-- .slide: data-background="img/background/marshall-amplifier.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-![music-store-phase-3](diagrams/music-store-phase-3.puml.png "Music store class diagram")
-
-<https://pxhere.com/en/photo/853260> <!-- .element: class="attribution" -->
-
-note:
-Let's connect `Guitar` with the effects.
-We'll use an `Amplifier` and an `EffectLoop`.
+An `Effect` interface with a few implementations.
 
 ---
 
@@ -43,8 +45,8 @@ We'll use an `Amplifier` and an `EffectLoop`.
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
 
 note:
-Let's finalize the local music store code.
-By introducing all available effects.
+Let's continue by connecting `Guitar` to the effects.
+We'll use an `Amplifier` and an `EffectLoop`.
 
 ---
 
@@ -566,33 +568,6 @@ switch(effect) {
 note:
 This is how you would have to write it if no guarded patterns were available.
 We would have to use a good old switch statement instead of a switch expression.
-
----
-
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th> pattern </th>
-            <th><code>example</code></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="opacity:0.4;">
-            <td> type pattern </td>
-            <td><code>Guitar lesPaul</code></td>
-        </tr>
-        <tr>
-            <td> guarded pattern </td>  
-            <td><code>Tuner tu && <br> !tu.isInTune(guitar)</code></td>
-        </tr>
-    </tbody>
-</table>
-
-<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
 
 ---
 
