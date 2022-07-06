@@ -27,9 +27,6 @@ _Voorbereidingen_:
   - Slides
   - IntelliJ - code op juiste tag (`0-completed-preparations`)
 
-Welcome to this talk on Pattern Matching.
-A new feature in Java.
-
 ---
 
 <!-- .slide: data-background="img/background/hanno-guitar-devoxx.jpg" data-background-color="black" data-background-opacity="0.9" -->
