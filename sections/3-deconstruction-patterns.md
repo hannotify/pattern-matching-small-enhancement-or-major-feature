@@ -542,6 +542,11 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td>Preview (composition of record and type patterns only)</td>
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
+        <tr>
+            <td><strong>20</strong></td>
+            <td>Second preview (composition of record and type patterns only)</td>
+            <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
+        </tr>
     </tbody>
 </table>
 
