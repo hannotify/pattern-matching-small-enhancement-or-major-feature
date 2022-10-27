@@ -68,6 +68,95 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+    } 
+}
+</code></pre>
+
+note:
+
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
+    } 
+}
+</code></pre>
+
+note:
+
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
+        case EffectLoop(_, _, var effect, ...) -> "Effect loop contains more than one effect.";
+    } 
+}
+</code></pre>
+
+note:
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Array patterns
+
+<pre><code class="java" data-trim data-line-numbers>
+record EffectLoop(String name, int volume, Effect... effects) { }
+</code></pre>
+
+<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
+static String apply(EffectLoop effectLoop) {}
+    return switch(effectLoop) {
+        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
+        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
+        case EffectLoop(_, _, var effect, ...) -> "Effect loop contains more than one effect.";
+        case EffectLoop(_, _, var effect1, var effect2) -> "Effect loop contains exactly two effects.";
+        case EffectLoop(_, _, var effect1, var effect2, ...) -> "Effect loop contains more than two effects.";
+    } 
+}
+</code></pre>
+
+note:
+
+---
+
 <!---.slide: data-visibility="hidden" -->
 
 ### Other ideas

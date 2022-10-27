@@ -121,68 +121,23 @@ note:
 
 Record patterns are part of JEP 405.
 It will be the first installment of Java's support for deconstruction patterns.
-It will probably be in preview in Java 19.
+It is in preview in Java 19, second preview in Java 20
 
 ---
 
 <!-- .slide: data-auto-animate" -->
 
-## Array patterns
+## Patterns in enhanced for
 
 <pre><code class="java" data-trim data-line-numbers>
-record EffectLoop(String name, int volume, Effect... effects) { }
+record Delay(int timeInMs) implements Effect {}
 </code></pre>
 
-<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
-static String apply(EffectLoop effectLoop) {}
-    return switch(effectLoop) {
-        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
-    } 
-}
-</code></pre>
-
-note:
-
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-## Array patterns
-
-<pre><code class="java" data-trim data-line-numbers>
-record EffectLoop(String name, int volume, Effect... effects) { }
-</code></pre>
-
-<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
-static String apply(EffectLoop effectLoop) {}
-    return switch(effectLoop) {
-        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
-        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
-    } 
-}
-</code></pre>
-
-note:
-
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-## Array patterns
-
-<pre><code class="java" data-trim data-line-numbers>
-record EffectLoop(String name, int volume, Effect... effects) { }
-</code></pre>
-
-<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
-static String apply(EffectLoop effectLoop) {}
-    return switch(effectLoop) {
-        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
-        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
-        case EffectLoop(_, _, var effect, ...) -> "Effect loop contains more than one effect.";
-    } 
+<pre data-id="patterns-enhanced-for-animation"><code class="java" data-trim data-line-numbers>
+static void printDelays(List&lt;Delay&gt; delays) {
+    for (Delay delay : delays) {
+        System.out.println("Delay found with timeInMs=" + delay.timeInMs());
+    }
 }
 </code></pre>
 
@@ -192,25 +147,22 @@ note:
 
 <!-- .slide: data-auto-animate" -->
 
-## Array patterns
+## Patterns in enhanced for
 
 <pre><code class="java" data-trim data-line-numbers>
-record EffectLoop(String name, int volume, Effect... effects) { }
+record Delay(int timeInMs) implements Effect {}
 </code></pre>
 
-<pre data-id="array-pattern-animation"><code class="java" data-trim data-line-numbers>
-static String apply(EffectLoop effectLoop) {}
-    return switch(effectLoop) {
-        case EffectLoop(var name, var volume) -> "Effect loop contains no effects.";
-        case EffectLoop(_, _, var effect) -> "Effect loop contains exactly one effect.";
-        case EffectLoop(_, _, var effect, ...) -> "Effect loop contains more than one effect.";
-        case EffectLoop(_, _, var effect1, var effect2) -> "Effect loop contains exactly two effects.";
-        case EffectLoop(_, _, var effect1, var effect2, ...) -> "Effect loop contains more than two effects.";
-    } 
+<pre data-id="patterns-enhanced-for-animation"><code class="java" data-trim data-line-numbers>
+static void printDelays(List&lt;Delay&gt; delays) {
+    for (Delay(int timeInMs) : delays) {
+        System.out.println("Delay found with timeInMs=" + timeInMs);
+    }
 }
 </code></pre>
 
 note:
+This feature is planned for Java 20! (as part of JEP 432)
 
 ---
 
@@ -237,10 +189,6 @@ note:
         <tr style="opacity:0.4;">
             <td> any pattern </td>
             <td><code>_</code></td>
-        </tr>
-        <tr>
-            <td> array pattern </td>
-            <td><code>EffectLoop(var name, var effect, ...)</code></td>
         </tr>
     </tbody>
 </table>
@@ -334,10 +282,14 @@ note:
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
+        <tr>
+            <td><strong>20</strong></td>
+            <td>Second preview</td>
+            <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
+        </tr>
     </tbody>
 </table>
 
 note:
 
-Record patterns is available in 'preview' status in Java 19.
-Array patterns are not part of any JEP yet.
+Record patterns is available in 'preview' status in Java 19, 'second preview' in Java 20.
