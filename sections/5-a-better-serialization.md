@@ -1,15 +1,17 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 # A Better Serialization? <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
 note:
 
-**Target time: 43m**
+**Target time: 40m**
 
 ---
 
 <!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+
 ## Here be dragons! <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
@@ -17,7 +19,7 @@ note:
     They can change a <strong>lot</strong> in the meantime.
 </blockquote>
 
-<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" --> 
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
 
 note:
 This is like a disclaimer`++`.
@@ -28,11 +30,11 @@ This is like a disclaimer`++`.
 
 ### Deconstruction pattern
 
-* transforms an object into a set of typed fields
+- transforms an object into a set of typed fields
 
 ### Constructor
 
-* transforms a set of typed fields into an object
+- transforms a set of typed fields into an object
 
 note:
 
@@ -43,14 +45,14 @@ And this is an important observation when thinking about serialization.
 
 ## Serialization
 
-* very important feature
-* but many people hate its current implementation
+- very important feature
+- but many people hate its current implementation
 
 ### Drawbacks
 
-* it undermines the accessibility model <!-- .element: class="fragment" -->
-* serialization logic is not 'readable code' <!-- .element: class="fragment" -->
-* it bypasses constructors and data validation <!-- .element: class="fragment" -->
+- it undermines the accessibility model <!-- .element: class="fragment" -->
+- serialization logic is not 'readable code' <!-- .element: class="fragment" -->
+- it bypasses constructors and data validation <!-- .element: class="fragment" -->
 
 note:
 
@@ -58,9 +60,9 @@ Serialization is a very important feature; it helped Java gain popularity in the
 But many people really hate its current implementation.
 According to Java architect Brian Goetz: "even Gollum hates serialization".
 
-* it undermines the accessibility model (field scraping through reflection magic)
-* serialization logic is not 'readable code'
-* it bypasses constructors and data validation
+- it undermines the accessibility model (field scraping through reflection magic)
+- serialization logic is not 'readable code'
+- it bypasses constructors and data validation
 
 Not to worry!
 Using patterns could improve the situation dramatically.
@@ -108,7 +110,7 @@ public class EffectLoop implements Effect {
 
 note:
 
-We add a pattern definition to serialize our object. 
+We add a pattern definition to serialize our object.
 Let's assume that the serialized representation of an `EffectLoop` is a `String` and an `Effect` array.
 
 ---
@@ -184,9 +186,9 @@ And to make the intent of the code even more clear, we use annotations.
 
 We really improved on the drawbacks we indicated earlier!
 
-* the accessibility model is no longer undermined
-* serialization logic has become readable code!
-* it no longer bypasses constructors and data validation
+- the accessibility model is no longer undermined
+- serialization logic has become readable code!
+- it no longer bypasses constructors and data validation
 
 ---
 
@@ -200,7 +202,7 @@ We really improved on the drawbacks we indicated earlier!
 
 note:
 
-Of course, not *all* drawbacks are solved with this.
+Of course, not _all_ drawbacks are solved with this.
 How will you support multiple versions of one class, for example?
 Well, `@Serializer` and `@Deserializer` annotations could get a property `version` in the future.
 So that you would be able to annotate multiple methods with these annotations to support multiple versions.
@@ -233,4 +235,3 @@ So that you would be able to annotate multiple methods with these annotations to
 
 note:
 Well, I said 'in the future', but actually this entire feature is still very much in the future.
- 

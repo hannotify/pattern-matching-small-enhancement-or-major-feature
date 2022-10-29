@@ -8,7 +8,7 @@
 
 note:
 
-**Target time: 35m**
+**Target time: 32m**
 
 ---
 
@@ -260,7 +260,6 @@ This feature is planned for Java 20! (as part of JEP 432)
         </tr>           
     </tbody>
 </table>
-
 
 ---
 

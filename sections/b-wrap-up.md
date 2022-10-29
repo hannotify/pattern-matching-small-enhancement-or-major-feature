@@ -1,26 +1,27 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 # Wrap-up <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
 note:
 
-**Target time: 55m**
+**Target time: 49m**
 
 ---
 
 ## Pattern matching...
 
-* is a rich feature arc that will play out over several versions.
-* allows us to use type patterns in instanceof. <!-- .element: class="fragment" -->
-* improves switch expressions. <!-- .element: class="fragment" -->
-* makes destructuring objects as easy as (and more similar to) constructing them.<!-- .element: class="fragment" -->
-* holds the potential to simplify and streamline much of the code we write today.<!-- .element: class="fragment" -->
+- is a rich feature arc that will play out over several versions.
+- allows us to use type patterns in instanceof. <!-- .element: class="fragment" -->
+- improves switch expressions. <!-- .element: class="fragment" -->
+- makes destructuring objects as easy as (and more similar to) constructing them.<!-- .element: class="fragment" -->
+- holds the potential to simplify and streamline much of the code we write today.<!-- .element: class="fragment" -->
 
 note:
-Pattern matching is a rich feature arc that will play out over several versions. 
-(slide) The first installment allows us to use type patterns in instanceof, which reduces the 
-ceremony of such code, and the second installment brought us (slide) patterns in switch. 
+Pattern matching is a rich feature arc that will play out over several versions.
+(slide) The first installment allows us to use type patterns in instanceof, which reduces the
+ceremony of such code, and the second installment brought us (slide) patterns in switch.
 Future installments will bring deconstruction patterns on records, and more, (slide) with the aim of making destructuring objects as easy as - and more similar to - constructing them.
 
 Together with the related features of records and sealed classes (slide), pattern matching holds the potential to simplify and streamline much of the code we write today.

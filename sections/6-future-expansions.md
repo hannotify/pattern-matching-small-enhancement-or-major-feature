@@ -1,15 +1,17 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
 # Future Expansions <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
 note:
 
-**Target time: 47m**
+**Target time: 44m**
 
 ---
 
 <!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+
 ## Here be super dragons! <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
@@ -17,7 +19,7 @@ note:
     Proceed with caution!
 </blockquote>
 
-<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" --> 
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
 
 note:
 This is like a disclaimer`+++`.
@@ -43,9 +45,9 @@ __let Reverb(String name, int roomSize) = reverb;
 
 note:
 A pattern binding statement destructures a target using a pattern.
-Here, we assert that the pattern will match, so we destructure the target and bind its components to new variables. 
+Here, we assert that the pattern will match, so we destructure the target and bind its components to new variables.
 
-BTW - the "double underscore" syntax is a convention used by the Java language designers to suggest that the syntax is merely a placeholder, for purposes of exposition. 
+BTW - the "double underscore" syntax is a convention used by the Java language designers to suggest that the syntax is merely a placeholder, for purposes of exposition.
 So we can't be sure at all that `let` will be the actual keyword for pattern bind statements.
 
 ---
@@ -86,7 +88,6 @@ static String apply(EffectLoop effectLoop) {}
 
 note:
 
-
 ---
 
 <!-- .slide: data-auto-animate" -->
@@ -107,7 +108,6 @@ static String apply(EffectLoop effectLoop) {}
 </code></pre>
 
 note:
-
 
 ---
 
@@ -177,7 +177,7 @@ note:
 
 note:
 As you can see, the details are getting murkier by the minute.
-This is because these are **very new ideas** and are likely to change. 
+This is because these are **very new ideas** and are likely to change.
 Or to not be ever implemented at all.
 
 ---
@@ -197,5 +197,5 @@ Or to not be ever implemented at all.
 
 note:
 As you can see, the details are getting murkier by the minute.
-This is because these are **very new ideas** and are likely to change. 
+This is because these are **very new ideas** and are likely to change.
 Or to not be ever implemented at all.
