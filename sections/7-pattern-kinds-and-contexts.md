@@ -32,6 +32,11 @@ note:
             <td>Test if target matches one (or more) of the indicated patterns.</td>
         </tr>
         <tr class="fragment">
+            <td><em>enhanced for</em></td>
+            <td><code>for (Delay(int timeInMs) : delays) {}</code></td>
+            <td>Perform a iteration for each target that matches the indicated patterns.</td>
+        </tr>        
+        <tr class="fragment">
             <td><em>bind statement</em></td>
             <td><code>__let Reverb(var name, var roomSize) = reverb;</code></td>
             <td>Destructure a target using a pattern.</td>
