@@ -166,37 +166,6 @@ This feature is planned for Java 20! (as part of JEP 432)
 
 ---
 
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th> pattern </th>
-            <th><code>example</code></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="opacity:0.4;">
-            <td>..</td>
-            <td>..</td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> var pattern </td>
-            <td><code>var timeInMs</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> any pattern </td>
-            <td><code>_</code></td>
-        </tr>
-    </tbody>
-</table>
-
-<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
-
----
-
 ## Feature Status
 
 ### Sealed Types
