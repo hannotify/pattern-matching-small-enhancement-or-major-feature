@@ -34,7 +34,7 @@ note:
         <tr class="fragment">
             <td><em>enhanced for</em></td>
             <td><code>for (Delay(int timeInMs) : delays) {}</code></td>
-            <td>Perform a iteration for each target that matches the indicated patterns.</td>
+            <td>Perform a iteration for each target that matches the indicated pattern.</td>
         </tr>        
         <tr class="fragment">
             <td><em>bind statement</em></td>
