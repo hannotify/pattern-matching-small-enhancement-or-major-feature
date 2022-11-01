@@ -23,6 +23,12 @@ note:
 
 <https://pxhere.com/en/photo/1359311> <!-- .element: class="attribution" -->
 
+note:
+
+A lot of the stuff that follows is currently not yet possible in Java!
+But it paints a nice picture of how pattern matching might look in a few years time.
+We'll point out what specific parts currently ARE possible in the latest Java version.
+
 ---
 
 <!-- .slide: data-auto-animate" -->
@@ -250,13 +256,66 @@ note:
 A functional approach could look like this.
 (explain how it works)
 What a trainwreck, right?
-I first tried an imperative approach.
+We first tried an imperative approach.
 Well, it didn't even make the slide.
 Go figure!
 
 ---
 
-## Benefits
+### Var patterns
+
+<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
+// Pre-Java 10
+Guitar telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
+
+// Java 10
+var telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
+</code></pre>
+
+<small><a href="https://openjdk.java.net/jeps/286">https://openjdk.java.net/jeps/286</a>
+
+note:
+Do you remember 'Local-Variable Type Inference' that became available in Java 10?
+I really like to use this feature in places where you would otherwise repeat the type.
+Well, in the future you can do the same with patterns.
+You can use `var` instead of specifying an explicit type.
+
+---
+
+### Var patterns
+
+<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
+    if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
+        return timeInMs == roomSize;
+    }
+    return false;
+}
+</code></pre>
+
+note:
+Let's return to our pattern composition example and use a few var patterns.
+
+---
+
+### Var patterns
+
+<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers="2">
+static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
+    if (effectLoop instanceof EffectLoop(Delay(var timeInMs), Reverb(var name, var roomSize))) {
+        return timeInMs == roomSize;
+    }
+    return false;
+}
+</code></pre>
+
+note:
+
+When deconstruction patterns are fully available in Java in the furute, the compiler will be able to infer the needed types from the pattern definitions in the `Delay` and `Reverb` class.
+
+---
+
+## Benefits of deconstruction patterns
 
 <ul>
     <li>Better encapsulation<br/><small>a case branch only receives data that it actually references.</small>
@@ -296,6 +355,41 @@ Go figure!
 
 ---
 
+<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
+
+## It's a kind of Pattern <!-- .element: class="stroke" -->
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th> pattern </th>
+            <th><code>example</code></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="opacity:0.4;">
+            <td> type pattern </td>
+            <td><code>Guitar lesPaul</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> guarded pattern </td>  
+            <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
+        </tr>
+        <tr style="opacity:0.4;">
+            <td> deconstruction pattern </td>  
+            <td><code>Delay(int timeInMs)</code></td>
+        </tr>
+        <tr>
+            <td> var pattern </td>
+            <td><code>var timeInMs</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+---
+
 ## Feature Status
 
 ### Deconstruction patterns
@@ -311,12 +405,12 @@ Go figure!
     <tbody>
         <tr>
             <td><strong>19</strong></td>
-            <td>Preview (composition of record and type patterns only)</td>
+            <td>Preview (deconstruction with record patterns only)</td>
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
         <tr>
             <td><strong>20</strong></td>
-            <td>Second preview (composition of record and type patterns only)</td>
+            <td>Second preview (deconstruction with record patterns only)</td>
             <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
         </tr>
     </tbody>
@@ -324,8 +418,7 @@ Go figure!
 
 note:
 
-It is impossible to put a release version on deconstruction patterns as a whole.
-Because it will be delivered in parts.
-The first part adds support for record and type patterns only.
-It is in 'Preview' status in Java 19.
-More on record patterns in a moment.
+Eventually deconstruction will be available for all pattern kinds.
+But in the current Java version it's only supported for record patterns.
+The same holds true for using var patterns, they are currently only supported for records.
+We'll dive deeper into record patterns in a moment!

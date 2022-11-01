@@ -119,9 +119,8 @@ static String switchOn(Amplifier amplifier) {}
 
 note:
 
-Record patterns are part of JEP 405.
-It will be the first installment of Java's support for deconstruction patterns.
-It is in preview in Java 19, second preview in Java 20
+Like we said before records are the first Java construct that supports deconstruction.
+You can even deconstruct using a var pattern, as long as you apply it to records.
 
 ---
 
@@ -260,4 +259,5 @@ This feature is planned for Java 20! (as part of JEP 432)
 
 note:
 
-Record patterns is available in 'preview' status in Java 19, 'second preview' in Java 20.
+So to summarise: almost all pattern matching features are made available for records first.
+With the intent to extend the support to arbitrary classes later.

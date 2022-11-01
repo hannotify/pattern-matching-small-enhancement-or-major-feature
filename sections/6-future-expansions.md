@@ -10,59 +10,7 @@ note:
 
 ---
 
-<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
-
-## Here be super dragons! <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    We can't be sure that the following features will appear in Java as depicted, <strong>if at all</strong>.<br/>
-    Proceed with caution!
-</blockquote>
-
-<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
-
-note:
-This is like a disclaimer`+++`.
-
----
-
-### Var patterns
-
-<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
-// Pre-Java 10
-Guitar telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
-
-// Java 10
-var telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
-</code></pre>
-
-<small><a href="https://openjdk.java.net/jeps/286">https://openjdk.java.net/jeps/286</a>
-
-note:
-Do you remember 'Local-Variable Type Inference' that became available in Java 10?
-I really like to use this feature in places where you would otherwise repeat the type.
-Well, in the future you can do the same with patterns.
-You can use `var` instead of specifying an explicit type.
-
----
-
-### Var patterns
-
-<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
-static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
-    if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
-        return timeInMs == roomSize;
-    }
-    return false;
-}
-</code></pre>
-
-note:
-Let's return to our pattern composition example and use a few var patterns.
-
----
-
-### Var patterns
+### Unnamed patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers="2">
 static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
@@ -74,7 +22,11 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 </code></pre>
 
 note:
-The compiler can infer the needed types from the pattern definitions in the `Delay` and `Reverb` class.
+
+Let's start with an expansion that we think is in the near future. "Unnamed patterns"
+
+Remember our var pattern example?
+In this example the compiler can infer the needed types from the pattern definitions in the `Delay` and `Reverb` class.
 Although it seems a bit of a waste to map the `name` variable from the Reverb class.
 Because we don't do anything with it.
 In this case we could choose to apply an 'unnamed pattern'.
@@ -93,6 +45,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 </code></pre>
 
 note:
+
 So an 'unnamed pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the pattern definition.
 But there is a big difference: an unnamed pattern _doesn't bind a value to a variable_.
 That's why there is no variable name, and just an underscore character to denote the unnamed pattern.
@@ -196,47 +149,12 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
             <td> deconstruction pattern </td>  
             <td><code>Delay(int timeInMs)</code></td>
         </tr>
-        <tr>
-            <td> var pattern </td>
-            <td><code>var timeInMs</code></td>
-        </tr>
-    </tbody>
-</table>
-
-<https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
-
----
-
-<!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
-
-## It's a kind of Pattern <!-- .element: class="stroke" -->
-
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th> pattern </th>
-            <th><code>example</code></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="opacity:0.4;">
-            <td> type pattern </td>
-            <td><code>Guitar lesPaul</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> guarded pattern </td>  
-            <td><code>Tuner tu when <br> !tu.isInTune(guitar)</code></td>
-        </tr>
-        <tr style="opacity:0.4;">
-            <td> deconstruction pattern </td>  
-            <td><code>Delay(int timeInMs)</code></td>
-        </tr>
         <tr style="opacity:0.4;">
             <td> var pattern </td>
             <td><code>var timeInMs</code></td>
         </tr>
         <tr>
-            <td> any pattern </td>
+            <td> unnamed pattern </td>
             <td><code>_</code></td>
         </tr>
     </tbody>
@@ -267,8 +185,32 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
     </tbody>
 </table>
 
-
 <https://openjdk.org/jeps/8294349>
+
+note:
+
+Unnamed patterns are part of this particular JEP draft.
+This means it will probably become an official JEP in the near future.
+So chances are this feature will be targeted at one of the next Java releases.
+
+The JEP also contains support for unnamed variables, by the way.
+[TODO: hele JEP doorlezen en hier nog aanvullen]
+
+---
+
+<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+
+## Here be dragons! <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    We can't be sure <strong>at all</strong> that the following features will appear in Java as depicted.
+    They can change a <strong>lot</strong> in the meantime.
+</blockquote>
+
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
+
+note:
+This is like a disclaimer`++`.
 
 ---
 
@@ -403,12 +345,10 @@ note:
 
 ---
 
-<!---.slide: data-visibility="hidden" -->
-
 ### Other ideas
 
 <ul>
-    <li>Deconstruction patterns for all classes</li>
+    <li>Deconstruction patterns for arbitrary classes</li>
     <li>Enhanced array patterns<br/><small><code>String[] { [8] -> var eighthElement, [9] -> var ninthElement}</code></small></li>
     <li>AND patterns</li>
     <li>Patterns in <code>catch</code> clauses</li>
@@ -417,26 +357,6 @@ note:
 
 <br/>
 <br/>
-<small>
-<a href="https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html">https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html</a>
-</small>
-
-note:
-As you can see, the details are getting murkier by the minute.
-This is because these are **very new ideas** and are likely to change.
-Or to not be ever implemented at all.
-
----
-
-### Other ideas
-
-<ul>
-    <li class="fragment">AND patterns:<br/><code>PatternOne&PatternTwo</code>
-    <li class="fragment">Patterns in <code>catch</code> clauses:<br/><small>(will most likely complement multi-catch blocks)</small>
-    <li class="fragment">Collection patterns
-</ul>
-
-<br><br>
 <small>
 <a href="https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html">https://mail.openjdk.java.net/pipermail/amber-spec-experts/2021-January/002758.html</a>
 </small>
