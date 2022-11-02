@@ -219,13 +219,6 @@ if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
 
 ---
 
-## Benefits
-
-- Nearly 100% of casts will just disappear!
-- More concise
-
----
-
 <!-- .slide: data-background="img/background/freddie-mercury.jpg" data-background-color="black" data-background-opacity="0.4" -->
 
 ## It's a kind of Pattern <!-- .element: class="stroke" -->

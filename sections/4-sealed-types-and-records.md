@@ -142,6 +142,8 @@ static void printDelays(List&lt;Delay&gt; delays) {
 
 note:
 
+When dealing with a record in an enhanced for loop, you can start using pattern matching there as well.
+
 ---
 
 <!-- .slide: data-auto-animate" -->
@@ -161,7 +163,10 @@ static void printDelays(List&lt;Delay&gt; delays) {
 </code></pre>
 
 note:
-This feature is planned for Java 20! (as part of JEP 432)
+
+Like so. 
+The implementation of the for loop only receives the `timeInMs` field.
+This feature is currently planned for Java 20.
 
 ---
 
