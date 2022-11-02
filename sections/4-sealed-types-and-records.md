@@ -69,7 +69,7 @@ static String apply(Effect effect) {
 
 <br/>
 <small>
-<a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html</a>
+<a href="https://openjdk.org/projects/amber/design-notes/patterns/pattern-matching-for-java">https://openjdk.org/projects/amber/design-notes/patterns/pattern-matching-for-java</a>
 </small>
 
 note:
@@ -166,7 +166,6 @@ note:
 
 Like so. 
 The implementation of the for loop only receives the `timeInMs` field.
-This feature is currently planned for Java 20.
 
 ---
 
@@ -255,7 +254,7 @@ This feature is currently planned for Java 20.
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
         <tr>
-            <td><strong>20</strong></td>
+            <td><strong>n/a</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
         </tr>

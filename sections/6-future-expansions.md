@@ -193,8 +193,8 @@ Unnamed patterns are part of this particular JEP draft.
 This means it will probably become an official JEP in the near future.
 So chances are this feature will be targeted at one of the next Java releases.
 
-The JEP also contains support for unnamed variables, by the way.
-[TODO: hele JEP doorlezen en hier nog aanvullen]
+The JEP will also support for unnamed local variables, by the way.
+(example: catching an exception but not planning to use the exception variable)
 
 ---
 
@@ -228,7 +228,7 @@ __let Reverb(String name, int roomSize) = reverb;
 
 <br/>
 <small>
-<a href="https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html">https://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html</a>
+<a href="https://openjdk.org/projects/amber/design-notes/patterns/pattern-matching-for-java">https://openjdk.org/projects/amber/design-notes/patterns/pattern-matching-for-java</a>
 </small>
 
 note:

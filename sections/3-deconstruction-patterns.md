@@ -8,7 +8,7 @@ note:
 
 **Target time: 22m**
 
-**Switch keyboard layout naar Qwerty Hanno!!**
+**Switch keyboard layout naar Qwerty Hanno! 'met Ctrl+Space'**
 
 ---
 
@@ -409,7 +409,7 @@ When deconstruction patterns are fully available in Java in the furute, the comp
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
         <tr>
-            <td><strong>20</strong></td>
+            <td><strong>n/a</strong></td>
             <td>Second preview (deconstruction with record patterns only)</td>
             <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
         </tr>
