@@ -10,6 +10,9 @@ note:
 
 **Target time: 10m**
 
+"Who has used pattern matching for switch already?"
+(available in preview from Java 17)
+
 ---
 
 <!-- .slide: data-background="img/background/guitar-store-close-up.jpg" data-background-color="black" data-background-opacity="0.2" -->
@@ -600,7 +603,7 @@ We would have to use a good old switch statement instead of a switch expression.
 
 ## Feature Status
 
-### Guarded Patterns
+### Pattern Matching for Switch
 
 <table style="font-size: 100%">
     <thead>

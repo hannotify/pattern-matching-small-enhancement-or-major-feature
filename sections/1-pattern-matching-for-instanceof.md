@@ -10,6 +10,9 @@ note:
 
 **Target time: 3m**
 
+"Who has used pattern matching for instanceof already?"
+(available in preview from Java 14)
+
 ---
 
 <!-- .slide: data-background="img/background/guitar-store-close-up.jpg" data-background-color="black" data-background-opacity="0.2" -->

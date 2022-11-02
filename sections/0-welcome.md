@@ -50,7 +50,6 @@ I work at Info Support as an IT consultant.
 Before diving into the very interesting subject of Pattern Matching, I'm curious to hear:
 
 "Who of you is running Java 17 or higher in production?"
-"And of those people: who has used pattern matching already?"
 
 ---
 
