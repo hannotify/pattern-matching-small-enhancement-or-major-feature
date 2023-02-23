@@ -12,27 +12,13 @@ note:
 
 ---
 
-<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
-
-## Demo
-
-- Make `Effect` a sealed type
-
-<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
-
-note:
-
-- All implementations of a sealed type must be `final`, `sealed` or `non-sealed` ([more info on non-sealed](https://stackoverflow.com/questions/63860110/what-is-the-point-of-extending-a-sealed-class-with-a-non-sealed-class))
-
-Example of non-sealed: `UserCustomEffect`.
-
----
-
 <!-- .slide: data-auto-animate" -->
 
 ### Sealed types yield completeness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
+public interface Effect {}
+
 static String apply(Effect effect) {
     return switch(effect) {
         case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
@@ -54,6 +40,8 @@ static String apply(Effect effect) {
 ### Sealed types yield completeness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
+public sealed interface Effect permits Delay, EffectLoop, Octave, Overdrive, Reverb, Tremolo, Tuner {}
+
 static String apply(Effect effect) {
     return switch(effect) {
         case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
