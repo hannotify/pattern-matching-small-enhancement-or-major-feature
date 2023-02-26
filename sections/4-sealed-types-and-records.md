@@ -51,6 +51,32 @@ static String apply(Effect effect) {
         case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
         case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
         case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
+        default -> String.format("Unknown effect active: %s.", effect);
+    };
+}
+</code></pre>
+
+note:
+Here no default case is needed; the compiler is already aware that all cases have been handled.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Sealed types yield completeness
+
+<pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
+public sealed interface Effect permits Delay, EffectLoop, Octave, Overdrive, Reverb, Tremolo, Tuner {}
+
+static String apply(Effect effect) {
+    return switch(effect) {
+        case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
+        case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
+        case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
+        case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
+        case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
+        case EffectLoop(Tuner(int pitchInHz), _) -> String.format("The EffectLoop contains a tuner with pitch %d. Muting all signal!", pitchInHz);
+        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
     };
 }
 </code></pre>
@@ -152,7 +178,7 @@ static void printDelays(List&lt;Delay&gt; delays) {
 
 note:
 
-Like so. 
+Like so.
 The implementation of the for loop only receives the `timeInMs` field.
 
 ---
