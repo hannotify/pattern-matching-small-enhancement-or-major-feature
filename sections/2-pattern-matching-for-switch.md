@@ -366,7 +366,7 @@ Typically the visitor pattern is used in cases like this to separate traversal o
 - quite verbose
 - box primitives
 - intrusive: each Effect implementation needs an `accept` method for each Visitor it accepts
-- elements we're traversing need a common supertype.
+- elements we're traversing must be in a hierarchy and thus need a common Visitor-specific supertype.
 
 ---
 
@@ -418,7 +418,7 @@ So this method would make a lot more sense if it was `static`.
 
 ## Benefits of pattern matching
 
-- No need for the Visitor pattern or a common supertype
+- No need for the Visitor pattern or a common Visitor-specific supertype (like `EffectVisitor`)
 - A single expression instead of many assignments
 - Less error-prone (in adding cases)
 - More concise
