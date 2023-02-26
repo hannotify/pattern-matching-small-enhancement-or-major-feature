@@ -24,6 +24,8 @@ eval (Left x : Right op : xs) = evalExpression (x, op, eval xs)
 eval [Left 5, Right '*', Left 2, Right '*', Left 4, Right '+', Left 2] -- ((5 * 2) * 4) + 2 = 42
 </code></pre>
 
+<small> Note: this example does not consider precedence. </small>
+
 ---
 
 ### Functional programming
@@ -43,3 +45,5 @@ static Integer calc(Expr e) {
     }
 }
 </code></pre>
+
+<small> Note: this example does not consider precedence. </small>
