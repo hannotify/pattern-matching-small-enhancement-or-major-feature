@@ -8,7 +8,7 @@
 
 note:
 
-**Target time: 10m**
+**Target time: 8m**
 
 "Who has used pattern matching for switch already?"
 (available in preview from Java 17)

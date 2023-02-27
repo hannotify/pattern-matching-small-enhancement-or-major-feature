@@ -6,7 +6,7 @@
 
 note:
 
-**Target time: 43m**
+**Target time: 39m**
 
 ---
 
@@ -34,6 +34,16 @@ Together with the related features of records and sealed classes (slide), patter
 
 note:
 And that is why we think pattern matching is not a Small Enhancement, but a Major Feature.
+
+---
+
+<!-- .slide: data-background="https://thumbs.gfycat.com/JointEthicalAcouchi.webp" -->
+
+### How would you use pattern matching in your work?
+
+Note: We are very curious what your thoughs are about pattern matching.
+How you would use pattern matching in your day-to-day work?
+Let's discuss that with a drink!
 
 ---
 
