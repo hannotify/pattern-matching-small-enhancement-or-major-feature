@@ -144,7 +144,7 @@ public class EffectLoop implements Effect {
 </code></pre>
 
 note:
-Here, we add a factory method to deserialize our object. (we could also have used an overloaded constructor)
+Here, we overload the existing constructor to deserialize the object.
 It converts a `String` and `Effect` array back to an `EffectLoop` object.
 If the constructor had any data validation, it would be called here.
 

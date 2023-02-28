@@ -510,30 +510,7 @@ note:
 
 ---
 
-<!-- .slide: data-auto-animate -->
-
-### Guarded patterns
-
-<pre data-id="guards-animation"><code class="java" data-trim data-line-numbers="5">
-String apply(Effect effect, Guitar guitar) {
-    return switch(effect) {
-        // (...)
-        case Tremolo tr -> String.format("Tremolo active with depth %d and rate %d.", tr.getDepth(), tr.getRate());
-        case Tuner tu && !tu.isInTune(guitar) -> String.format("Guitar is in need of tuning - tuner active with pitch %d. Muting all signal!", tu.getPitchInHz());
-        case EffectLoop el -> el.getEffects().stream().map(this::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
-So we saw in the demo that the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
-
-One of the main reasons for Java to start supporting guarded patterns is to prevent further testing in a case block, like this:
-
----
-
-<!-- .slide: data-auto-animate -->
+<!-- .slide: data-auto-animate" -->
 
 ### Guarded patterns
 
@@ -550,6 +527,9 @@ String apply(Effect effect, Guitar guitar) {
 </code></pre>
 
 note:
+So we saw in the demo that the case block will only be executed if the effect is a `Tuner` and the `Guitar` is not in tune already.
+
+One of the main reasons for Java to start supporting guarded patterns is to prevent further testing in a case block, like this:
 
 ---
 
