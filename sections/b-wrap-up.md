@@ -51,21 +51,27 @@ Let's discuss that with a drink!
 <br />
 <table>
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="20%"
+        <td width="20%" style="text-align: right; vertical-align: middle;"><img width="25%"
+                data-src="img/icons/slide-deck.png" class="no-background" /></td>
+        <td style="vertical-align: middle;" colspan="2"><a href="https://hanno.codes/slides/pattern-matching/javaland-2023">hanno.codes/slides/pattern-matching/javaland-2023</a>
+        </td>
+</tr>
+<tr>
+        <td style="text-align: right; vertical-align: middle;"><img width="25%"
                 data-src="img/icons/github.png" class="no-background" /></td>
         <td style="vertical-align: middle;" colspan="2"><a 
                 href="https://github.com/hannotify/pattern-matching-music-store">github.com/hannotify/pattern-matching-music-store</a>
         </td>
 </tr>
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="20%" data-src="img/icons/website.png" class="no-background" /></td>
+        <td style="text-align: right; vertical-align: middle;"><img width="25%" data-src="img/icons/website.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a
                 href="https://hanno.codes">hanno.codes</a></td>
         <td style="vertical-align: middle;"><a
                 href="https://peterwessels.nl">peterwessels.nl</a></td>
 </tr>
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="20%"
+        <td style="text-align: right; vertical-align: middle;"><img width="25%"
                 data-src="img/icons/twitter-white.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a href="https://www.twitter.com/hannotify">@hannotify</a></td>
         <td style="vertical-align: middle;"><a href="https://www.twitter.com/PeterWessels">@PeterWessels</a></td>
@@ -73,7 +79,3 @@ Let's discuss that with a drink!
 </table>
 
 note:
-
-We will Tweet the slides!
-
-**Vergeet niet jezelf te muten bij vragen!**
