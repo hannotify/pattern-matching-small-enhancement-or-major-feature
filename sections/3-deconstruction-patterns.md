@@ -88,8 +88,30 @@ Well, we want to see that in action!
 
 <https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
 
-note:
-Now, if we add a pattern definition to every implementor of the Effect interface...
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Records
+
+#### Input:
+
+- Commit to the class being a transparent carrier for its data.
+
+<h4>Output:</h4>
+<ul>
+    <li>constructors</li>
+    <li>accessor methods</li>
+    <li><code>equals()</code>-implementation</li>
+    <li><code>hashCode()</code>-implementation</li>
+    <li><code>toString()</code>-implementation</li>
+    <li class="fragment">deconstruction pattern</li>
+</ul>
+
+Note:
+
+So why does this work? As you all know, you get the implementation for all these methods for free.
+In addition, Java offers you an implemenation for deconstruction patterns for records.
 
 ---
 
@@ -112,6 +134,7 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
+Now, if we add a pattern definition to every implementor of the Effect interface...
 ...the switch expression could look like this.
 (I'm too lazy to fix the arrow alignment here, sorry about that.)
 

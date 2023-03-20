@@ -2,7 +2,7 @@
 
 ## Pattern Matching Plays Nice With
 
-# Sealed Types and Records <!-- .element: class="stroke" -->
+# Sealed Types <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
@@ -14,7 +14,7 @@ note:
 
 <!-- .slide: data-auto-animate" -->
 
-### Sealed types yield completeness
+### New effect implementation; now what?
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
 public interface Effect {}
@@ -31,6 +31,9 @@ static String apply(Effect effect) {
     };
 }
 </code></pre>
+
+Note:
+What happens if someone else introduced another effect implementation?
 
 ---
 
@@ -86,25 +89,8 @@ static String apply(Effect effect) {
 note:
 Here no default case is needed; the compiler is already aware that all cases have been handled.
 
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Records
-
-#### Input:
-
-- Commit to the class being a transparent carrier for its data.
-
-<h4>Output:</h4>
-<ul>
-    <li>constructors</li>
-    <li>accessor methods</li>
-    <li><code>equals()</code>-implementation</li>
-    <li><code>hashCode()</code>-implementation</li>
-    <li><code>toString()</code>-implementation</li>
-    <li class="fragment">deconstruction pattern</li>
-</ul>
+So if someone introduce another effect implementation; it won't compile!
+This shift left introduces more compile-time safety and avoid unexpected behaviour in production.
 
 ---
 
