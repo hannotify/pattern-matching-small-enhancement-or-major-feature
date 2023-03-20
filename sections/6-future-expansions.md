@@ -260,6 +260,51 @@ Now if we cannot guarantee the pattern will match, we can provide an else clause
 
 <!-- .slide: data-auto-animate" -->
 
+## Patterns in enhanced for
+
+<pre><code class="java" data-trim data-line-numbers>
+record Delay(int timeInMs) implements Effect {}
+</code></pre>
+
+<pre data-id="patterns-enhanced-for-animation"><code class="java" data-trim data-line-numbers>
+static void printDelays(List&lt;Delay&gt; delays) {
+    for (Delay delay : delays) {
+        System.out.println("Delay found with timeInMs=" + delay.timeInMs());
+    }
+}
+</code></pre>
+
+note:
+
+When dealing with a record in an enhanced for loop, you can start using pattern matching there as well.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Patterns in enhanced for
+
+<pre><code class="java" data-trim data-line-numbers>
+record Delay(int timeInMs) implements Effect {}
+</code></pre>
+
+<pre data-id="patterns-enhanced-for-animation"><code class="java" data-trim data-line-numbers>
+static void printDelays(List&lt;Delay&gt; delays) {
+    for (Delay(int timeInMs) : delays) {
+        System.out.println("Delay found with timeInMs=" + timeInMs);
+    }
+}
+</code></pre>
+
+note:
+
+Like so.
+The implementation of the for loop only receives the `timeInMs` field.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
 ## Array patterns
 
 <pre><code class="java" data-trim data-line-numbers>
