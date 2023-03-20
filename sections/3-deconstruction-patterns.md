@@ -134,9 +134,9 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
-Now, if we add a pattern definition to every implementor of the Effect interface...
+Now, if all implementors of the Effect interface would become Records...
 ...the switch expression could look like this.
-(I'm too lazy to fix the arrow alignment here, sorry about that.)
+(We're too lazy to fix the arrow alignment here, sorry about that.)
 
 But we can see that the benefits are quickly increasing!
 For example with `Reverb` and `Tremolo`: we no longer have to call each getter separately.
@@ -235,7 +235,7 @@ var telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TE
 note:
 Do you remember 'Local-Variable Type Inference' that became available in Java 10?
 I really like to use this feature in places where you would otherwise repeat the type.
-Well, in the future you can do the same with patterns.
+Well, when you apply it to records, you can do the same with patterns.
 You can use `var` instead of specifying an explicit type.
 
 ---
@@ -269,7 +269,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 
-When deconstruction patterns are fully available in Java in the furute, the compiler will be able to infer the needed types from the pattern definitions in the `Delay` and `Reverb` class.
+When deconstruction patterns are fully available in Java in the future, the compiler will be able to infer the needed types.
 
 ---
 

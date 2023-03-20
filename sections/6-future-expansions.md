@@ -26,7 +26,7 @@ note:
 Let's start with an expansion that we think is in the near future. "Unnamed patterns"
 
 Remember our var pattern example?
-In this example the compiler can infer the needed types from the pattern definitions in the `Delay` and `Reverb` class.
+In this example the compiler can infer the needed types from the deconstruction patterns in the `Delay` and `Reverb` class.
 Although it seems a bit of a waste to map the `name` variable from the Reverb class.
 Because we don't do anything with it.
 In this case we could choose to apply an 'unnamed pattern'.
@@ -46,7 +46,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 
-So an 'unnamed pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the pattern definition.
+So an 'unnamed pattern' is like a var pattern: it doesn't specify a type and so the type is inferred from the deconstruction pattern.
 But there is a big difference: an unnamed pattern _doesn't bind a value to a variable_.
 That's why there is no variable name, and just an underscore character to denote the unnamed pattern.
 It's like you tell the compiler: "Compiler, I don't care about the first value at all, just make sure to map the second value (which is `roomSize`) to a variable.
@@ -118,7 +118,7 @@ static String apply(Effect effect) {
 
 note:
 This is where unnamed patterns come in.
-We could define a pattern definition that checks for the presence of a tuner.
+We could define a deconstruction pattern that checks for the presence of a tuner.
 Using an unnamed pattern we can tell the compiler that we don't care about any other effects.
 Now, if there is a Tuner present in the effect loop, the top case branch will be executed.
 If no Tuner is present, the 'regular' case branch will be executed as before.
