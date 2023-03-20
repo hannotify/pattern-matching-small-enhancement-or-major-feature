@@ -418,6 +418,14 @@ So this method would make a lot more sense if it was `static`.
 
 ## Benefits of pattern matching
 
+- No need for the Visitor pattern
+- A single expression instead of many assignments
+- Less error-prone
+- More concise
+- Safer - the compiler can check for missing cases
+
+Note:
+
 - No need for the Visitor pattern or a common Visitor-specific supertype (like `EffectVisitor`)
 - A single expression instead of many assignments
 - Less error-prone (in adding cases)
