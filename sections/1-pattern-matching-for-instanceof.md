@@ -28,6 +28,8 @@ All demo code is on Github - link will be on the final slide.
 
 ---
 
+<!-- .slide: data-visibility="hidden" -->
+
 ### Instanceof-and-cast
 
 <pre><code class="java" data-trim data-line-numbers>
@@ -39,6 +41,8 @@ if (product instanceof Guitar) {
 </code></pre>
 
 ---
+
+<!-- .slide: data-visibility="hidden" -->
 
 ### Instanceof-and-cast
 
@@ -52,6 +56,8 @@ if (product instanceof Guitar) { // 1. is product a Guitar?
 
 ---
 
+<!-- .slide: data-visibility="hidden" -->
+
 ### Instanceof-and-cast
 
 <pre><code class="java" data-trim data-line-numbers="3">
@@ -63,6 +69,8 @@ if (product instanceof Guitar) { // 1. is product a Guitar?
 </code></pre>
 
 ---
+
+<!-- .slide: data-visibility="hidden" -->
 
 ### Instanceof-and-cast
 
@@ -76,7 +84,7 @@ if (product instanceof Guitar) { // 1. is product a Guitar?
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-visibility="hidden" data-auto-animate -->
 
 ### Improve the situation
 
@@ -103,7 +111,7 @@ The situation would improve dramatically if we could compress the 3 steps shown 
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-visibility="hidden" data-auto-animate -->
 
 ### Improve the situation
 
@@ -122,6 +130,20 @@ And it does 3 things at the same time:
 1. testing
 2. conditional extraction
 3. binding to variable(s)
+
+---
+
+<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
+
+## Demo
+
+- Simplify implementation of `equals`
+
+<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
+
+note:
+
+- **Guitar.java** Simplify implementation of `equals`
 
 ---
 
@@ -167,20 +189,6 @@ It is not a new concept, a lot of programming languages support pattern matching
 - C#
 - Erlang
 - [Scala](https://docs.scala-lang.org/tour/pattern-matching.html)
-
----
-
-<!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
-
-## Demo
-
-- Simplify implementation of `equals`
-
-<https://pxhere.com/en/photo/1458897> <!-- .element: class="attribution" -->
-
-note:
-
-- **Guitar.java** Simplify implementation of `equals`
 
 ---
 
