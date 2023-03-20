@@ -26,6 +26,50 @@ This is like a disclaimer`++`.
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+### Pattern definition
+
+<pre data-id="pattern-definition-animation"><code class="java" data-trim data-line-numbers>
+public class Overdrive implements Effect {
+    private final int gain;
+
+    public Overdrive(int gain) {
+        this.gain = gain;
+    }
+}
+</code></pre>
+
+note:
+This is the `Overdrive` class right now...
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+### Pattern definition
+
+<pre data-id="pattern-definition-animation"><code class="java" data-trim data-line-numbers="8-10">
+public class Overdrive implements Effect {
+    private final int gain;
+
+    public Overdrive(int gain) {
+        this.gain = gain;
+    }
+
+    public pattern Overdrive(int gain) {
+        gain = this.gain;
+    }
+}
+</code></pre>
+
+note:
+...and this is wat we need to add to support a deconstruction pattern.
+It is called a _pattern definition_.
+And it sort of works like a reverse constructor.
+
+---
+
 ## Opposites
 
 ### Deconstruction pattern
