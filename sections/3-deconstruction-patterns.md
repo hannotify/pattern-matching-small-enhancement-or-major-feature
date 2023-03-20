@@ -371,6 +371,11 @@ When deconstruction patterns are fully available in Java in the furute, the comp
             <td>Second preview (deconstruction with record patterns only)</td>
             <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
         </tr>
+        <tr>
+            <td><strong>n/a</strong></td>
+            <td>Final</td>
+            <td><a href="https://openjdk.org/jeps/440">JEP 440</a></td>
+        </tr>
     </tbody>
 </table>
 
@@ -379,4 +384,42 @@ note:
 Eventually deconstruction will be available for all pattern kinds.
 But in the current Java version it's only supported for record patterns.
 The same holds true for using var patterns, they are currently only supported for records.
-We'll dive deeper into record patterns in a moment!
+
+---
+
+## Feature Status
+
+### Record Patterns
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>19</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
+        </tr>
+        <tr>
+            <td><strong>20</strong></td>
+            <td>Second preview</td>
+            <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
+        </tr>
+        <tr>
+            <td><strong>n/a</strong></td>
+            <td>Final</td>
+            <td><a href="https://openjdk.org/jeps/440">JEP 440</a></td>
+        </tr>
+    </tbody>
+</table>
+
+note:
+
+So to summarise: almost all pattern matching features are made available for records first.
+With the intent to extend the support to arbitrary classes later.
+

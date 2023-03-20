@@ -39,7 +39,7 @@ What happens if someone else introduced another effect implementation?
 
 <!-- .slide: data-auto-animate" -->
 
-### Sealed types yield completeness
+### Sealed types yield exhaustiveness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
 public sealed interface Effect permits Delay, EffectLoop, Octave, Overdrive, Reverb, Tremolo, Tuner {}
@@ -64,7 +64,7 @@ Here no default case is needed; the compiler is already aware that all cases hav
 
 <!-- .slide: data-auto-animate" -->
 
-### Sealed types yield completeness
+### Sealed types yield exhaustiveness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
 public sealed interface Effect permits Delay, EffectLoop, Octave, Overdrive, Reverb, Tremolo, Tuner {}
@@ -156,7 +156,7 @@ You can even deconstruct using a var pattern, as long as you apply it to records
 
 ## Feature Status
 
-### Completeness
+### Exhaustiveness
 
 <table style="font-size: 100%">
     <thead>
@@ -181,39 +181,16 @@ You can even deconstruct using a var pattern, as long as you apply it to records
             <td><strong>19</strong></td>
             <td>Third preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/427">JEP 427</a></td>
-        </tr>           
-    </tbody>
-</table>
-
----
-
-## Feature Status
-
-### Record Patterns
-
-<table style="font-size: 100%">
-    <thead>
-        <tr>
-            <th>Java version</th>
-            <th>Feature status</th>
-            <th>JEP</th>
         </tr>
-    </thead>
-    <tbody>
         <tr>
-            <td><strong>19</strong></td>
-            <td>Preview</td>
-            <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
+            <td><strong>20</strong></td>
+            <td>Fourth preview <br/></td>
+            <td><a href="https://openjdk.java.net/jeps/433">JEP 433</a></td>
         </tr>
         <tr>
             <td><strong>n/a</strong></td>
-            <td>Second preview</td>
-            <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
-        </tr>
+            <td>Final<br/></td>
+            <td><a href="https://openjdk.java.net/jeps/440">JEP 440</a></td>
+        </tr>                       
     </tbody>
 </table>
-
-note:
-
-So to summarise: almost all pattern matching features are made available for records first.
-With the intent to extend the support to arbitrary classes later.
