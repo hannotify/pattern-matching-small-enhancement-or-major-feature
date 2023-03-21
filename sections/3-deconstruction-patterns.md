@@ -17,17 +17,13 @@ note:
 ## Disclaimer <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
-    We can't tell you when the following features are coming to Java.
-    Also: syntax and implementation specifics may still change.
+    The following feature are still in 'preview' stage.
+    Syntax and implementation specifics may still change.
 </blockquote>
 
 <https://pxhere.com/en/photo/1359311> <!-- .element: class="attribution" -->
 
 note:
-
-A lot of the stuff that follows is currently not yet possible in Java!
-But it paints a nice picture of how pattern matching might look in a few years time.
-We'll point out what specific parts currently ARE possible in the latest Java version.
 
 ---
 
@@ -50,7 +46,11 @@ String apply(Effect effect) {
 </code></pre>
 
 note:
-Let's get back to our switch expression and introduce a deconstruction pattern.
+Let's get back to our switch expression example.
+
+**Now imagine you implemented these effects as records.**
+
+This means we can introduce a deconstruction pattern.
 
 ---
 
@@ -223,26 +223,6 @@ Go figure!
 ### Var patterns
 
 <pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
-// Pre-Java 10
-Guitar telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
-
-// Java 10
-var telecaster = new Guitar("Fender Telecaster Baritone Blacktop", GuitarType.TELECASTER);
-</code></pre>
-
-<small><a href="https://openjdk.java.net/jeps/286">https://openjdk.java.net/jeps/286</a>
-
-note:
-Do you remember 'Local-Variable Type Inference' that became available in Java 10?
-I really like to use this feature in places where you would otherwise repeat the type.
-Well, when you apply it to records, you can do the same with patterns.
-You can use `var` instead of specifying an explicit type.
-
----
-
-### Var patterns
-
-<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
 static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     if (effectLoop instanceof EffectLoop(Delay(int timeInMs), Reverb(String name, int roomSize))) {
         return timeInMs == roomSize;
@@ -252,7 +232,11 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 </code></pre>
 
 note:
-Let's return to our pattern composition example and use a few var patterns.
+Who of you likes to use `var` in Java?
+
+I do, especially when the resulting type is really obvious.
+Well, when you apply it to records, you can do the same with patterns.
+You can use `var` instead of specifying an explicit type.
 
 ---
 
@@ -269,7 +253,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 
-When deconstruction patterns are fully available in Java in the future, the compiler will be able to infer the needed types.
+The compiler is able to infer the needed types here.
 
 ---
 
@@ -422,4 +406,5 @@ note:
 
 So to summarise: almost all pattern matching features are made available for records first.
 With the intent to extend the support to arbitrary classes later.
+Hanno will get into that in more detail later on.
 

@@ -305,9 +305,9 @@ That is much better!
 <https://pxhere.com/en/photo/544037> <!-- .element: class="attribution" -->
 
 note:
-Q:
+Q: (PETER)
 
-- Why didn't we use the type system, by implementing the `apply()` method?
+- Why didn't we just use the type system, by implementing the `apply()` method for each effect class?
 
 A:
 
@@ -498,7 +498,7 @@ We can use guarded patterns to further refine a matched pattern by applying a bo
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ### Guarded patterns
 

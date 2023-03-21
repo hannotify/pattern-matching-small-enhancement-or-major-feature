@@ -44,5 +44,3 @@ public static LoggableMessage fromMessage(Object message) {
     };
 }
 </code></pre>
-
----

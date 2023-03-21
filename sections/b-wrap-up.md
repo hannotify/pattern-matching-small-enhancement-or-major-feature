@@ -19,8 +19,8 @@ note:
 - holds the potential to simplify and streamline much of the code we write today.<!-- .element: class="fragment" -->
 
 note:
-Pattern matching is a rich feature arc that will play out over several versions.
-(slide) The first installment allows us to use type patterns in instanceof, which reduces the
+We consider pattern matching to be a rich feature arc that will play out over several versions.
+(slide) The first installment allowed us to use type patterns in instanceof, which reduces the
 ceremony of such code, and the second installment brought us (slide) patterns in switch.
 Deconstruction patterns on records are also now available, and more related features will appear in the near future (slide) with the aim of making destructuring objects as easy as - and more similar to - constructing them.
 
@@ -37,7 +37,7 @@ And that is why we think pattern matching is not a Small Enhancement, but a Majo
 
 ---
 
-<!-- .slide: data-background="https://thumbs.gfycat.com/JointEthicalAcouchi.webp" -->
+<!-- .slide: data-background="https://thumbs.gfycat.com/JointEthicalAcouchi.webp" data-visibility="hidden" -->
 
 ### How would you use pattern matching in your work?
 

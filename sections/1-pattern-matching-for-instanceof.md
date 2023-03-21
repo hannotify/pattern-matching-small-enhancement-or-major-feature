@@ -189,6 +189,7 @@ It is not a new concept, a lot of programming languages support pattern matching
 - C#
 - Erlang
 - [Scala](https://docs.scala-lang.org/tour/pattern-matching.html)
+- Kotlin
 
 ---
 

@@ -41,7 +41,9 @@ public class Overdrive implements Effect {
 </code></pre>
 
 note:
-This is the `Overdrive` class right now...
+We've seen that deconstruction works well with records.
+What if we wanted to extend that support to all arbitrary classes?
+What would we need?
 
 ---
 
@@ -65,7 +67,6 @@ public class Overdrive implements Effect {
 
 note:
 ...and this is wat we need to add to support a deconstruction pattern.
-It is called a _deconstruction pattern_.
 And it sort of works like a reverse constructor.
 
 ---
