@@ -36,10 +36,10 @@ note:
             <td><code>for (Delay(int timeInMs) : delays) {<br/>}</code></td>
             <td>Perform a iteration for each target that matches the indicated pattern.</td>
         </tr>        
-        <!-- <tr class="fragment">
+        <tr class="fragment">
             <td><em>bind statement</em></td>
             <td><code>__let Reverb(var name, var roomSize) = reverb;</code></td>
             <td>Destructure a target using a pattern.</td>
-        </tr> -->
+        </tr>
     </tbody>
 </table>

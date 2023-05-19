@@ -23,7 +23,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 
-Let's start with an expansion that we think is in the near future. "Unnamed patterns"
+Let's start with an expansion that we know is in the near future. "Unnamed patterns"
 
 Remember our var pattern example?
 In this example the compiler can infer the needed types from the deconstruction patterns in the `Delay` and `Reverb` class.
@@ -50,6 +50,7 @@ So an 'unnamed pattern' is like a var pattern: it doesn't specify a type and so 
 But there is a big difference: an unnamed pattern _doesn't bind a value to a variable_.
 That's why there is no variable name, and just an underscore character to denote the unnamed pattern.
 It's like you tell the compiler: "Compiler, I don't care about the first value at all, just make sure to map the second value (which is `roomSize`) to a variable.
+You also tell your fellow developers that you deliberately don't use the second value.
 
 ---
 
@@ -178,23 +179,29 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
     </thead>
     <tbody>
         <tr>
-            <td><strong>n/a</strong></td>
-            <td>JEP draft</td>
-            <td><a href="https://openjdk.org/jeps/8294349">8294349</a></td>
+            <td><strong>21</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.org/jeps/443">JEP 443</a></td>
         </tr>
     </tbody>
 </table>
 
-<https://openjdk.org/jeps/8294349>
+<https://openjdk.org/jeps/443>
 
 note:
 
-Unnamed patterns are part of this particular JEP draft.
-This means it will probably become an official JEP in the near future.
-So chances are this feature will be targeted at one of the next Java releases.
-
-The JEP will also support for unnamed local variables, by the way.
+Unnamed patterns are part of JEP 443, which is targeted for Java 21.
+The JEP will also add support for unnamed local variables, by the way.
 (example: catching an exception but not planning to use the exception variable)
+
+---
+
+## Primitive types in patterns, instanceof and switch
+
+TODO
+
+<https://openjdk.org/jeps/8288476>
+
 
 ---
 
