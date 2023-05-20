@@ -6,7 +6,7 @@
 
 note:
 
-**Target time: 19m**
+**Target time: 20m**
 
 **Switch keyboard layout naar Qwerty Hanno! 'met Ctrl+Space'**
 
