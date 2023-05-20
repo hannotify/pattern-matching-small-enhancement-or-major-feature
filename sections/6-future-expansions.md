@@ -196,12 +196,111 @@ The JEP will also add support for unnamed local variables, by the way.
 
 ---
 
-## Primitive types in patterns, instanceof and switch
+## Primitive types in patterns
 
-TODO
+<pre><code class="java" data-trim data-line-numbers="3-4">
+static String apply(Effect effect, Guitar guitar) {
+    return switch(effect) {
+        case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
+        case Reverb(_, int roomSize) -> String.format("Reverb active with roomSize %d.", roomSize);
+        // ...
+    }
+}
+</code></pre>
 
 <https://openjdk.org/jeps/8288476>
 
+note: 
+Primitive type are currently not permitted at the top-level, only in a nested record pattern:
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Primitive types at the top-level
+
+<pre data-id="primitive-types-animation"><code class="java" data-trim data-line-numbers>
+switch (reverb.roomSize()) {
+    case 1 -> "Toilet";
+    case 2 -> "Bedroom";
+    case 30 -> "Classroom";
+    default -> "Unsupported value";
+}
+</code></pre>
+
+note:
+There are plans to allow primitive type patterns at the top-level, allowing us to change this...
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Primitive types at the top-level
+
+<pre data-id="primitive-types-animation"><code class="java" data-trim data-line-numbers>
+switch (reverb.roomSize()) {
+    case 1 -> "Toilet";
+    case 2 -> "Bedroom";
+    case 30 -> "Classroom";
+    case int i -> "Unsupported int value";
+}
+</code></pre>
+
+note:
+...into this:
+
+And this makes the switch expression *exhaustive*.
+
+---
+
+<!-- .slide: data-auto-animate" -->
+
+## Primitive types at the top-level
+
+<pre data-id="primitive-types-animation"><code class="java" data-trim data-line-numbers>
+switch (reverb.roomSize()) {
+    case 1 -> "Toilet";
+    case 2 -> "Bedroom";
+    case 30 -> "Classroom";
+    case int i when i > 100 && i < 1000 -> "Cinema";
+    case int i when i > 5000 -> "Stadium";
+    case int i -> "Unsupported int value";
+}
+</code></pre>
+
+note:
+We could express even more intricate logic using guards!
+
+---
+
+## Feature Status
+
+### Primitive types in patterns, instanceof, and switch 
+
+<table style="font-size: 100%">
+    <thead>
+        <tr>
+            <th>Java version</th>
+            <th>Feature status</th>
+            <th>JEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>n/a</strong></td>
+            <td>draft</td>
+            <td><a href="https://openjdk.org/jeps/8288476">JEP Draft #8288476</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<https://openjdk.org/jeps/8288476>
+
+note:
+Apart from the Pattern Matching features, this JEP will also add support for:
+
+* primitive types in `instanceof`
+* all primitive types in a switch statement or expression (adding support for `boolean`, `float`, `double` and `long`)
 
 ---
 
