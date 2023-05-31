@@ -602,7 +602,7 @@ We would have to use a good old switch statement instead of a switch expression.
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <!-- <tr>
             <td><strong>17</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
@@ -611,16 +611,21 @@ We would have to use a good old switch statement instead of a switch expression.
             <td><strong>18</strong></td>
             <td>Second preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
-        </tr>
-        <tr>
+        </tr> -->
+        <tr class="greyed-out">
             <td><strong>19</strong></td>
             <td>Third preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/427">JEP 427</a></td>
         </tr>        
-        <tr>
+        <tr class="greyed-out">
             <td><strong>20</strong></td>
             <td>Fourth preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/433">JEP 433</a></td>
+        </tr>
+        <tr>
+            <td><strong>21</strong></td>
+            <td>Final <br/></td>
+            <td><a href="https://openjdk.java.net/jeps/441">JEP 441</a></td>
         </tr>
     </tbody>
 </table>

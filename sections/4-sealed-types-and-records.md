@@ -134,12 +134,12 @@ You can even deconstruct using a var pattern, as long as you apply it to records
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>15</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/360">JEP 360</a></td>
         </tr>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>16</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/397">JEP 397</a></td>
@@ -167,28 +167,18 @@ You can even deconstruct using a var pattern, as long as you apply it to records
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><strong>17</strong></td>
-            <td>Preview</td>
-            <td><a href="https://openjdk.java.net/jeps/406">JEP 406</a></td>
-        </tr>
-        <tr>
-            <td><strong>18</strong></td>
-            <td>Second preview <br/></td>
-            <td><a href="https://openjdk.java.net/jeps/420">JEP 420</a></td>
-        </tr>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>19</strong></td>
             <td>Third preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/427">JEP 427</a></td>
         </tr>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>20</strong></td>
             <td>Fourth preview <br/></td>
             <td><a href="https://openjdk.java.net/jeps/433">JEP 433</a></td>
         </tr>
         <tr>
-            <td><strong>n/a</strong></td>
+            <td><strong>21</strong></td>
             <td>Final<br/></td>
             <td><a href="https://openjdk.java.net/jeps/440">JEP 440</a></td>
         </tr>                       

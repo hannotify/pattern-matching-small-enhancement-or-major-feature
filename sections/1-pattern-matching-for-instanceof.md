@@ -267,12 +267,12 @@ if (product instanceof Guitar lesPaul && lesPaul.isInTune()) {
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>14</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/305">JEP 305</a></td>
         </tr>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>15</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/375">JEP 375</a></td>

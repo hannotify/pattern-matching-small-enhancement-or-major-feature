@@ -345,18 +345,18 @@ The compiler is able to infer the needed types here.
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>19</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.java.net/jeps/405">JEP 405</a></td>
         </tr>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>20</strong></td>
             <td>Second preview</td>
             <td><a href="https://openjdk.java.net/jeps/432">JEP 432</a></td>
         </tr>
         <tr>
-            <td><strong>n/a</strong></td>
+            <td><strong>21</strong></td>
             <td>Final</td>
             <td><a href="https://openjdk.org/jeps/440">JEP 440</a></td>
         </tr>
