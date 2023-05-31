@@ -51,7 +51,7 @@ In this case we could choose to apply an 'unnamed pattern'.
 
 ### Unnamed patterns
 
-<pre data-id="type-inference-animation"><code class="java" data-trim data-line-numbers>
+<pre data-id="type-inference-animation"><code class="java" data-trim data-trim data-line-numbers="2">
 static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
     if (effectLoop instanceof EffectLoop(Delay(var timeInMs), Reverb(_, var roomSize))) {
         return timeInMs == roomSize;
@@ -67,32 +67,6 @@ But there is a big difference: an unnamed pattern _doesn't bind a value to a var
 That's why there is no variable name, and just an underscore character to denote the unnamed pattern.
 It's like you tell the compiler: "Compiler, I don't care about the first value at all, just make sure to map the second value (which is `roomSize`) to a variable.
 You also tell your fellow developers that you deliberately don't use the second value.
-
----
-
-<!-- .slide: data-auto-animate" -->
-
-### Optimization
-
-<pre data-id="optimization-animation"><code class="java" data-trim data-line-numbers>
-static String apply(Effect effect) {
-    return switch(effect) {
-        case Delay(int timeInMs) -> String.format("Delay active of %d ms.", timeInMs);
-        case Reverb(String name, int roomSize) -> String.format("Reverb active of type %s and roomSize %d.", name, roomSize);
-        case Overdrive(int gain) -> String.format("Overdrive active with gain %d.", gain);
-        case Tremolo(int depth, int rate) -> String.format("Tremolo active with depth %d and rate %d.", depth, rate);
-        case Tuner(int pitchInHz) -> String.format("Tuner active with pitch %d. Muting all signal!", pitchInHz);
-        case EffectLoop(var effects) -> effects.stream().map(Effect::apply).collect(Collectors.joining(System.lineSeparator()));
-        default -> String.format("Unknown effect active: %s.", effect);
-    };
-}
-</code></pre>
-
-note:
-Another use case for unnamed patterns is optimization of a specific case branch.
-To demonstrate this, let's return to our switch expression example.
-Now the EffectLoop branch could be quite performance heavy, because of the recursive call.
-So if we could avoid executing it when it is not needed, we would.
 
 ---
 
@@ -226,7 +200,7 @@ static String apply(Effect effect, Guitar guitar) {
 
 <https://openjdk.org/jeps/8288476>
 
-note: 
+note:
 Primitive types are currently not permitted at the top-level, only in a nested record pattern:
 
 ---
@@ -265,7 +239,7 @@ switch (reverb.roomSize()) {
 note:
 ...into this:
 
-And this makes the switch expression *exhaustive*.
+And this makes the switch expression _exhaustive_.
 
 ---
 
@@ -291,7 +265,7 @@ We could express even more intricate logic using guards!
 
 ## Feature Status
 
-### Primitive types in patterns, instanceof, and switch 
+### Primitive types in patterns, instanceof, and switch
 
 <table style="font-size: 100%">
     <thead>
@@ -315,8 +289,8 @@ We could express even more intricate logic using guards!
 note:
 Apart from the Pattern Matching features, this JEP will also add support for:
 
-* primitive types in `instanceof`
-* all primitive types in a switch statement or expression (adding support for `boolean`, `float`, `double` and `long`)
+- primitive types in `instanceof`
+- all primitive types in a switch statement or expression (adding support for `boolean`, `float`, `double` and `long`)
 
 ---
 
