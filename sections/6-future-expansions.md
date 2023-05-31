@@ -70,7 +70,7 @@ You also tell your fellow developers that you deliberately don't use the second 
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate" data-visibility="hidden" -->
 
 ### Optimization
 
@@ -92,7 +92,7 @@ So why bother processing the entire effect loop when you know all those effects 
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate" data-visibility="hidden" -->
 
 ### Optimization
 
