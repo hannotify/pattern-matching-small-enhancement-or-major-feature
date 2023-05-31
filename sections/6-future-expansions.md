@@ -6,7 +6,23 @@
 
 note:
 
-**Target time: 40m**
+**Target time: 32m**
+
+---
+
+<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+
+## Here be dragons! <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    We can't be sure <strong>at all</strong> that the following features will appear in Java as depicted.
+    They can change a <strong>lot</strong> in the meantime.
+</blockquote>
+
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
+
+note:
+This is like a disclaimer`++`.
 
 ---
 
@@ -211,7 +227,7 @@ static String apply(Effect effect, Guitar guitar) {
 <https://openjdk.org/jeps/8288476>
 
 note: 
-Primitive type are currently not permitted at the top-level, only in a nested record pattern:
+Primitive types are currently not permitted at the top-level, only in a nested record pattern:
 
 ---
 
@@ -242,7 +258,7 @@ switch (reverb.roomSize()) {
     case 1 -> "Toilet";
     case 2 -> "Bedroom";
     case 30 -> "Classroom";
-    case int i -> "Unsupported int value";
+    case int i -> "Unsupported int value: " + i;
 }
 </code></pre>
 
@@ -264,7 +280,7 @@ switch (reverb.roomSize()) {
     case 30 -> "Classroom";
     case int i when i > 100 && i < 1000 -> "Cinema";
     case int i when i > 5000 -> "Stadium";
-    case int i -> "Unsupported int value";
+    case int i -> "Unsupported int value: " + i;
 }
 </code></pre>
 
@@ -301,22 +317,6 @@ Apart from the Pattern Matching features, this JEP will also add support for:
 
 * primitive types in `instanceof`
 * all primitive types in a switch statement or expression (adding support for `boolean`, `float`, `double` and `long`)
-
----
-
-<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
-
-## Here be dragons! <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    We can't be sure <strong>at all</strong> that the following features will appear in Java as depicted.
-    They can change a <strong>lot</strong> in the meantime.
-</blockquote>
-
-<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
-
-note:
-This is like a disclaimer`++`.
 
 ---
 
@@ -409,7 +409,7 @@ The implementation of the for loop only receives the `timeInMs` field.
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate" data-visibility="hidden" -->
 
 ## Array patterns
 
@@ -429,7 +429,7 @@ note:
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ## Array patterns
 
@@ -450,7 +450,7 @@ note:
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ## Array patterns
 
@@ -472,7 +472,7 @@ note:
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ## Array patterns
 
@@ -495,6 +495,8 @@ static String apply(EffectLoop effectLoop) {}
 note:
 
 ---
+
+<!-- .slide: data-auto-animate data-visibility="hidden" -->
 
 ### Other ideas
 

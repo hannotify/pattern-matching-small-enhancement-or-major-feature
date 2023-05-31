@@ -6,7 +6,7 @@
 
 note:
 
-**Target time: 32m**
+**Target time: 39m**
 
 ---
 

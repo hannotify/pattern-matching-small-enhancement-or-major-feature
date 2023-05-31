@@ -28,7 +28,7 @@ Together with the related features of records and sealed classes (slide), patter
 
 ---
 
-<!-- .slide: data-background="https://thumbs.gfycat.com/DefiantElasticGadwall.webp" -->
+<!-- .slide: data-background="img/background/major-feature.gif" -->
 
 ## Major Feature <!-- .element: class="stroke" -->
 
@@ -53,7 +53,7 @@ Let's discuss that with a drink!
 <tr>
         <td width="20%" style="text-align: right; vertical-align: middle;"><img width="25%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>
-        <td style="vertical-align: middle;" colspan="2"><a href="https://hanno.codes/slides/pattern-matching/javaland-2023">hanno.codes/slides/pattern-matching/javaland-2023</a>
+        <td style="vertical-align: middle;" colspan="2"><a href="https://hanno.codes/slides/pattern-matching/devoxxpl-2023">hanno.codes/slides/pattern-matching/devoxxpl-2023</a>
         </td>
 </tr>
 <tr>
