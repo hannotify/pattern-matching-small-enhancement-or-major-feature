@@ -294,7 +294,7 @@ Apart from the Pattern Matching features, this JEP will also add support for:
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate" data-visibility="hidden" -->
 
 ### Pattern bind statements
 
@@ -320,7 +320,7 @@ So we can't be sure at all that `let` will be the actual keyword for pattern bin
 
 ---
 
-<!-- .slide: data-auto-animate" -->
+<!-- .slide: data-auto-animate" data-visibility="hidden"-->
 
 ### Pattern bind statements
 
