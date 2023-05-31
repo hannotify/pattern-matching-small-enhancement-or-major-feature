@@ -480,6 +480,26 @@ However, it will be able to combine them, just as any other two case labels can 
 
 ---
 
+<!-- .slide: data-auto-animate" -->
+
+### Enum constants
+
+<pre data-id="null-in-switch"><code class="java">
+public enum AutoTune implements Effect { Articulator, Choir }
+
+static String apply(Effect effect) {
+    return switch(effect) {
+        case Delay de      -> String.format("Delay active of %d ms.", de.getTimeInMs());
+        case Autotune.Articulator -> "I put emphasis on every word!"
+        case Autotune.Choir -> "You have an entire choir behind you!"
+    };
+}
+</code></pre>
+
+note:
+
+---
+
 <!-- .slide: data-background="img/background/binary-code.jpg" data-background-color="black" data-background-opacity="0.3" -->
 
 ## Demo
