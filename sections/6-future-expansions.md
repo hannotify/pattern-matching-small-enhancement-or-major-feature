@@ -232,7 +232,7 @@ switch (reverb.roomSize()) {
     case 1 -> "Toilet";
     case 2 -> "Bedroom";
     case 30 -> "Classroom";
-    case int i -> "Unsupported int value: " + i;
+    default -> "Unsupported value: " + reverb.roomSize();
 }
 </code></pre>
 

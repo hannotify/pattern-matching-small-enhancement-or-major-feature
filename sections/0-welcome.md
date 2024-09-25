@@ -7,10 +7,10 @@
         <td style="text-align: right; padding: 0em 0.5em 0em 0em; border-bottom: none;"><img width="10%" data-src="img/icons/twitter-white.png" class="no-background" style="vertical-align: middle; "/></td>
         <td style="vertical-align: middle; padding: 0em 0em 0em 0em; border-bottom: none;"><a href="https://www.twitter.com/hannotify">@hannotify</a></td>
     </tr>
+    <tr>
         <td style="vertical-align: middle; padding: 0em 0em 0em 0em; text-align: right; border-bottom: none;">Peter Wessels</td>
         <td style="text-align: right; padding: 0em 0.5em 0em 0em; border-bottom: none;"><img width="10%" data-src="img/icons/twitter-white.png" class="no-background" style="vertical-align: middle;"/></td>
         <td style="vertical-align: middle; padding: 0em 0em 0em 0em; border-bottom: none;"><a href="https://www.twitter.com/PeterWessels">@PeterWessels</a></td>    
-    <tr>
     </tr>
 </table>
 <br/>
