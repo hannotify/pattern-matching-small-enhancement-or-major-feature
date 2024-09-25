@@ -1,3 +1,7 @@
+:root {
+    --eventColor: #4daae8
+}
+
 .slides img {
 	border:0 !important; 
 	box-shadow: none !important;
@@ -32,17 +36,23 @@ tr:hover .popup-image {
 }
 
 a {
-    color: #0d908b !important;
+    color: var(--eventColor) !important;
 }
 
 .reveal .progress span {
-    background: #0d908b !important;
+    background: var(--eventColor) !important;
 }
 
-::selection {
-    color: #fff;
-    background: #0d908b;
-    text-shadow: none;
+.reveal ::selection {
+    color: black;
+    background: var(--eventColor);
+    text-shadow: none; 
+}
+  
+.reveal ::-moz-selection {
+    color: black;
+    background: var(--eventColor);
+    text-shadow: none; 
 }
 
 .reveal blockquote.explanation {
@@ -65,21 +75,6 @@ a {
 
 .reveal code {
     font-family: 'Jetbrains Mono', monospace;
-}
-
-.reveal pre {
-    width: 100%;
-}
-
-.reveal ::selection {
-  color: black;
-  background: #0d908b;
-  text-shadow: none; }
-
-.reveal ::-moz-selection {
-  color: black;
-  background: #0d908b;
-  text-shadow: none; 
 }
 
 .reveal .rightFooter {

@@ -8,8 +8,6 @@ note:
 
 **Target time: 20m**
 
-**Switch keyboard layout naar Qwerty Hanno! 'met Ctrl+Space'**
-
 ---
 
 <!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->

@@ -47,35 +47,39 @@ Let's discuss that with a drink!
 
 ---
 
-<h2>Thank you! 😀</h2>
+<h2>Thank you! 🙂</h2>
 <br />
-<table>
+<table style="font-size: 100%">
 <tr>
-        <td width="20%" style="text-align: right; vertical-align: middle;"><img width="25%"
+        <td style="text-align: right; vertical-align: middle; width: 25%"><img width="15%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>
-        <td style="vertical-align: middle;" colspan="2"><a href="https://hanno.codes/slides/pattern-matching/devoxxpl-2023">hanno.codes/slides/pattern-matching/devoxxpl-2023</a>
+        <td style="vertical-align: middle;"><a
+                href="https://hanno.codes/slides/pattern-matching/hbo-ict-job-student-event">https://hanno.codes/slides/pattern-matching/hbo-ict-job-student-event</a>
         </td>
 </tr>
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="25%"
+        <td style="text-align: right; vertical-align: middle;"><img width="15%"
                 data-src="img/icons/github.png" class="no-background" /></td>
         <td style="vertical-align: middle;" colspan="2"><a 
                 href="https://github.com/hannotify/pattern-matching-music-store">github.com/hannotify/pattern-matching-music-store</a>
         </td>
 </tr>
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="25%" data-src="img/icons/website.png" class="no-background" /></td>
+        <td style="text-align: right; vertical-align: middle;"><img width="15%"
+                data-src="img/icons/website.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a
                 href="https://hanno.codes">hanno.codes</a></td>
-        <td style="vertical-align: middle;"><a
-                href="https://peterwessels.nl">peterwessels.nl</a></td>
 </tr>
 <tr>
-        <td style="text-align: right; vertical-align: middle;"><img width="25%"
+        <td style="text-align: right; vertical-align: middle;"><img width="15%"
                 data-src="img/icons/twitter-white.png" class="no-background" /></td>
-        <td style="vertical-align: middle;"><a href="https://www.twitter.com/hannotify">@hannotify</a></td>
-        <td style="vertical-align: middle;"><a href="https://www.twitter.com/PeterWessels">@PeterWessels</a></td>
+        <td style="vertical-align: middle;"><a
+                href="https://www.twitter.com/hannotify">@hannotify</a></td>
+</tr>
+<tr>
+        <td style="text-align: right; vertical-align: middle;"><img width="15%"
+                data-src="img/icons/envelope.png" class="no-background" /></td>
+        <td style="vertical-align: middle;"><a
+                href="">hanno&#8203.&#8203embregts&#8203@&#8203infosupport&#8203.&#8203com</a></td>
 </tr>
 </table>
-
-note:
