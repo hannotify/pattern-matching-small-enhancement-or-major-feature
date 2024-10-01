@@ -565,7 +565,6 @@ We would have to use a good old switch statement instead of a switch expression.
 ### Enum constants
 
 <pre><code class="java" data-trim data-line-numbers>
-sealed interface Effect permits Delay, AutoTune
 enum AutoTune implements Effect { ARTICULATOR, CHOIR }
 
 static String apply(Effect effect) {
@@ -573,6 +572,7 @@ static String apply(Effect effect) {
         case Delay de -> String.format("Delay active of %d ms.", de.getTimeInMs());
         case AutoTune.ARTICULATOR -> "I put emphasis on every word!";
         case AutoTune.CHOIR -> "Backed up by a choir!";
+        default -> "Unknown effect active";
     };
 }
 </code></pre>

@@ -38,7 +38,7 @@ static boolean isDelayTimeEqualToReverbRoomSize(EffectLoop effectLoop) {
 
 note:
 
-Let's start with an expansion that we know is in the near future. "Unnamed patterns"
+Let's start with an expansion that became available recently: "Unnamed patterns"
 
 Remember our var pattern example?
 In this example the compiler can infer the needed types from the deconstruction patterns in the `Delay` and `Reverb` class.
@@ -378,7 +378,7 @@ static void printDelays(List&lt;Delay&gt; delays) {
 
 note:
 
-When dealing with a record in an enhanced for loop, you can start using pattern matching there as well.
+When dealing with a record in an enhanced for loop, in the future you can start using pattern matching there as well.
 
 ---
 

@@ -184,8 +184,3 @@ You can even deconstruct using a var pattern, as long as you apply it to records
         </tr>                       
     </tbody>
 </table>
-
-note:
-
-Q: Hanno, have you every seen a JEP that's in 4th preview?
-A: The feature has always gathered a lot of feedback in the past, and on top of that it needs alignment with the related Record Patterns preview feature. In the end there are plenty of reasons to keep it in preview just a little longer.

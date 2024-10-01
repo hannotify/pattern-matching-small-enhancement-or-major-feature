@@ -17,6 +17,7 @@ note:
 
 _Voorbereidingen_:
 
+- Logitech Spotlight - set to a relatively small spotlight radius
 - Eerste scherm:
   - Speaker notes
 - Tweede scherm:
@@ -46,6 +47,10 @@ Before diving into the very interesting subject of Pattern Matching, I'm curious
 
 <https://gph.is/g/ZPJNoPQ> <!-- .element: class="attribution" -->
 
+note:
+
+Kleine toevoeging?
+
 ---
 
 <!-- .slide: data-background="img/background/major-feature.gif" -->
@@ -53,3 +58,7 @@ Before diving into the very interesting subject of Pattern Matching, I'm curious
 ## Major Feature <!-- .element: class="stroke" -->
 
 <https://thumbs.gfycat.com/DefiantElasticGadwall.webp> <!-- .element: class="attribution" -->
+
+note:
+
+of belangrijke feature?
