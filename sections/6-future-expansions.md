@@ -1,28 +1,27 @@
 <!-- .slide: data-background="img/background/final-puzzle-piece.jpg" data-background-color="black" data-background-opacity="0.4" -->
 
-# Future Expansions <!-- .element: class="stroke" -->
+# Expansions in the Near and Far Future <!-- .element: class="stroke" -->
 
 <https://pxhere.com/en/photo/752901> <!-- .element: class="attribution" -->
 
 note:
 
-**Target time: 32m**
+**Target time: 30m**
 
 ---
 
-<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+<!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->
 
-## Here be dragons! <!-- .element: class="stroke" -->
+## Disclaimer <!-- .element: class="stroke" -->
 
 <blockquote class="explanation">
-    We can't be sure <strong>at all</strong> that the following features will appear in Java as depicted.
-    They can change a <strong>lot</strong> in the meantime.
+    Some of the following features are still in 'preview' stage.
+    Syntax and implementation specifics may still change.
 </blockquote>
 
-<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
+<https://pxhere.com/en/photo/1359311> <!-- .element: class="attribution" -->
 
 note:
-This is like a disclaimer`++`.
 
 ---
 
@@ -168,20 +167,24 @@ If no Tuner is present, the 'regular' case branch will be executed as before.
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="greyed-out">
             <td><strong>21</strong></td>
             <td>Preview</td>
             <td><a href="https://openjdk.org/jeps/443">JEP 443</a></td>
         </tr>
+        <tr>
+            <td><strong>22</strong></td>
+            <td>Final</td>
+            <td><a href="https://openjdk.org/jeps/456">JEP 456</a></td>
+        </tr>
     </tbody>
 </table>
 
-<https://openjdk.org/jeps/443>
+<https://openjdk.org/jeps/456>
 
 note:
 
-Unnamed patterns are part of JEP 443, which is targeted for Java 21.
-The JEP will also add support for unnamed local variables, by the way.
+The JEP also added support for unnamed local variables, by the way.
 (example: catching an exception but not planning to use the exception variable)
 
 ---
@@ -198,7 +201,6 @@ static String apply(Effect effect, Guitar guitar) {
 }
 </code></pre>
 
-<https://openjdk.org/jeps/8288476>
 
 note:
 Primitive types are currently not permitted at the top-level, only in a nested record pattern:
@@ -277,14 +279,14 @@ We could express even more intricate logic using guards!
     </thead>
     <tbody>
         <tr>
-            <td><strong>n/a</strong></td>
-            <td>draft</td>
-            <td><a href="https://openjdk.org/jeps/8288476">JEP Draft #8288476</a></td>
+            <td><strong>23</strong></td>
+            <td>Preview</td>
+            <td><a href="https://openjdk.org/jeps/455">JEP 455</a></td>
         </tr>
     </tbody>
 </table>
 
-<https://openjdk.org/jeps/8288476>
+<https://openjdk.org/jeps/455>
 
 note:
 Apart from the Pattern Matching features, this JEP will also add support for:
@@ -294,7 +296,25 @@ Apart from the Pattern Matching features, this JEP will also add support for:
 
 ---
 
-<!-- .slide: data-auto-animate" data-visibility="hidden" -->
+<!-- .slide: data-background="img/background/dragons.jpg" data-background-color="black" data-background-opacity="0.7" -->
+
+## Here be dragons! <!-- .element: class="stroke" -->
+
+<blockquote class="explanation">
+    We can't be sure <strong>at all</strong> that the following features will appear in Java as depicted.
+    They can change a <strong>lot</strong> in the meantime.
+</blockquote>
+
+<https://www.pexels.com/photo/dragon-festival-during-nighttime-6068535/> <!-- .element: class="attribution" -->
+
+note:
+
+Let's get to the far future stuff. 
+Then we have to give a disclaimer`++`.
+
+---
+
+<!-- .slide: data-auto-animate" -->
 
 ### Pattern bind statements
 
@@ -312,15 +332,17 @@ __let Reverb(String name, int roomSize) = reverb;
 </small>
 
 note:
-A pattern binding statement destructures a target using a pattern.
+A pattern bind statement destructures a target using a pattern.
 Here, we assert that the pattern will match, so we destructure the target and bind its components to new variables.
+
+(Kotlin has a similar feature - anyone uses Kotlin?)
 
 BTW - the "double underscore" syntax is a convention used by the Java language designers to suggest that the syntax is merely a placeholder, for purposes of exposition.
 So we can't be sure at all that `let` will be the actual keyword for pattern bind statements.
 
 ---
 
-<!-- .slide: data-auto-animate" data-visibility="hidden"-->
+<!-- .slide: data-auto-animate" -->
 
 ### Pattern bind statements
 

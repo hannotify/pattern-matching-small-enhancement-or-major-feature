@@ -10,21 +10,6 @@ note:
 
 ---
 
-<!-- .slide: data-background="img/background/wall-disclaimer.jpg" data-background-color="black" data-background-opacity="0.5" -->
-
-## Disclaimer <!-- .element: class="stroke" -->
-
-<blockquote class="explanation">
-    The following feature are still in 'preview' stage.
-    Syntax and implementation specifics may still change.
-</blockquote>
-
-<https://pxhere.com/en/photo/1359311> <!-- .element: class="attribution" -->
-
-note:
-
----
-
 <!-- .slide: data-auto-animate" -->
 
 ### Deconstruction patterns

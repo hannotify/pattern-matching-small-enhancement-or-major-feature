@@ -564,21 +564,22 @@ We would have to use a good old switch statement instead of a switch expression.
 
 ### Enum constants
 
-<pre><code class="java">
-public enum AutoTune implements Effect { ARTICULATOR, CHOIR }
+<pre><code class="java" data-trim data-line-numbers>
+sealed interface Effect permits Delay, AutoTune
+enum AutoTune implements Effect { ARTICULATOR, CHOIR }
 
 static String apply(Effect effect) {
     return switch(effect) {
         case Delay de -> String.format("Delay active of %d ms.", de.getTimeInMs());
         case AutoTune.ARTICULATOR -> "I put emphasis on every word!";
-        case AutoTune.CHOIR -> "You have an entire choir behind you!";
+        case AutoTune.CHOIR -> "Backed up by a choir!";
     };
 }
 </code></pre>
 
 note:
 
-Scheduled for Java 21.
+Available in Java 21 (and up).
 
 ---
 

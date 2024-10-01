@@ -8,7 +8,7 @@
 
 note:
 
-**Target time: 29m**
+**Target time: 28m**
 
 ---
 
@@ -17,7 +17,7 @@ note:
 ### New effect implementation; now what?
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
-public interface Effect {}
+interface Effect {}
 
 static String apply(Effect effect) {
     return switch(effect) {
@@ -42,7 +42,7 @@ What happens if someone else introduced another effect implementation?
 ### Sealed types yield exhaustiveness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
-public sealed interface Effect permits Delay, Reverb, Overdrive, Tremolo, Tuner, EffectLoop {}
+sealed interface Effect permits Delay, Reverb, Overdrive, Tremolo, Tuner, EffectLoop {}
 
 static String apply(Effect effect) {
     return switch(effect) {
@@ -67,7 +67,7 @@ Here no default case is needed; the compiler is already aware that all cases hav
 ### Sealed types yield exhaustiveness
 
 <pre data-id="exhaustiveness-animation"><code class="java" data-trim data-line-numbers>
-public sealed interface Effect permits Delay, Reverb, Overdrive, Tremolo, Tuner, EffectLoop {}
+sealed interface Effect permits Delay, Reverb, Overdrive, Tremolo, Tuner, EffectLoop {}
 
 static String apply(Effect effect) {
     return switch(effect) {
