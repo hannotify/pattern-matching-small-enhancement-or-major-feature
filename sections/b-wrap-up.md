@@ -54,7 +54,7 @@ Let's discuss that with a drink!
         <td style="text-align: right; vertical-align: middle; width: 25%"><img width="15%"
                 data-src="img/icons/slide-deck.png" class="no-background" /></td>
         <td style="vertical-align: middle;"><a
-                href="https://hanno.codes/slides/pattern-matching/hbo-ict-job-student-event">https://hanno.codes/slides/pattern-matching/hbo-ict-job-student-event</a>
+                href="https://hanno.codes/slides/pattern-matching/hbo-ict-job-student-event-2024">https://hanno.codes/slides/pattern-matching/hbo-ict-job-student-event-2024</a>
         </td>
 </tr>
 <tr>
