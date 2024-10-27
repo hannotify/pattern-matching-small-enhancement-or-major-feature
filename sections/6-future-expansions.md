@@ -321,7 +321,7 @@ Then we have to give a disclaimer`++`.
 <pre data-id="pattern-bind-statements-animation"><code class="java" data-trim data-line-numbers>
 var reverb = new Reverb("ChamberReverb", 2);
 
-__let Reverb(String name, int roomSize) = reverb;
+reverb instanceof Reverb(String name, int roomSize); // syntax in progress
 
 // do something with name & roomSize
 </code></pre>
