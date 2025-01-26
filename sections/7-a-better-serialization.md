@@ -60,7 +60,7 @@ public class Overdrive implements Effect {
     }
 
     public pattern Overdrive(int gain) {
-        gain = this.gain;
+        match Overdrive(this.gain);
     }
 }
 </code></pre>
@@ -147,8 +147,7 @@ public class EffectLoop implements Effect {
     }
 
     public pattern EffectLoop(String name, Effect[] effects) {
-        name = this.name;
-        effects = this.effects.toArray();
+        match EffectLoop(this.name, this.effects.toArray());
     }
 }
 </code></pre>
@@ -182,8 +181,7 @@ public class EffectLoop implements Effect {
     }
 
     public pattern EffectLoop(String name, Effect[] effects) {
-        name = this.name;
-        effects = this.effects.toArray();
+        match EffectLoop(this.name, this.effects.toArray());
     }
 }
 </code></pre>
@@ -209,7 +207,7 @@ public class EffectLoop implements Effect {
         this.effects = new HashSet&lt;&gt;();
     }
 
-    @Deserializer
+    @Unmarshaller
     public EffectLoop(String name, Effect[] effects) {
         this(name);
         for (Effect effect : effects) {
@@ -217,10 +215,9 @@ public class EffectLoop implements Effect {
         }
     }
 
-    @Serializer
+    @Marshaller
     public pattern EffectLoop(String name, Effect[] effects) {
-        name = this.name;
-        effects = this.effects.toArray();
+        match EffectLoop(this.name, this.effects.toArray());
     }
 }
 </code></pre>
@@ -240,6 +237,8 @@ We really improved on the drawbacks we indicated earlier!
 ### Some challenges remain
 
 **Q:** How to support multiple versions of one class?
+
+TODO: replace this by the @Deprecated-approach
 
 <span class="fragment">
     <strong>A:</strong>  <code>@Serializer</code> and <code>@Deserializer</code> annotations could get a property <code>version</code> in the future.
